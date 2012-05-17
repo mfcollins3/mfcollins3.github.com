@@ -2,6 +2,8 @@
 {% assign homeClass = 'active' %}
 {% elsif page.url contains '/blog/' %}
 {% assign blogClass = 'active' %}
+{% elsif page.url == '/about-me.html' %}
+{% assign aboutMeClass = 'active' %}
 {% endif %}
 
 <nav class="navbar navbar-fixed-top">
@@ -17,6 +19,7 @@
                 <ul class="nav">
                     <li class="{{homeClass}}"><a href="/">Home</a></li>
                     <li class="{{blogClass}}"><a href="/blog">Blog</a></li>
+                    <li class="{{aboutMeClass}}"><a href="/about-me.html">About Me</a></li>
                 </ul>
                 <ul class="nav pull-right">
                     <li><a href="https://github.com/mfcollins3">GitHub</a></li>
