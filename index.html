@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Welcome
 ---
 <div class="hero-unit">
     <h1>Michael Collins on GitHub</h1>
@@ -21,16 +22,12 @@ layout: default
             <h1>Recent Updates</h1>
         </div>
         <ul class="unstyled">
-            {% for post in paginator.posts %}
-            <li>
-                <article>
-                    <h2><a href="{{post.url}}">{{post.title}}</a></h2>
-                    <p>{{post.description}}</p>
-                    <p><a href=="{{post.url}}">Read more</a></p>
-                </article>
-            </li>
+            {% for post in site.posts limit:5 %}
+            {% include post_summary.html %}
             {% endfor %}
-        </ul>    </div>
+        </ul>
+        <p><a href="/blog">See more posts</a></p>
+    </div>
     <div class="span4">
         <div class="page-header">
             <h1>Where I Will Be</h1>

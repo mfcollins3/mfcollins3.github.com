@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{page.title}} - Michael Collins on GitHub</title>
+        <link rel="stylesheet" href="/css/{{site.theme}}.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        {% include google_analytics.html %}
+    </head>
+    <body>
+        {% include navigation_bar.html %}
+        <div class="container">
+            <article>
+                <div class="page-header">
+                    <h1>{{page.title}} <small><time datetime="{{page.date}}">{{page.date | date_to_long_string}}</time></small></h1>
+                </div>
+                <div class="row">
+                    <div class="span8">
+                        <p id="description">{{page.description}}</p>
+                        {{content}}
+                        {% include disqus_thread.html %}
+                    </div>
+                    <div class="span4">
+                        <div>
+                            <h3>Related Posts</h3>
+                            <ul class="unstyled">
+                                {% for related_post in site.related_posts %}
+                                <li><a href="{{related_post.url}}">{{related_post.title}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Categories</h3>
+                            <ul class="unstyled">
+                                {% for category in page.categories %}
+                                <li>{{category}}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Tags</h3>
+                            <ul class="unstyled">
+                                {% for tag in page.tags %}
+                                <li>{{tag}}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {% include footer.html %}
+        {% include javascript.html %}
+    </body>
+</html>

@@ -1,7 +1,7 @@
 safe: true
 lsi: false
 pygments: true
-pagination: 20
+paginate: 20
 exclude: [Rakefile, README.md, lib, temp, src]
 permalink: /blog/:categories/:year/:month/:day/:title.html
 

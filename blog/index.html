@@ -1,0 +1,28 @@
+---
+layout: default
+title: Blog
+---
+<div class="hero-unit">
+    <h1>Michael Collins' Blog</h1>
+    <p>
+        Here you will find my thoughts, ideas, and sample code from the hobby and
+        professional projects that I am working on.
+    </p>
+</div>
+<div class="row">
+    <div class="span8">
+        <ul class="unstyled">
+            {% for post in paginator.posts %}
+            {% include post_summary.html %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="span4">
+        <div>
+            <h3>Categories</h3>
+        </div>
+        <div>
+            <h3>Tags</h3>
+        </div>
+    </div>
+</div>
