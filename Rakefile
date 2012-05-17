@@ -17,7 +17,7 @@ CLOBBER.include('./css')
 CLOBBER.include('./javascript')
 
 JAVASCRIPT_FILES = FileList.new('./lib/jquery/jquery.js')
-JAVASCRIPT_FILES.include('./lib/jquery-mobile/jquery.mobile-1.1.0.js')
+#JAVASCRIPT_FILES.include('./lib/jquery-mobile/jquery.mobile-1.1.0.js')
 JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-modal.js')
 JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-dropdown.js')
 JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-scrollspy.js')
@@ -38,13 +38,21 @@ task :default => [:compile_stylesheets, './javascript/website.js'] do
   sh "jekyll --pygments --safe"
 end
 
-task :compile_stylesheets => ['./css', './temp'] + CSS_FILES
+task :compile_stylesheets => ['./css/images', './temp', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png'] + CSS_FILES
 
-directory './css'
+directory './css/images'
 
 directory './javascript'
 
 directory './temp'
+
+file './css/images/glyphicons-halflings-white.png' => ['./lib/twitter-bootstrap/img/glyphicons-halflings-white.png'] do
+  cp './lib/twitter-bootstrap/img/glyphicons-halflings-white.png', './css/images/glyphicons-halflings-white.png'
+end
+
+file './css/images/glyphicons-halflings.png' => ['./lib/twitter-bootstrap/img/glyphicons-halflings.png'] do
+  cp './lib/twitter-bootstrap/img/glyphicons-halflings.png', './css/images/glyphicons-halflings.png'
+end
 
 file './javascript/website.js' => ['./javascript'] + JAVASCRIPT_FILES do
   sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{JAVASCRIPT_FILES.join(' --js ')} > ./javascript/website.js"

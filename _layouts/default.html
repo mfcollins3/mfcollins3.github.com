@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Michael Collins on GitHub</title>
+        <link rel="stylesheet" href="/css/{{site.theme}}.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        {% include google_analytics.html %}
+    </head>
+    <body>
+        {% include navigation_bar.html %}
+        <div class="container">
+            {{content}}
+        </div>
+        {% include footer.html %}
+        <script type="text/javascript" src="/javascript/website.js"></script>
+        {% if page.script %}
+            {{page.script}}
+        {% endif %}
+    </body>
+</html>
