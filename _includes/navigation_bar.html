@@ -2,6 +2,8 @@
 {% assign homeClass = 'active' %}
 {% elsif page.url contains '/blog/' %}
 {% assign blogClass = 'active' %}
+{% elsif page.url == '/projects.html' %}
+{% assign projectsClass = 'active' %}
 {% elsif page.url == '/about-me.html' %}
 {% assign aboutMeClass = 'active' %}
 {% endif %}
@@ -19,6 +21,17 @@
                 <ul class="nav">
                     <li class="{{homeClass}}"><a href="/">Home</a></li>
                     <li class="{{blogClass}}"><a href="/blog">Blog</a></li>
+                    <li class="dropdown {{projectsClass}}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Projects
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <ul>
+                                <li><a href="http://mfcollins3.github.com/ios-forms">iOS Forms</a></li>
+                            </ul>
+                        </ul>
+                    </li>
                     <li class="{{aboutMeClass}}"><a href="/about-me.html">About Me</a></li>
                 </ul>
                 <ul class="nav pull-right">
