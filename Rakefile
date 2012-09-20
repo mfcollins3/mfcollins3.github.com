@@ -31,8 +31,8 @@ JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-carousel.js')
 JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-typeahead.js')
 JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-affix.js')
 
-STYLESHEET_FILES = FileList.new('./src/stylesheets/normal.less')
-CSS_FILES = STYLESHEET_FILES.pathmap('%{^./src/stylesheets,./css}X.css')
+STYLESHEET_FILES = FileList.new('./src/themes/normal.less')
+CSS_FILES = STYLESHEET_FILES.pathmap('%{^./src/themes,./css}X.css')
 
 desc 'Builds the website'
 task :default => [:compile_stylesheets, './javascript/website.js'] do
@@ -59,7 +59,7 @@ file './javascript/website.js' => ['./javascript'] + JAVASCRIPT_FILES do
   sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{JAVASCRIPT_FILES.join(' --js ')} > ./javascript/website.js"
 end
 
-rule(/\.css$/ => [proc {|t| t.pathmap('%{^./css,./src/stylesheets}X.less')}]) do |t|
+rule(/\.css$/ => [proc {|t| t.pathmap('%{^./css,./src/themes}X.less')}]) do |t|
   tempCssName = t.name.pathmap('%{^./css,./temp}X.css')
   sh "lessc #{t.source} #{tempCssName}"
   sh "java -jar lib/yuicompressor/build/yuicompressor-2.4.8pre.jar --type css #{tempCssName} > #{t.name}"
