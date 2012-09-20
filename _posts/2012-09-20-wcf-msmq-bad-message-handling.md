@@ -426,4 +426,4 @@ Conclusion
 ----------
 In this post, I explained what dead letters and poison messages are and how they affect a WCF/MSMQ solution. I also presented a solution for creating WCF services to receive and handle the messages that are written to the dead letter queue or poison message queues. Hopefully this will help you with your own programs.
 
-The source code presented in this post has been posted as a Gist on GitHub. You can <a href="https://gist.github.com/cb22003460712cfc7e7b">download it from here</a>.
+The source code presented in this post has been posted as a Gist on GitHub. You can <a href="https://gist.github.com/3757366">download it from here</a> or clone the repository using Git from here: git://gist.github.com/3757366.git.
