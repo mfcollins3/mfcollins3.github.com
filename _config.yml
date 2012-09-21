@@ -6,4 +6,4 @@ exclude: [Rakefile, README.md, lib, temp, src]
 permalink: /blog/:categories/:year/:month/:day/:title.html
 
 theme: normal
-brand: Michael Collins on GitHub
+brand: The Imaginary Road
