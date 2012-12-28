@@ -1,0 +1,12 @@
+{% if page.header %}
+<header>
+	<div class="container">
+		<div class="hero-unit">
+			<h1>{{page.header}}</h1>
+			{% if page.header_description %}
+			<p>{{page.header_description}}</p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+{% endif %}
