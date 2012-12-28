@@ -39,10 +39,17 @@ CSS_FILES = STYLESHEET_FILES.pathmap('%{^./src/themes,./css}X.css')
 HANDLEBARS_FILES = FileList.new('./src/templates/*.handlebars')
 TEMPLATE_FILES = HANDLEBARS_FILES.pathmap('%{^./src,./_temp}X.js')
 
+HOMEPAGE_JAVASCRIPT_FILES = FileList.new('./src/javascript/homepage.js')
+HOMEPAGE_JAVASCRIPT_FILES.include('./_temp/templates/events.js')
+
+PAGE_JAVASCRIPT_MODULES = FileList.new('./javascript/homepage.js')
+
 desc 'Builds the website'
-task :default => [:compile_stylesheets, './javascript/website.js', :compile_templates] do
+task :default => [:compile_stylesheets, './javascript/website.js', :compile_templates, :compile_page_javascript_modules] do
   sh "jekyll --pygments --safe"
 end
+
+task :compile_page_javascript_modules => PAGE_JAVASCRIPT_MODULES
 
 task :compile_stylesheets => ['./css/images', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png'] + CSS_FILES
 
@@ -62,6 +69,10 @@ end
 
 file './css/images/glyphicons-halflings.png' => ['./lib/twitter-bootstrap/img/glyphicons-halflings.png'] do
   cp './lib/twitter-bootstrap/img/glyphicons-halflings.png', './css/images/glyphicons-halflings.png'
+end
+
+file './javascript/homepage.js' => ['./javascript'] + HOMEPAGE_JAVASCRIPT_FILES do
+  sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{HOMEPAGE_JAVASCRIPT_FILES.join(' --js ')} > ./javascript/homepage.js"
 end
 
 file './javascript/website.js' => ['./javascript'] + JAVASCRIPT_FILES do

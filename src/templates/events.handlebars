@@ -1,0 +1,27 @@
+{{#if events}}
+	{{#each events}}
+		<li>
+			<h5>{{this.date}}</h5>
+			<p>
+				{{#if this.titleUrl}}
+					<strong><a href="{{this.titleUrl}}">{{this.title}}</a></strong>
+				{{else}}
+					<strong>{{this.title}}</strong><br/>
+				{{/if}}
+				{{#if this.locationUrl}}
+					<em><a href="{{this.locationUrl}}">{{this.location}}</a></em>
+				{{else}}
+					<em>{{this.location}}</em>
+				{{/if}}
+			</p>
+			<p>{{this.description}}</p>
+			{{#if this.url}}
+				<p><a href="{{this.url}}">More information</a></p>
+			{{/if}}
+		</li>
+	{{/each}}
+{{else}}
+	<li>
+		<em>There are no events scheduled at this time.</em>
+	</li>
+{{/if}}

@@ -2,7 +2,7 @@ safe: true
 lsi: false
 pygments: true
 paginate: 20
-exclude: [Rakefile, README.md, lib, temp, src]
+exclude: [Rakefile, README.md, lib, _temp, src]
 permalink: /blog/:categories/:year/:month/:day/:title.html
 
 theme: normal
