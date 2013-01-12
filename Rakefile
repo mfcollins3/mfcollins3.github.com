@@ -44,6 +44,9 @@ HOMEPAGE_JAVASCRIPT_FILES.include('./_temp/templates/events.js')
 
 PAGE_JAVASCRIPT_MODULES = FileList.new('./javascript/homepage.js')
 
+FONT_AWESOME_FILES = FileList.new('./lib/font-awesome/font/*.*')
+FONT_FILES = FONT_AWESOME_FILES.pathmap('%{^./lib/font-awesome/font,./css/fonts}p')
+
 desc 'Builds the website'
 task :default => [:compile_stylesheets, './javascript/website.js', :compile_templates, :compile_page_javascript_modules] do
   sh "jekyll --pygments --safe"
@@ -51,9 +54,11 @@ end
 
 task :compile_page_javascript_modules => PAGE_JAVASCRIPT_MODULES
 
-task :compile_stylesheets => ['./css/images', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png'] + CSS_FILES
+task :compile_stylesheets => ['./css/images', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png', './css/fonts'] + CSS_FILES + FONT_FILES
 
 task :compile_templates => ['./_temp/templates'] + TEMPLATE_FILES
+
+directory './css/fonts'
 
 directory './css/images'
 
@@ -62,6 +67,22 @@ directory './javascript'
 directory './_temp/css'
 
 directory './_temp/templates'
+
+file './css/fonts/fontawesome-webfont.eot' => ['./lib/font-awesome/font/fontawesome-webfont.eot'] do
+	cp './lib/font-awesome/font/fontawesome-webfont.eot', './css/fonts/fontawesome-webfont.eot'
+end
+
+file './css/fonts/fontawesome-webfont.ttf' => ['./lib/font-awesome/font/fontawesome-webfont.ttf'] do
+	cp './lib/font-awesome/font/fontawesome-webfont.ttf', './css/fonts/fontawesome-webfont.ttf'
+end
+
+file './css/fonts/fontawesome-webfont.woff' => ['./lib/font-awesome/font/fontawesome-webfont.woff'] do
+	cp './lib/font-awesome/font/fontawesome-webfont.woff', './css/fonts/fontawesome-webfont.woff'
+end
+
+file './css/fonts/FontAwesome.otf' => ['./lib/font-awesome/font/FontAwesome.otf'] do
+	cp './lib/font-awesome/font/FontAwesome.otf', './css/fonts/FontAwesome.otf'
+end
 
 file './css/images/glyphicons-halflings-white.png' => ['./lib/twitter-bootstrap/img/glyphicons-halflings-white.png'] do
   cp './lib/twitter-bootstrap/img/glyphicons-halflings-white.png', './css/images/glyphicons-halflings-white.png'

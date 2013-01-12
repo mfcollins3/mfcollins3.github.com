@@ -4,3 +4,6 @@
 [submodule "lib/yuicompressor"]
 	path = lib/yuicompressor
 	url = git://github.com/yui/yuicompressor.git
+[submodule "lib/font-awesome"]
+	path = lib/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git
