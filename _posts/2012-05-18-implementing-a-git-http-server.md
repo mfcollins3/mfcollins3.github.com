@@ -4,13 +4,6 @@ title: Implementing a Git HTTP Server
 description: In this post, I will look at the Git smart HTTP protocol and will
   demonstrate how to create a web application that can host and serve Git
   repositories to users. Demonstrations will be shown using Node.js.
-categories:
-- Projects
-tags:
-- git
-- node.js
-- IIS
-- Windows
 disqus_identifier: 2012-05-18-implementing-a-git-http-server
 ---
 Introduction

@@ -6,13 +6,6 @@ description: Since I started working on Neudesic's Neuron product, I have
     of that technology plus related technologies such as MSMQ. In this post,
     I will discuss how to handle problem situations where WCF messages sent
     over MSMQ have errors or expire and are sent to the dead letter queue.
-categories:
-- .NET Development
-- Windows Communication Foundation
-tags:
-- .net
-- wcf
-- msmq
 disqus_identifier: 2012-09-20-wcf-msmq-bad-message-handling
 ---
 Yes, it has been a while since I have blogged. It's been a mix of writer's block, lack of time, working on a product, and being a father and husband. None of those are easy obstacles to overcome. But just because I have not been writing does not mean that I have not been doing anything. Quite the contrary, I have been working on a lot of things and learning many new things to share with anyone out there that cares to learn. In this post, I am going to look at the integration between Windows Communication Foundation and MSMQ, and specificially how to handle problem situations such as poison messages in the queue or when messages expire in the queue and are moved to the dead letter queue.

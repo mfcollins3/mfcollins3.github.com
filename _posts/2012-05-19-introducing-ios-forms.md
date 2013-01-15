@@ -4,15 +4,6 @@ title: "New Project: iOS Forms"
 description: In this post, I will introduce you to the iOS Forms project, a new
     open source project to help myself and others create form-based data entry
     applications for the iPhone or iPad.
-categories:
-- Projects
-tags:
-- iOS
-- Objective-C
-- CocoaTouch
-- Cocoa
-- iPhone
-- iPad
 disqus_identifier: 2012-05-19-introducing-ios-forms.md
 ---
 Today I am starting a new open source project here on GitHub titled **iOS Forms**.

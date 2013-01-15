@@ -2,11 +2,6 @@
 layout: post
 title: Introduction to ZeroMQ
 description: I will be presenting to the Phoenix Connected Systems User Group on November 7th, 2012. The topic will be an introduction to ZeroMQ. In this post, I will describe a little about ZeroMQ and tell you what you will be seeing in my presentation.
-categories:
-- Presentations
-tags:
-- presentation
-- pcsug
 disqus_identifier: 2012-10-22-introduction-to-zeromq
 ---
 Messaging is big on my research list right now, and that probably has to do a lot with my day job. Spending my days and weeks and months (and almost one year!) in the guts of Neuron has brought me back into the world of message-oriented middleware pretty heavily. From dealing with MSMQ to now dealing with AMQP, I have been reminded why messaging is an important technology and sorry that I have not used it as much on past projects.
