@@ -44,6 +44,13 @@ HOMEPAGE_JAVASCRIPT_FILES.include('./_temp/templates/events.js')
 
 PAGE_JAVASCRIPT_MODULES = FileList.new('./javascript/homepage.js')
 
+FONT_FILES = FileList.new('./lib/font-awesome/font/fontawesome-webfont.eot')
+FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.svg')
+FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.ttf')
+FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.woff')
+FONT_FILES.include('./lib/font-awesome/font/FontAwesome.otf')
+CSS_FONT_FILES = FONT_FILES.pathmap('./css/fonts/%f')
+
 desc 'Builds the website'
 task :default => [:compile_stylesheets, './javascript/website.js', :compile_templates, :compile_page_javascript_modules] do
   sh "jekyll --pygments --safe"
@@ -51,9 +58,11 @@ end
 
 task :compile_page_javascript_modules => PAGE_JAVASCRIPT_MODULES
 
-task :compile_stylesheets => ['./css/images', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png'] + CSS_FILES
+task :compile_stylesheets => ['./css/fonts', './css/images', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png'] + CSS_FILES + CSS_FONT_FILES
 
 task :compile_templates => ['./_temp/templates'] + TEMPLATE_FILES
+
+directory './css/fonts'
 
 directory './css/images'
 
@@ -62,6 +71,10 @@ directory './javascript'
 directory './_temp/css'
 
 directory './_temp/templates'
+
+file './css/fonts/FontAwesome.otf' => ['./lib/font-awesome/font/FontAwesome.otf'] do
+	cp './lib/font-awesome/font/FontAwesome.otf', './css/fonts/FontAwesome.otf'
+end
 
 file './css/images/glyphicons-halflings-white.png' => ['./lib/twitter-bootstrap/img/glyphicons-halflings-white.png'] do
   cp './lib/twitter-bootstrap/img/glyphicons-halflings-white.png', './css/images/glyphicons-halflings-white.png'
@@ -77,6 +90,10 @@ end
 
 file './javascript/website.js' => ['./javascript'] + JAVASCRIPT_FILES do
   sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{JAVASCRIPT_FILES.join(' --js ')} > ./javascript/website.js"
+end
+
+rule(/^\.\/css\/fonts\/fontawesome-webfont\./ => [proc {|t| t.pathmap('./lib/font-awesome/font/%f')}]) do |t|
+	cp t.source, t.name
 end
 
 rule(/\.css$/ => [proc {|t| t.pathmap('%{^./css,./src/themes}X.less')}]) do |t|
