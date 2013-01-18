@@ -3,7 +3,11 @@
     <head>
         <title>{{page.title}} - {{site.brand}}</title>
         <link rel="stylesheet" href="/css/{{site.theme}}.css"/>
+        {% if page.category %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/{{page.category}}/rss.xml"/>
+        {% else %}
         <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml"/>
+        {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         {% include google_analytics.html %}
     </head>

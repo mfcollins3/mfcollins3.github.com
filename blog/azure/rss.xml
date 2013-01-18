@@ -3,13 +3,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
   <channel>
-    <title>The Imaginary Road</title>
-    <description>Personal and professional thoughts and observations from Michael Collins.</description>
-    <link>http://www.michaelfcollins3.me/index.html</link>
+    <title>Windows Azure - The Imaginary Road</title>
+    <description>Ideas and techniques for building Windows Azure applications or making use of Azure technologies.</description>
+    <link>http://www.michaelfcollins3.me/blog/azure/index.html</link>
     <copyright>Copyright 2012-2013 Michael F. Collins, III</copyright>
     <language>en-us</language>
     <pubDate>{{site.time | date:'%a, %d %b %Y %H:%M:%S %Z'}}</pubDate>
-    {% for post in site.posts limit:20 %}
+    {% for post in site.categories.azure limit:20 %}
       <item>
         <title>{{post.title}}</title>
         <link>http://www.michaelfcollins3.me{{post.url}}</link>
