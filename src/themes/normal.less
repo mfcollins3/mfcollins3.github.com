@@ -13,7 +13,7 @@
 @import "../../lib/twitter-bootstrap/less/bootstrap.less";
 
 body {
-    padding-top: 50px;
+    padding-top: @navbarHeight + 1;
 }
 
 @import "../../lib/twitter-bootstrap/less/responsive.less";
@@ -23,19 +23,6 @@ body {
 
 @import "./lib/font-awesome/less/font-awesome.less";
 @FontAwesomePath: 'fonts';
-
-footer {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid @grayLighter;
-}
-
-article #description {
-    border-bottom: 1px solid @grayLighter;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    font-style: italic;
-}
 
 /* Pygments CSS classes */
 .hll { background-color: #ffffcc }
@@ -99,3 +86,154 @@ article #description {
 .vg { color: #19177C } /* Name.Variable.Global */
 .vi { color: #19177C } /* Name.Variable.Instance */
 .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+@import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
+
+.navbar a {
+	font-family: 'Architects Daughter', cursive;
+}
+
+#homepage {
+	> header {
+		#gradient .vertical(#87ceeb, white);
+		color: @gray;
+		font-family: 'Architects Daughter', @sansFontFamily;
+
+		> div {
+			.container-fixed();
+			width: (@gridColumnWidth * @gridColumns) + (@gridGutterWidth * (@gridColumns - 1));
+			text-align: center;
+			padding: 60px;
+			margin-bottom: 30px;
+			font-size: 18px;
+			font-weight: 200;
+			line-height: @baseLineHeight * 1.5;
+			
+			h1 {
+				font-size: 60px;
+				line-height: 1;
+				letter-spacing: -1px;
+			}
+
+			li {
+				line-height: @baseLineHeight * 1.5; // Reset since we specify in Type.less
+			}
+		}
+	}
+
+	#alerts {
+		.container-fixed();
+		width: (@gridColumnWidth * @gridColumns) + (@gridGutterWidth * (@gridColumns - 1));
+	}
+	
+	#blogFeatures {
+		.makeRow();
+	}
+
+	#featuredPost {
+		.makeColumn(8);
+	}
+
+	#featuredCategory {
+		.makeColumn(4);
+
+		h2 {
+			border-bottom: 1px solid @grayLighter;		
+		}
+
+		article h1 {
+			font-size: @baseFontSize * 1.75;
+		}
+	}
+
+	#featuredProjects {
+		.makeRow();
+		border-top: 1px solid @grayLighter;
+		display: none;
+	}
+
+	#featuredProject {
+		.makeColumn(10);
+
+		article {
+			.makeRow();
+
+			#projectSummary {
+				.makeColumn(8);
+			}
+
+			#projectLinks {
+				.makeColumn(2);
+			}
+		}
+	}
+
+	#otherProjects {
+		.makeColumn(2);
+	}
+
+	#content {
+		.makeRow();
+		border-top: 1px solid @grayLighter;
+	}
+
+	#categories {
+		.makeColumn(2);
+		padding-top: @baseLineHeight * 2;
+
+		ul li {
+			margin-top: @baseLineHeight / 2;
+		}
+
+		ul li:first-child {
+			margin-top: 0;
+		}
+	}
+
+	#recentPosts {
+		.makeColumn(7);
+
+		article h1 {
+			font-size: @baseFontSize * 1.75;
+		}
+	}
+
+	#news {
+		.makeColumn(3);
+	}
+
+	#events {
+		article {
+			h1 {
+				line-height: @baseLineHeight;
+				font-size: @baseFontSize;
+			}
+
+			.eventDate {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.sectionTitle {
+		font-size: @baseFontSize;
+		line-height: @baseLineHeight;
+		margin-bottom: 0;
+		#gradient .horizontal(#87ceeb, white);
+	}
+
+	ul {
+		list-style: none;
+		margin-left: 0;
+	}
+}
+
+#main {
+	.container-fixed();
+	width: (@gridColumnWidth * @gridColumns) + (@gridGutterWidth * (@gridColumns - 1));
+}
+
+body > footer {
+	border-top: 1px solid @grayLighter;
+	padding-top: @baseLineHeight / 2;
+}

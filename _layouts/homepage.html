@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{site.brand}}</title>
+		{% if page.theme %}
+		<link rel="stylesheet" href="/css/{{page.theme}}.css"/>
+		{% else %}
+		<link rel="stylesheet" href="/css/{{site.theme}}.css"/>
+		{% endif %}
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		{% include google_analytics.html %}
+	</head>
+	<body id="homepage">
+		<header>
+			<div>
+				<h1>The Imaginary Road</h1>
+				<p>Personal and professional thoughts and observations from Michael Collins</p>
+			</div>
+		</header>
+		{% include navigation_bar.html %}
+		{% if page.alert %}
+		<section id="alerts">
+			<div class="alert">
+				<strong>Warning!</strong> {{page.alert}}
+			</div>
+		</section>
+		{% endif %}
+		<section id="main">
+			<section id="blogFeatures">
+				<section id="featuredPost">
+					<h1 class="sectionTitle">Featured Post</h1>
+					<article>
+						{% assign featuredPost = site.posts | first %}
+						<h1><a href="{{featuredPost.url}}">{{featuredPost.title}}</a></h1>
+						<p>{{featuredPost.description}}</p>
+					</article>
+				</section>
+				<section id="featuredCategory">
+					{% assign featuredCategory = site.categories.zeromq %}
+					{% assign featuredCategoryPost = featuredCategory | first %}
+					<hgroup>
+						<h1 class="sectionTitle">Featured Category</h1>
+						<h2><a href="#">ZeroMQ</a></h2>
+					</hgroup>
+					<article>
+						<h1><a href="{{featuredCategoryPost.url}}">{{featuredCategoryPost.title}}</a></h1>
+						<p>{{featuredCategoryPost.description}}</p>
+					</article>
+					<ul>
+						{% for post in featuredCategory limit:4 offset:1 %}
+						<li><a href="{{post.url}}">{{post.title}}</a></li>
+						{% endfor %}
+					</ul>
+				</section>
+			</section>
+			<section id="featuredProjects">
+				<section id="featuredProject">
+					<h1 class="sectionTitle">Featured Project</h1>
+					<article>
+						<section id="projectSummary">
+							<h1><a href="#">Featured Project Title</a></h1>
+							<p>This is a description of the featured project.</p>
+						</section>
+						<section id="projectLinks">
+							<ul>
+								<li><a href="#">Project Website</a></li>
+								<li><a href="#">GitHub Repository</a></li>
+								<li><a href="#">Downloads</a></li>
+								<li><a href="#">Documentation</a></li>
+								<li><a href="#">Support Forum</a></li>
+							</ul>
+						</section>
+					</article>
+				</section>
+				<section id="otherProjects">
+					<h1 class="sectionTitle">Other Projects</h1>
+					<ul>
+						<li><a href="#">Project Title</a></li>
+						<li><a href="#">Project Title</a></li>
+						<li><a href="#">Project Title</a></li>
+						<li><a href="#">Project Title</a></li>
+						<li><a href="#">Project Title</a></li>
+					</ul>
+				</section>
+			</section>
+			<section id="content">
+				<aside id="categories">
+					<ul>
+						<li><a href="#">iOS</a></li>
+						<li><a href="#">WCF</a></li>
+						<li><a href="#">Workflow Foundation</a></li>
+						<li><a href="#">WPF</a></li>
+						<li><a href="#">ZeroMQ</a></li>
+					</ul>
+				</aside>
+				<section id="recentPosts">
+					<h1 class="sectionTitle">Recent Posts</h1>
+					{% for post in site.posts limit:9 offset:1 %}
+					<article>
+						<h1><a href="{{post.url}}">{{post.title}}</a></h1>
+						<p>{{post.description}}</p>
+					</article>
+					{% endfor %}
+					<p><a href="/blog/index.html">Read more blog posts</a></p>
+				</section>
+				<aside id="news">
+					<section id="events">
+						<h1 class="sectionTitle">Where I'll Be</h1>
+						<div id="eventList"></div>
+					</section>
+				</aside>
+			</section>
+		</section>
+		{% include footer.html %}
+		{% include javascript.html %}
+        {% include disqus_comment_count_javascript.html %}
+	</body>
+</html>

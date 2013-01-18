@@ -1,27 +1,25 @@
 {{#if events}}
 	{{#each events}}
-		<li>
-			<h5>{{this.date}}</h5>
-			<p>
-				{{#if this.titleUrl}}
-					<strong><a href="{{this.titleUrl}}">{{this.title}}</a></strong>
-				{{else}}
-					<strong>{{this.title}}</strong><br/>
-				{{/if}}
-				{{#if this.locationUrl}}
-					<em><a href="{{this.locationUrl}}">{{this.location}}</a></em>
-				{{else}}
-					<em>{{this.location}}</em>
-				{{/if}}
-			</p>
-			<p>{{this.description}}</p>
-			{{#if this.url}}
-				<p><a href="{{this.url}}">More information</a></p>
+		<article>
+			{{#if this.titleUrl}}
+				<h1><a href="{{this.titleUrl}}">{{this.title}}</a></h1>
+			{{else}}
+				<h1>{{this.title}}</h1>
 			{{/if}}
-		</li>
+			<p class="eventDate">{{this.date}}</p>
+			{{#if this.locationUrl}}
+				<p class="eventLocation"><a href="{{this.locationUrl}}">{{this.location}}</a></p>
+			{{else}}
+				<p class="eventLocation">{{this.location}}</p>
+			{{/if}}
+			<p class="eventDescription">{{this.description}}</p>
+			{{#if this.url}}
+				<p class="eventLink"><a href="{{this.url}}">More information</a></p>
+			{{/if}}
+		</article>
 	{{/each}}
 {{else}}
-	<li>
+	<p class="noEvents">
 		<em>There are no events scheduled at this time.</em>
-	</li>
+	</p>
 {{/if}}

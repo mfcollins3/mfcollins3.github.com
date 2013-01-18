@@ -1,4 +1,13 @@
 {
 	"events": [
+		{
+			"title": "Northwest Valley .NET User Group",
+			"url": "http://nwvdnug.org",
+			"date": "January 23, 2013 6:00pm",
+			"titleUrl": "http://nwvdnug.org/Meetings/Next",
+			"locationUrl": "http://www.bing.com/maps/?where1=5600%20W%20Union%20Hills%20Ave,%20Glendale,%20AZ,%2085308",
+			"location": "Foothills Recreation Center, Glendale, AZ",
+			"description": "I will be in attendance at the January meeting. Scott Williams, also of Neudesic, will be presenting on Backbone.js and implementing client-side JavaScript applications."
+		}
 	]
 }
