@@ -38,7 +38,7 @@ featuredCategoryUrl: /blog/zeromq/index.html
 					{% assign featuredPost = site.posts | first %}
 					<h1 class="featuredSectionTitle">Featured Post</h1>
 					<article>
-						<h1><span class="label label-important">New!</span> <a href="{{featuredPost.url}}">{{featuredPost.title}}</a></h1>
+						<h1><a href="{{featuredPost.url}}">{{featuredPost.title}}</a></h1>
 						<p>{{featuredPost.description}}</p>
 						<p><a href="{{featuredPost.url}}#disqus_thread" data-disqus-identifier="{{featuredPost.disqus_identifier}}">Comments</a></p>
 					</article>
