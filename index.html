@@ -1,5 +1,99 @@
 ---
-layout: homepage
+description: The Imaginary Road is the personal blog of Michael Collins. My blog contains mostly technical postings about the projects that I am working on or researching in both my personal and professional lives.
 javascript: homepage
-alert: I am currently in the process of updating the website. Some links, categories, and pages may not work. I sincerely apologize in advance for any inconvenience. Please check back soon and the remaining links should be working. Thank you for your interest in my blog.
+featuredCategoryTitle: ZeroMQ
+featuredCategoryUrl: /blog/zeromq/index.html
 ---
+{% assign featuredCategory = site.categories.zeromq %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{site.brand}}</title>
+		<link rel="stylesheet" href="/css/{{site.theme}}.css"/>
+		<link rel="alternate" type="application/rss+xml" title="{{site.brand}} RSS Feed" href="/rss.xml"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="og:title" content="{{site.brand}}"/>
+		<meta name="og:type" content="website"/>
+		<meta name="og:url" content="http://www.michaelfcollins3.me"/>
+		<meta name="og:description" content="{{page.description}}"/>
+		<meta name="og:site_name" content="{{site.brand}}"/>
+		<meta name="description" content="{{page.description}}"/>
+		<meta name="author" content="Michael F. Collins, III"/>
+		<meta charset="UTF-8"/>
+		{% include google_analytics.html %}
+	</head>
+	<body id="homepage">
+		<header class="jumbotron hidden-phone">
+			<div class="container">
+				<h1>The Imaginary Road</h1>
+				<p>
+					A blog about the ideas, innovations, and inventions of Michael Collins, and the story of my road towards a better future.
+				</p>
+			</div>
+		</header>
+		{% include navigation_bar.html %}
+		<div class="container">
+			<div class="row">
+				<section id="featuredPost" class="span8">
+					{% assign featuredPost = site.posts | first %}
+					<h1 class="featuredSectionTitle">Featured Post</h1>
+					<article>
+						<h1><span class="label label-important">New!</span> <a href="{{featuredPost.url}}">{{featuredPost.title}}</a></h1>
+						<p>{{featuredPost.description}}</p>
+						<p><a href="{{featuredPost.url}}#disqus_thread" data-disqus-identifier="{{featuredPost.disqus_identifier}}">Comments</a></p>
+					</article>
+				</section>
+				<section id="featuredCategory" class="span4">
+					<hgroup>
+						<h1 class="featuredSectionTitle">Featured Category</h1>
+						<h2><a href="{{page.featuredCategoryUrl}}">{{page.featuredCategory}}</a></h2>
+					</hgroup>
+					{% assign featuredCategoryPost = featuredCategory | first %}
+					<article>
+						<h1><a href="{{featuredCategoryPost.url}}">{{featuredCategoryPost.title}}</a></h1>
+						<p>{{featuredCategoryPost.description}}</p>
+					</article>
+					<ul>
+						{% for post in featuredCategory limit:4 offset:1 %}
+						<li><a href="{{post.url}}">{{post.title}}</a></li>
+						{% endfor %}
+					</ul>
+				</section>
+			</div>
+			<div class="row">
+				<section id="featuredProject" class="span10"></section>
+				<section id="otherProjects" class="span2"></section>
+			</div>
+			<div class="row">
+				<aside id="categoryList" class="span2 hidden-phone">
+					<ul class="unstyled">
+						{% for category in site.categories %}
+						{% assign categoryName = category | first %}
+						<li><a href="/blog/{{categoryName | cgi_escape}}/index.html">{{categoryName}}</a></li>
+						{% endfor %}
+					</ul>
+				</aside>
+				<section id="recentPosts" class="span6">
+					<h1 class="featuredSectionTitle">Recent Posts</h1>
+					{% for post in site.posts limit:10 offset:1 %}
+					<article>
+						<h1><a href="{{post.url}}">{{post.title}}</a></h1>
+						<p>{{post.description}}</p>
+						<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
+					</article>
+					{% endfor %}
+					<p><a href="/blog/index.html">Read more blog posts</a></p>
+				</section>
+				<section id="other" class="span4 hidden-phone">
+					<section id="events">
+						<h1 class="featuredSectionTitle">Where I'll Be</h1>
+						<div id="eventList"></div>
+					</section>
+				</section>
+			</div>
+		</div>
+		{% include footer.html %}
+		{% include javascript.html %}
+		{% include disqus_comment_count_javascript.html %}
+	</body>
+</html>

@@ -1,14 +1,15 @@
-{% if page.url == '/index.html' %}
+{% assign prefix = page.url | replace_first:'/','' | split:'/' | first %}
+{% case prefix %}
+{% when 'index.html' %}
 {% assign homeClass = 'active' %}
-{% elsif page.url contains '/blog/' %}
+{% when 'blog' %}
 {% assign blogClass = 'active' %}
-{% elsif page.url == '/projects.html' %}
+{% when 'projects.html' %}
 {% assign projectsClass = 'active' %}
-{% elsif page.url == '/about-me.html' %}
+{% when 'about-me.html' %}
 {% assign aboutMeClass = 'active' %}
-{% endif %}
-
-<nav class="navbar navbar-fixed-top">
+{% endcase %}
+<nav id="navigationBar" class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -17,23 +18,29 @@
                 <span class="icon-bar"></span>
             </a>
             <a class="brand" href="/">{{site.brand}}</a>
-            <div class="nav-collapse">
-                <ul class="nav">
+            <div class="nav-collapse collapse">
+                <ul id="siteLinks" class="nav">
                     <li class="{{homeClass}}"><a href="/">Home</a></li>
-                    <li class="{{blogClass}}"><a href="/blog">Blog</a></li>
-                    <li class="dropdown {{projectsClass}}">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Projects
-                            <b class="caret"></b>
-                        </a>
+                    <li class="{{blogClass}}"><a href="/blog/index.html">Blog</a></li>
+                    <li class="{{projectsClass}} dropdown">
+                        <a href="/projects.html" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"/></a>
                         <ul class="dropdown-menu">
-                            <li><a href="http://mfcollins3.github.com/ios-forms">iOS Forms</a></li>
+                            <li><a href="#">Project 1</a></li>
+                            <li><a href="#">Project 2</a></li>
+                            <li><a href="#">Project 3</a></li>
                         </ul>
                     </li>
                     <li class="{{aboutMeClass}}"><a href="/about-me.html">About Me</a></li>
                 </ul>
-                <ul class="nav pull-right">
-                    <li><a href="https://github.com/mfcollins3">GitHub</a></li>
+                <p class="navbar-text hidden-desktop">Contact Me:</p>
+                <ul id="socialMediaLinks" class="nav pull-right">
+                    <li><a href="https://github.com/mfcollins3"><span class="socialMediaIcon icon-github hidden-phone hidden-tablet"></span><span class="hidden-desktop">GitHub</span></a></li>
+                    <li><a href="https://www.facebook.com/mfcollins3"><span class="socialMediaIcon icon-facebook hidden-phone hidden-tablet"></span><span class="hidden-desktop">Facebook</span></a></li>
+                    <li><a href="http://twitter.com/mfcollins3"><span class="socialMediaIcon icon-twitter hidden-phone hidden-tablet"></span><span class="hidden-desktop">Twitter</span></a></li>
+                    <li><a href="http://www.linkedin.com/in/michaelfcollins3/"><span class="socialMediaIcon icon-linkedin hidden-phone hidden-tablet"></span><span class="hidden-desktop">LinkedIn</span></a></li>
+                    <li><a href="https://plus.google.com/108671264811803826632/"><span class="socialMediaIcon icon-google-plus hidden-phone hidden-tablet"></span><span class="hidden-desktop">Google+</span></a></li>
+                    <li><a href="http://pinterest.com/mfcollins3/"><span class="socialMediaIcon icon-pinterest hidden-phone hidden-tablet"></span><span class="hidden-desktop">Pinterest</span></a></li>
+                    <li><a href="skype:mfcollins3"><span class="socialMediaIcon icon-phone hidden-phone hidden-tablet"></span><span class="hidden-desktop">Skype</span></a></li>
                 </ul>
             </div>
         </div>
