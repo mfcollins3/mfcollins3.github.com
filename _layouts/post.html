@@ -17,12 +17,12 @@
                     <h1>{{page.title}} <small><time datetime="{{page.date}}">{{page.date | date_to_long_string}}</time></small></h1>
                 </div>
                 <div class="row">
-                    <div class="span8">
-                        <p id="description">{{page.description}}</p>
+                    <div class="span9">
+                        <p id="description" class="lead">{{page.description}}</p>
                         {{content}}
                         {% include disqus_thread.html %}
                     </div>
-                    <div class="span4">
+                    <div class="span3">
                         <div>
                             <h3>Related Posts</h3>
                             <ul class="unstyled">
