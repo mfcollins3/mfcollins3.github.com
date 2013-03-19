@@ -69,7 +69,7 @@ featuredCategoryUrl: /blog/zeromq/index.html
 					<ul class="unstyled">
 						{% for category in site.categories %}
 						{% assign categoryName = category | first %}
-						<li><a href="/blog/{{categoryName | cgi_escape}}/index.html">{{categoryName}}</a></li>
+						<li><a href="/blog/{{categoryName | cgi_escape}}/index.html">{{categoryName | replace:'_',' '}}</a></li>
 						{% endfor %}
 					</ul>
 				</aside>

@@ -4,7 +4,7 @@ title: Building Neuron ESB 3.0 Subscribers the Reactive Way
 description: Neuron ESB 3.0 is out, and if you're a Neuron user or using .NET-based ESBs, then you should be interested, because there's a lot of stuff there. Now rocking on the .NET 4 platform, there are some pretty cool things that you can do with Neuron that you could not do with the previous releases. In this post, I will show you a new way to create custom subscribers using Neuron's Party class and using Reactive Extensions to asynchronously receive and filter incoming messages sent to a subscriber.
 disqus_identifier: 2013-03-06-neuron-esb-subscribers-the-reactive-way
 categories:
-- Neuron ESB
+- Neuron_ESB
 tags:
 - neuron
 - neudesic
