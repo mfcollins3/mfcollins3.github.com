@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Imaginary Road</title>
+        <link rel="stylesheet" href="/css/normal.css"/>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml"/>
+        {% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-4462879-7']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="hero-unit">
+                    <h1>{{page.header}}</h1>
+                    {% if page.header_description %}
+                    <p>{{page.header_description}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <nav id="navigationBar" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/">The Imaginary Road</a>
+                    <div class="nav-collapse collapse">
+                        <ul id="siteLinks" class="nav">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/blog/index.html">Blog</a></li>
+                            <li class="{{projectsClass}} dropdown">
+                                <a href="/projects.html" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"/></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Project 1</a></li>
+                                    <li><a href="#">Project 2</a></li>
+                                    <li><a href="#">Project 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/about-me.html">About Me</a></li>
+                        </ul>
+                        <p class="navbar-text hidden-desktop">Contact Me:</p>
+                        <ul id="socialMediaLinks" class="nav pull-right">
+                            <li><a href="https://github.com/mfcollins3"><span class="socialMediaIcon icon-github hidden-phone hidden-tablet"></span><span class="hidden-desktop">GitHub</span></a></li>
+                            <li><a href="https://www.facebook.com/mfcollins3"><span class="socialMediaIcon icon-facebook hidden-phone hidden-tablet"></span><span class="hidden-desktop">Facebook</span></a></li>
+                            <li><a href="http://twitter.com/mfcollins3"><span class="socialMediaIcon icon-twitter hidden-phone hidden-tablet"></span><span class="hidden-desktop">Twitter</span></a></li>
+                            <li><a href="http://www.linkedin.com/in/michaelfcollins3/"><span class="socialMediaIcon icon-linkedin hidden-phone hidden-tablet"></span><span class="hidden-desktop">LinkedIn</span></a></li>
+                            <li><a href="https://plus.google.com/108671264811803826632/"><span class="socialMediaIcon icon-google-plus hidden-phone hidden-tablet"></span><span class="hidden-desktop">Google+</span></a></li>
+                            <li><a href="http://pinterest.com/mfcollins3/"><span class="socialMediaIcon icon-pinterest hidden-phone hidden-tablet"></span><span class="hidden-desktop">Pinterest</span></a></li>
+                            <li><a href="skype:mfcollins3"><span class="socialMediaIcon icon-phone hidden-phone hidden-tablet"></span><span class="hidden-desktop">Skype</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="alert alert-block alert-error">
+                <h4>The page you requested was not found</h4>
+                <p>
+                    The page that you are looking for was not found in the location that you used. The page may have been moved to a different address or, in the case of a blog post, recategorized. I apologize for the inconvenience.
+                </p>
+                <p>
+                    Please use the navigation bar above to return to the home page or navigate to the blog to find the post that you were interested in.
+                </p>
+                <p>
+                    If you are unable to find the content that you were looking for, please email me directly at <a href="mailto:michael@imaginaryrealities.com?Subject=Could%20not%20find%20webpage">michael@imaginaryrealities.com</a> and I will be happy to help you find the information that you were looking for.
+                </p>
+                <p>
+                    Thank you.
+                </p>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <section id="footerLegalInformation" class="span4">
+                        <p>Copyright &copy; 2012-2013 Michael F. Collins, III</p>
+                        <p>
+                            The views expressed on this website are mine alone and do
+                            not necessarily reflect the views of my employer.
+                        </p>
+                        <p>
+                            Unless otherwise indicated, all source code that is published
+                            on this website is released under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>
+                            and can be reused for both open source and commercial
+                            development.
+                        </p>
+                    </section>
+                    <section id="footerContactInformation" class="span4 offset4">
+                        <address>
+                            <span>Michael F. Collins, III</span><br/>
+                            <span>Website: <a href="http://mfcollins3.github.com">http://mfcollins3.github.com</a></span><br/>
+                            <span>Website: <a href="http://www.michaelfcollins3.me">http://wwww.michaelfcollins3.me</a></span><br/>
+                            <span>Email: <a href="mailto:michael@imaginaryrealities.com">michael@imaginaryrealities.com</a></span><br/>
+                            <span>Email: <a href="mailto:michael.collins@neudesic.com">michael.collins@neudesic.com</a></span><br/>
+                            <span>Twitter: <a href="http://www.twitter.com/mfcollins3">@mfcollins3</a></span><br/>
+                            <span>Skype: <a href="skype:mfcollins3">mfcollins3</a></span><br/>
+                        </address>
+                    </section>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="/javascript/website.js"></script>
+    </body>
+</html>
