@@ -1,10 +1,7 @@
 ---
 description: The Imaginary Road is the personal blog of Michael Collins. My blog contains mostly technical postings about the projects that I am working on or researching in both my personal and professional lives.
 javascript: homepage
-featuredCategoryTitle: ZeroMQ
-featuredCategoryUrl: /blog/zeromq/index.html
 ---
-{% assign featuredCategory = site.categories.ZeroMQ %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -23,77 +20,69 @@ featuredCategoryUrl: /blog/zeromq/index.html
 		{% include google_analytics.html %}
 	</head>
 	<body id="homepage">
-		<header class="jumbotron hidden-phone">
-			<div class="container">
-				<h1>The Imaginary Road</h1>
-				<p>
-					A blog about the ideas, innovations, and inventions of Michael Collins, and the story of my road towards a better future.
-				</p>
-			</div>
-		</header>
-		{% include navigation_bar.html %}
+        {% include navigation_bar.html %}
 		<div class="container">
 			<div class="row">
-				<section id="featuredPost" class="span8">
-					{% assign featuredPost = site.posts | first %}
-					<h1 class="featuredSectionTitle">Featured Post</h1>
-					<article>
-						<h1><a href="{{featuredPost.url}}">{{featuredPost.title}}</a></h1>
-						<p>{{featuredPost.description}}</p>
-						<p><a href="{{featuredPost.url}}#disqus_thread" data-disqus-identifier="{{featuredPost.disqus_identifier}}">Comments</a></p>
-					</article>
-				</section>
-				<section id="featuredCategory" class="span4">
-					<hgroup>
-						<h1 class="featuredSectionTitle">Featured Category</h1>
-						<h2><a href="{{page.featuredCategoryUrl}}">{{page.featuredCategory}}</a></h2>
-					</hgroup>
-					{% assign featuredCategoryPost = featuredCategory | first %}
-					<article>
-						<h1><a href="{{featuredCategoryPost.url}}">{{featuredCategoryPost.title}}</a></h1>
-						<p>{{featuredCategoryPost.description}}</p>
-					</article>
-					<ul>
-						{% for post in featuredCategory limit:4 offset:1 %}
-						<li><a href="{{post.url}}">{{post.title}}</a></li>
-						{% endfor %}
-					</ul>
-				</section>
-			</div>
-			<div class="row">
-				<section id="featuredProject" class="span10"></section>
-				<section id="otherProjects" class="span2"></section>
-			</div>
-			<div class="row">
-				<aside id="categoryList" class="span2 hidden-phone">
-					<ul class="unstyled">
-						{% for category in site.categories %}
-						{% assign categoryName = category | first %}
-						<li><a href="/blog/{{categoryName | cgi_escape}}/index.html">{{categoryName | replace:'_',' '}}</a></li>
-						{% endfor %}
-					</ul>
-				</aside>
-				<section id="recentPosts" class="span6">
-					<h1 class="featuredSectionTitle">Recent Posts</h1>
-					{% for post in site.posts limit:10 offset:1 %}
-					<article>
-						<h1><a href="{{post.url}}">{{post.title}}</a></h1>
-						<p>{{post.description}}</p>
-						<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
-					</article>
-					{% endfor %}
-					<p><a href="/blog/index.html">Read more blog posts</a></p>
-				</section>
-				<section id="other" class="span4 hidden-phone">
-					<section id="events">
-						<h1 class="featuredSectionTitle">Where I'll Be</h1>
-						<div id="eventList"></div>
+				<div class="span8">
+					<section id="featuredPost">
+						<h1>Featured Post</h1>
+						{% assign first_post = site.posts | first %}
+						<ul class="breadcrumb">
+							<li><a href="/blog/index.html">Blog</a> <span class="divider">/</span></li>
+							{% for category in first_post.categories %}
+							<li>
+								<a href="/blog/{{category}}.html">{{category | replace:'_',' '}}</a>
+								{% unless forloop.last %}
+								<span class="divider">/</span>
+								{% endunless %}
+							</li>
+							{% endfor %}
+						</ul>
+						<article>
+							<div class="page-header">
+								<h1><a href="{{first_post.url}}">{{first_post.title}}</a></h1>
+							</div>
+							<p class="lead">{{first_post.description}}</p>
+							<time datetime="{{first_post.date | date:'%Y-%m-%d'}}">{{first_post.date | date:'%B %d, %Y'}}</time>
+							{{first_post.content | markdownify}}
+							{% if first_post.tags %}
+							<ul class="tags">
+								{% for tag in first_post.tags %}
+								<li><a href="/blog/tags/{{tag}}.html">{{tag | replace:'_':' '}}</a></li>
+								{% endfor %}
+							</ul>
+							{% endif %}
+				            </p><a href="{{first_post.url}}#disqus_thread" data-disqus-identifier="{{first_post.disqus_identifier}}">Comments</a></p>
+				            <ul class="pager">
+				            	<li class="previous"><a href="{{first_post.previous.url}}">&larr; Previous Post</a></li>
+				            </ul>
+				        </article>
 					</section>
-				</section>
+				</div>
+				<div class="span4">
+					<aside>
+						<section id="recentPosts">
+							<h1>Recent Posts</h1>
+							<ul>
+								{% for recent_post in site.posts limit:10 offset:1 %}
+								<li><a href="{{recent_post.url}}">{{recent_post.title}}</a></li>
+								{% endfor %}
+							</ul>
+						</section>
+						<section id="categories">
+							<h1>Other Topics</h1>
+							<ul>
+								<li><a href="/blogs/Command_Line_Programming.html">Command Line Programming</a></li>
+								<li><a href="/blogs/Neuron_ESB.html">Neuron ESB</a></li>
+								<li><a href="/blogs/ZeroMQ.html">ZeroMQ</a></li>
+							</ul>
+						</section>
+					</aside>
+				</div>
 			</div>
 		</div>
-		{% include footer.html %}
-		{% include javascript.html %}
-		{% include disqus_comment_count_javascript.html %}
+        {% include footer.html %}
+        {% include javascript.html %}
+        {% include disqus_comment_count_javascript.html %}
 	</body>
 </html>

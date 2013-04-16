@@ -53,7 +53,7 @@ CSS_FONT_FILES = FONT_FILES.pathmap('./css/fonts/%f')
 
 desc 'Builds the website'
 task :default => [:compile_stylesheets, './javascript/website.js', :compile_templates, :compile_page_javascript_modules] do
-  sh "jekyll --pygments --safe"
+  sh "jekyll --pygments --safe --no-lsi"
 end
 
 task :compile_page_javascript_modules => PAGE_JAVASCRIPT_MODULES
