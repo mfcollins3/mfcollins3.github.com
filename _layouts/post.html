@@ -12,44 +12,58 @@
     <body>
         {% include navigation_bar.html %}
         <div class="container">
-            <article>
-                <div class="page-header">
-                    <h1>{{page.title}} <small><time datetime="{{page.date}}">{{page.date | date_to_long_string}}</time></small></h1>
-                </div>
-                <div class="row">
-                    <div class="span9">
-                        <p id="description" class="lead">{{page.description}}</p>
+            <div class="row">
+                <div class="span9">
+                    <ul class="breadcrumb">
+                        <li><a href="/blog/index.html">Blog</a> <span class="divider">/</span></li>
+                        {% for category in page.categories %}
+                        <li>
+                            <a href="/blog/{{category}}.html">{{category | replace:'_',' '}}</a>
+                            {% unless forloop.last %}
+                            <span class="divider">/</span>
+                            {% endunless %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <article>
+                        <div class="page-header">
+                            <h1>{{page.title}}</h1>
+                        </div>
+                        <p class="lead">{{page.description}}</p>
+                        <time datetime="{{page.date | date:'%Y-%m-%d'}}">{{page.date | date:'%B %d, %Y'}}</time>
                         {{content}}
+                        <ul class="pager">
+                            {% unless page.previous %}
+                            {% assign previous_state = 'disabled' %}
+                            {% endunless %}
+                            {% unless page.next %}
+                            {% assign next_state = 'disabled' %}
+                            {% endunless %}
+                            <li class="previous {{previous_state}}"><a href="{{page.previous.url}}">&larr; Previous Post</a></li>
+                            <li class="next {{next_state}}"><a href="{{page.next.url}}">Next Post &rarr;</a></li>
+                        </ul>
                         {% include disqus_thread.html %}
-                    </div>
-                    <div class="span3">
-                        <div>
-                            <h3>Related Posts</h3>
-                            <ul class="unstyled">
-                                {% for related_post in site.related_posts %}
-                                <li><a href="{{related_post.url}}">{{related_post.title}}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Categories</h3>
-                            <ul class="unstyled">
-                                {% for category in page.categories %}
-                                <li>{{category}}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Tags</h3>
-                            <ul class="unstyled">
-                                {% for tag in page.tags %}
-                                <li>{{tag}}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
+                    </article>
                 </div>
-            </article>
+                <div class="span3">
+                    <section>
+                        <h2>Tags</h2>
+                        <ul class="tags">
+                            {% for tag in page.tags %}
+                            <li><a href="/blog/tags/{{tag}}.html">{{tag | replace:'_':' '}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Other Posts</h2>
+                        <ul>
+                            {% for related_post in site.related_posts %}
+                            <li><a href="{{related_post.url}}">{{related_post.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </div>
+            </div>
         </div>
         {% include footer.html %}
         {% include javascript.html %}
