@@ -5,6 +5,12 @@ description: If I have one bad habit as a developer, it is writing code without
   creating the proper unit or acceptance tests. In this post, I discuss my bad
   habit and look at what I should be doing to fix the problem.
 disqus_identifier: 2012-05-24-bad-habits-around-testing
+author: Michael F. Collins, III
+author_first_name: Michael
+author_last_name: Collins
+author_gender: male
+twitter_creator: mfcollins3
+modified_time: 2013-04-16
 ---
 It is not that I am a bad person, but like everyone else, I can be prone to
 displaying bad habits on occasion. I do not mean to be bad, but sometimes I

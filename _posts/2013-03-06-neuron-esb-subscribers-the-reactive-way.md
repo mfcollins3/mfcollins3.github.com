@@ -9,6 +9,12 @@ tags:
 - neuron
 - neudesic
 - esb
+author: Michael F. Collins, III
+author_first_name: Michael
+author_last_name: Collins
+author_gender: male
+twitter_creator: mfcollins3
+modified_time: 2013-04-16
 ---
 [Neuron ESB 3.0](http://products.neudesic.com/latest) recently hit the proverbial store shelves last week. This was a big release for me as it was my first major release since I joined the Neuron team. Moving Neuron to .NET 4 and a major release has been a big accomplishment. While I hoped to have Neuron out late last year, the extra time that we took releasing it now gave us a chance to fix a lot of quality and stability issues in the code, and I honestly believe that Neuron is in a great position in terms of quality and potential for future investment.
 

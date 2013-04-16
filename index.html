@@ -24,9 +24,7 @@ javascript: homepage
         <div id="jumbotron">
         	<div class="container">
         		<h1>The Imaginary Road</h1>
-        		<p>
-        			Welcome to The Imaginary Road. The Imaginary Road is the personal blog and website of Michael Collins. On this site, I will be posting about some of the projects that I am developing and general technical ideas and experiments that come to me.
-        		</p>
+        		<p>{{page.description}}</p>
         	</div>
         </div>
 		<div class="container">
@@ -52,25 +50,23 @@ javascript: homepage
 							</li>
 							{% endfor %}
 						</ul>
-						<article>
+						<article class="post">
 							<div class="page-header">
 								<h1><a href="{{first_post.url}}">{{first_post.title}}</a></h1>
 							</div>
 							<p class="lead">{{first_post.description}}</p>
-							<time datetime="{{first_post.date | date:'%Y-%m-%d'}}">{{first_post.date | date:'%B %d, %Y'}}</time>
+							<p><span class="author">{{first_post.author}}</span><br/><time datetime="{{first_post.date | date:'%Y-%m-%d'}}">{{first_post.date | date:'%B %d, %Y'}}</time></p>
 							{{first_post.content | markdownify}}
-							{% if first_post.tags %}
 							<ul class="tags">
 								{% for tag in first_post.tags %}
 								<li><a href="/blog/tags/{{tag}}.html">{{tag | replace:'_':' '}}</a></li>
 								{% endfor %}
 							</ul>
-							{% endif %}
-				            </p><a href="{{first_post.url}}#disqus_thread" data-disqus-identifier="{{first_post.disqus_identifier}}">Comments</a></p>
-				            <ul class="pager">
-				            	<li class="previous"><a href="{{first_post.previous.url}}">&larr; Previous Post</a></li>
-				            </ul>
 				        </article>
+			            </p><a href="{{first_post.url}}#disqus_thread" data-disqus-identifier="{{first_post.disqus_identifier}}">Comments</a></p>
+			            <ul class="pager">
+			            	<li class="previous"><a href="{{first_post.previous.url}}">&larr; Previous Post</a></li>
+			            </ul>
 					</section>
 				</div>
 				<div class="span4">
@@ -85,11 +81,7 @@ javascript: homepage
 						</section>
 						<section id="categories">
 							<h1>Other Topics</h1>
-							<ul>
-								<li><a href="/blogs/Command_Line_Programming.html">Command Line Programming</a></li>
-								<li><a href="/blogs/Neuron_ESB.html">Neuron ESB</a></li>
-								<li><a href="/blogs/ZeroMQ.html">ZeroMQ</a></li>
-							</ul>
+							{% include category_list.html %}
 						</section>
 					</aside>
 				</div>

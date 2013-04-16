@@ -11,6 +11,12 @@ description: We live in a GUI dominated world and we have since
     development to see if a former command-line developer can return from
     the world of the web and Windows.
 disqus_identifier: 2012-09-21-introduction-to-command-line-programming
+author: Michael F. Collins, III
+author_first_name: Michael
+author_last_name: Collins
+author_gender: male
+twitter_creator: mfcollins3
+modified_time: 2013-04-16
 ---
 I will be presenting at the upcoming Desert Code Camp in November, 2012, at the Chandler-Gilbert Community College campus. I love presenting at Code Camp. Attending it is one of the highlights of my year. I love being around others like me that are enthusiastic about being technologists and computer scientists, and being with people that want to learn from people who want to teach. I love doing both and am very grateful when I get the opportunity to do so.
 

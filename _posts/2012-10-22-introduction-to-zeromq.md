@@ -8,6 +8,12 @@ categories:
 tags:
 - zeromq
 - zmq
+author: Michael F. Collins, III
+author_first_name: Michael
+author_last_name: Collins
+author_gender: male
+twitter_creator: mfcollins3
+modified_time: 2013-04-16
 ---
 Messaging is big on my research list right now, and that probably has to do a lot with my day job. Spending my days and weeks and months (and almost one year!) in the guts of Neuron has brought me back into the world of message-oriented middleware pretty heavily. From dealing with MSMQ to now dealing with AMQP, I have been reminded why messaging is an important technology and sorry that I have not used it as much on past projects.
 

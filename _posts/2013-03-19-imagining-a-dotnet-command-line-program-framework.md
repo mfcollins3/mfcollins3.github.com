@@ -5,6 +5,13 @@ description: In an earlier post, I introduced you to the properties of developin
 disqus_identifier: 2013-03-19-imagining-a-dotnet-command-line-program-framework
 categories:
 - Command_Line_Programming
+author: Michael F. Collins, III
+author: Michael F. Collins, III
+author_first_name: Michael
+author_last_name: Collins
+author_gender: male
+twitter_creator: mfcollins3
+modified_time: 2013-04-16
 ---
 At the [November 2012 Desert Code Camp](http://nov2012.desertcodecamp.com/session/473), I presented a session on command line development. The focus of the presentation was why, in this world of web-based applications and graphical windowing environments, the command line still matters. And yes, it does still matter. Command line programs are quick to develop, provide demonstrable results faster when you do not necessarily need to have a GUI or web interface developed, are great for POCs and testing new ideas, and are also a great idea for providing a scriptable or expert interface for administering and managing your applications. 
 

@@ -5,6 +5,12 @@ description: In this post, I will look at the Git smart HTTP protocol and will
   demonstrate how to create a web application that can host and serve Git
   repositories to users. Demonstrations will be shown using Node.js.
 disqus_identifier: 2012-05-18-implementing-a-git-http-server
+author: Michael F. Collins, III
+author_first_name: Michael
+author_last_name: Collins
+author_gender: male
+twitter_creator: mfcollins3
+modified_time: 2013-04-16
 ---
 Introduction
 ------------
