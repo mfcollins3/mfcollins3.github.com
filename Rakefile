@@ -40,9 +40,12 @@ HANDLEBARS_FILES = FileList.new('./src/templates/*.handlebars')
 TEMPLATE_FILES = HANDLEBARS_FILES.pathmap('%{^./src,./_temp}X.js')
 
 HOMEPAGE_JAVASCRIPT_FILES = FileList.new('./src/javascript/homepage.js')
-HOMEPAGE_JAVASCRIPT_FILES.include('./_temp/templates/events.js')
+
+EVENTS_JAVASCRIPT_FILES = FileList.new('./lib/fullcalendar/fullcalendar.js')
+EVENTS_JAVASCRIPT_FILES.include('./src/javascript/events.js')
 
 PAGE_JAVASCRIPT_MODULES = FileList.new('./javascript/homepage.js')
+PAGE_JAVASCRIPT_MODULES.include('./javascript/events.js')
 
 FONT_FILES = FileList.new('./lib/font-awesome/font/fontawesome-webfont.eot')
 FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.svg')
@@ -82,6 +85,10 @@ end
 
 file './css/images/glyphicons-halflings.png' => ['./lib/twitter-bootstrap/img/glyphicons-halflings.png'] do
   cp './lib/twitter-bootstrap/img/glyphicons-halflings.png', './css/images/glyphicons-halflings.png'
+end
+
+file './javascript/events.js' => ['./javascript'] + EVENTS_JAVASCRIPT_FILES do
+  sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{EVENTS_JAVASCRIPT_FILES.join(' --js ')} > ./javascript/events.js"
 end
 
 file './javascript/homepage.js' => ['./javascript'] + HOMEPAGE_JAVASCRIPT_FILES do

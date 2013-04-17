@@ -8,6 +8,8 @@
 {% assign projectsClass = 'active' %}
 {% when 'about-me.html' %}
 {% assign aboutMeClass = 'active' %}
+{% when 'events.html' %}
+{% assign eventsClass = 'active' %}
 {% endcase %}
 <nav id="navigationBar" class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -22,6 +24,7 @@
                 <ul id="siteLinks" class="nav">
                     <li class="{{homeClass}}"><a href="/">Home</a></li>
                     <li class="{{blogClass}}"><a href="/blog/index.html">Blog</a></li>
+                    <li class="{{eventsClass}}"><a href="/events.html">Events</a></li>
                     <li class="{{projectsClass}} dropdown">
                         <a href="/projects.html" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"/></a>
                         <ul class="dropdown-menu">
