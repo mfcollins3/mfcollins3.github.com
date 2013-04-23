@@ -10,7 +10,11 @@ author_first_name: Michael
 author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
-modified_time: 2013-04-16
+modified_time: 2013-04-23
+categories:
+- Git
+tags:
+- git
 ---
 Introduction
 ------------

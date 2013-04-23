@@ -11,6 +11,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 modified_time: 2013-04-16
+categories:
+- Software_Development
+tags:
+- testing
 ---
 It is not that I am a bad person, but like everyone else, I can be prone to
 displaying bad habits on occasion. I do not mean to be bad, but sometimes I

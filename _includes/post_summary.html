@@ -1,6 +1,6 @@
 <article>
     <h1><a href="{{post.url}}">{{post.title}}</a></h1>
-    <p><time datetime="{{post.date}}">{{post.date | date_to_long_string}}</time></p>
+    <p><time datetime="{{page.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
     <p>{{post.description}}</p>
     <div class="row">
         <div class="span2">

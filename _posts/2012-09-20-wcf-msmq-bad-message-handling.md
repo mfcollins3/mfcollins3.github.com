@@ -13,6 +13,11 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 modified_time: 2013-04-16
+categories:
+- Windows_Communication_Foundation
+tags:
+- wcf
+- msmq
 ---
 Yes, it has been a while since I have blogged. It's been a mix of writer's block, lack of time, working on a product, and being a father and husband. None of those are easy obstacles to overcome. But just because I have not been writing does not mean that I have not been doing anything. Quite the contrary, I have been working on a lot of things and learning many new things to share with anyone out there that cares to learn. In this post, I am going to look at the integration between Windows Communication Foundation and MSMQ, and specificially how to handle problem situations such as poison messages in the queue or when messages expire in the queue and are moved to the dead letter queue.
 

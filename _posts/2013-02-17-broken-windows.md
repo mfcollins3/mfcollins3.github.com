@@ -9,6 +9,11 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 modified_time: 2013-04-16
+categories:
+- Software_Development
+tags:
+- windows
+- microsoft
 ---
 I have been a Windows programmer since version 1.0. I learned to program it as a child using the first edition of _Programming Windows_ by [Charles Petzold](http://www.charlespetzold.com/books.html). From pure C-based SDK programming, I evolved with the platform to use C++ frameworks including Borland's Object Windows Library (OWL) and the Microsoft Foundation Class (MFC) Library. I took a break to do Java development in the late 1990s, but I came back to Windows with .NET in 2000.
 
