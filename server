@@ -1,2 +1,2 @@
-jekyll --pygments --safe --no-lsi --server
+jekyll serve --safe
 
