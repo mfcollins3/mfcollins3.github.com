@@ -32,6 +32,7 @@ JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-collapse.js')
 JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-carousel.js')
 JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-typeahead.js')
 JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-affix.js')
+JAVASCRIPT_FILES.include('./lib/jstree/jquery.jstree.js')
 
 STYLESHEET_FILES = FileList.new('./src/themes/normal.less')
 CSS_FILES = STYLESHEET_FILES.pathmap('%{^./src/themes,./css}X.css')
@@ -54,10 +55,17 @@ FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.woff')
 FONT_FILES.include('./lib/font-awesome/font/FontAwesome.otf')
 CSS_FONT_FILES = FONT_FILES.pathmap('./css/fonts/%f')
 
+JSTREE_SOURCE_THEME_FILES = FileList.new('./lib/jstree/themes/default/**/*.*')
+JSTREE_THEME_FILES = JSTREE_SOURCE_THEME_FILES.pathmap('%{^./lib,./javascript}p')
+
 desc 'Builds the website'
-task :default => [:compile_stylesheets, './javascript/website.js', :compile_templates, :compile_page_javascript_modules] do
+task :default => [:compile_stylesheets, :compile_javascript_modules, :compile_templates] do
   sh "jekyll build"
 end
+
+task :compile_javascript_modules => ['./javascript/website.js', :compile_page_javascript_modules, :copy_jstree_files]
+
+task :copy_jstree_files => ['./javascript/jstree/themes/default'] + JSTREE_THEME_FILES
 
 task :compile_page_javascript_modules => PAGE_JAVASCRIPT_MODULES
 
@@ -70,6 +78,8 @@ directory './css/fonts'
 directory './css/images'
 
 directory './javascript'
+
+directory './javascript/jstree/themes/default'
 
 directory './_temp/css'
 
@@ -111,4 +121,8 @@ end
 
 rule(/^\.\/_temp\/templates\// => [proc {|t| t.pathmap('%{^./_temp,./src}X.handlebars')}]) do |t|
   sh "handlebars #{t.source} -f #{t.name}"
+end
+
+rule(/^\.\/javascript\/jstree\// => [proc {|t| t.pathmap('%{^./javascript,./lib}p')}]) do |t|
+  cp t.source, t.name
 end

@@ -35,6 +35,22 @@ javascript: homepage
 				</p>
 			</div>
 			<div class="row">
+				<div class="span4">
+					<aside>
+						<section id="categories">
+							<h4>Blog</h4>
+							<div id="categoryTree"/>
+						</section>
+						<section id="recentPosts">
+							<h4>Recent Posts</h4>
+							<ul>
+								{% for recent_post in site.posts limit:10 offset:1 %}
+								<li><a href="{{recent_post.url}}">{{recent_post.title}}</a></li>
+								{% endfor %}
+							</ul>
+						</section>
+					</aside>
+				</div>
 				<div class="span8">
 					<section id="featuredPost">
 						<h1>Featured Post</h1>
@@ -68,22 +84,6 @@ javascript: homepage
 			            	<li class="previous"><a href="{{first_post.previous.url}}">&larr; Previous Post</a></li>
 			            </ul>
 					</section>
-				</div>
-				<div class="span4">
-					<aside>
-						<section id="recentPosts">
-							<h1>Recent Posts</h1>
-							<ul>
-								{% for recent_post in site.posts limit:10 offset:1 %}
-								<li><a href="{{recent_post.url}}">{{recent_post.title}}</a></li>
-								{% endfor %}
-							</ul>
-						</section>
-						<section id="categories">
-							<h1>Other Topics</h1>
-							{% include category_list.html %}
-						</section>
-					</aside>
 				</div>
 			</div>
 		</div>
