@@ -42,10 +42,13 @@ TEMPLATE_FILES = HANDLEBARS_FILES.pathmap('%{^./src,./_temp}X.js')
 
 HOMEPAGE_JAVASCRIPT_FILES = FileList.new('./src/javascript/homepage.js')
 
+BLOG_JAVASCRIPT_FILES = FileList.new('./src/javascript/blog.js')
+
 EVENTS_JAVASCRIPT_FILES = FileList.new('./lib/fullcalendar/fullcalendar.js')
 EVENTS_JAVASCRIPT_FILES.include('./src/javascript/events.js')
 
 PAGE_JAVASCRIPT_MODULES = FileList.new('./javascript/homepage.js')
+PAGE_JAVASCRIPT_MODULES.include('./javascript/blog.js')
 PAGE_JAVASCRIPT_MODULES.include('./javascript/events.js')
 
 FONT_FILES = FileList.new('./lib/font-awesome/font/fontawesome-webfont.eot')
@@ -103,6 +106,10 @@ end
 
 file './javascript/homepage.js' => ['./javascript'] + HOMEPAGE_JAVASCRIPT_FILES do
   sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{HOMEPAGE_JAVASCRIPT_FILES.join(' --js ')} > ./javascript/homepage.js"
+end
+
+file './javascript/blog.js' => ['./javascript'] + BLOG_JAVASCRIPT_FILES do
+  sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{BLOG_JAVASCRIPT_FILES.join(' --js ')} > ./javascript/blog.js"
 end
 
 file './javascript/website.js' => ['./javascript'] + JAVASCRIPT_FILES do

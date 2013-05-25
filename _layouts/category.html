@@ -17,9 +17,17 @@
         <h1>{{page.title}}</h1>
     </div>
     <p class="lead">{{page.description}}</p>
-    <ul class="unstyled">
-        {{content}}
-    </ul>
+    <div class="row">
+        <div class="span4">
+            <h3>Categories</h3>
+            <div id="categoryTree"></div>
+        </div>
+        <div class="span8">
+            <ul class="unstyled">
+                {{content}}
+            </ul>
+        </div>
+    </div>
 </div>
 {% include footer.html %}
 {% include javascript.html %}

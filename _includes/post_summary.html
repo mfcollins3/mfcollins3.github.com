@@ -1,12 +1,12 @@
 <article>
     <h1><a href="{{post.url}}">{{post.title}}</a></h1>
-    <p><time datetime="{{page.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
-    <p>{{post.description}}</p>
+    <p><time datetime="{{post.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
+    {{post.excerpt}}
     <div class="row">
         <div class="span2">
             <a href="{{post.url}}">Read more</a>
         </div>
-        <div class="span6">
+        <div class="span5">
             <a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a>
         </div>
     </div>

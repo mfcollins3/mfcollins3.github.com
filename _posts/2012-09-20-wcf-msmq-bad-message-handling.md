@@ -1,11 +1,7 @@
 ---
 layout: post
 title: Poison Message and Dead Letter Handling for WCF and MSMQ
-description: Since I started working on Neudesic's Neuron product, I have
-    found myself doing a lot more with WCF and gaining a better understanding
-    of that technology plus related technologies such as MSMQ. In this post,
-    I will discuss how to handle problem situations where WCF messages sent
-    over MSMQ have errors or expire and are sent to the dead letter queue.
+description: Since I started working on Neudesic's Neuron product, I have found myself doing a lot more with WCF and gaining a better understanding of that technology plus related technologies such as MSMQ. In this post, I will discuss how to handle problem situations where WCF messages sent over MSMQ have errors or expire and are sent to the dead letter queue.
 disqus_identifier: 2012-09-20-wcf-msmq-bad-message-handling
 author: Michael F. Collins, III
 author_first_name: Michael
@@ -19,6 +15,8 @@ tags:
 - wcf
 - msmq
 ---
+Since I started working on Neudesic's Neuron product, I have found myself doing a lot more with WCF and gaining a better understanding of that technology plus related technologies such as MSMQ. In this post, I will discuss how to handle problem situations where WCF messages sent over MSMQ have errors or expire and are sent to the dead letter queue.
+
 Yes, it has been a while since I have blogged. It's been a mix of writer's block, lack of time, working on a product, and being a father and husband. None of those are easy obstacles to overcome. But just because I have not been writing does not mean that I have not been doing anything. Quite the contrary, I have been working on a lot of things and learning many new things to share with anyone out there that cares to learn. In this post, I am going to look at the integration between Windows Communication Foundation and MSMQ, and specificially how to handle problem situations such as poison messages in the queue or when messages expire in the queue and are moved to the dead letter queue.
 
 Prior to joining Neudesic's product team and taking over Neuron development, my experience with WCF was pretty basic. I created basic web services for my applications, but I did not have a need to delve into many of the internals. Also, since most of my applications uses HTTP, I did not have to deal with alternative transports such as TCP or MSMQ. But since taking over Neuron development, I have had to go through a "trial-by-fire" so to speak in order to learn pretty much everything about WCF that is possibly out there.

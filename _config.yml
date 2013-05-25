@@ -1,9 +1,10 @@
 safe: true
 lsi: false
 pygments: true
-paginate: 20
 exclude: [Rakefile, README.md, lib, _temp, src]
 permalink: /blog/:year/:month/:day/:title.html
+
+paginate: 10
 
 theme: normal
 brand: The Imaginary Road
