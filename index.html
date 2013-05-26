@@ -88,9 +88,9 @@ javascript: homepage
 								<h1><a href="{{featured_post.url}}">{{featured_post.title}}</a></h1>
 							</div>
 							<p class="lead">{{featured_post.description}}</p>
-							<p><span class="author">{{page.author}}</span><br/><time datetime="{{page.date | date:'%Y-%m-%d'}}">{{page.date | date:'%B %d, %Y'}}</time></p>
+							<p><span class="author">{{features_post.author}}</span><br/><time datetime="{{featured_post.date | date:'%Y-%m-%d'}}">{{featured_post.date | date:'%B %d, %Y'}}</time></p>
                         	{{featured_post.content | markdownify}}
-                        	<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
+                        	<p><a href="{{featured_post.url}}#disqus_thread" data-disqus-identifier="{{featured_post.disqus_identifier}}">Comments</a></p>
 						</article>
 					</section>
 					{% else %}
