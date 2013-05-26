@@ -40,7 +40,7 @@
                         {% assign last_category = page.category_names | last %}
                         {% for category in page.category_names %}
                         <li>
-                            <a href="/blog/{{category | replace:' ','_'}}.html">{{category}}</a>
+                            <a href="/blog/{{category | replace:' ','_' | replace:'.NET','dotnet'}}.html">{{category}}</a>
                             {% if category != last_category %}
                             <span class="divider">/</span>
                             {% endif %}

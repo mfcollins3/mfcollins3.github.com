@@ -29,46 +29,14 @@ javascript: homepage
         </div>
 		<div class="container">
 			<div class="row">
-				{% if paginator.page == 1 %}
-				{% assign featured_post = paginator.posts | first %}
-				<div class="span8">
-					<section id="featuredPost">
-						<h1>Featured Article</h1>
-						<article>
-							<ul class="breadcrumb">
-								<li>
-									<a href="/">Blog</a>
-									{% if featured_post.categories %}
-									<span class="divider">/</span>
-									{% endif %}
-								</li>
-								{% assign last_category = featured_post.category_names | last %}
-								{% for category in featured_post.category_names %}
-								<li>
-									<a href="/blog/{{category | replace:' ','_'}}.html">{{category}}</a>
-									{% if category != last_category %}
-									<span class="divider">/</span>
-									{% endif %}
-								</li>
-								{% endfor %}
-							</ul>
-							<div class="page-header">
-								<h1><a href="{{featured_post.url}}">{{featured_post.title}}</a></h1>
-							</div>
-							<p class="lead">{{featured_post.description}}</p>
-							<p><span class="author">{{page.author}}</span><br/><time datetime="{{page.date | date:'%Y-%m-%d'}}">{{page.date | date:'%B %d, %Y'}}</time></p>
-                        	{{featured_post.content | markdownify}}
-                        	<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
-						</article>
-					</section>
-				</div>
 				<div class="span4">
 					<h1>Blog</h1>
 					<section id="categories">
 						<div id="categoryTree"></div>
 					</section>
+					{% if paginator.page == 1 %}
 					<section id="recentPosts">
-						<h4>Recent Posts</h4>
+						<h1>Recent Posts</h2>
 						<ul class="pager">
 							<li class="previous disabled"><a href="#">&larr; Previous</a></li>
 							<li class="next"><a href="{{paginator.next_page_path}}">Next &rarr;</a></li>
@@ -91,15 +59,41 @@ javascript: homepage
 							<li class="next"><a href="{{paginator.next_page_path}}">Next &rarr;</a></li>
 						</ul>
 					</section>
-				</div>
-				{% else %}
-				<div class="span4">
-					<h1>Blog</h1>
-					<section id="categories">
-						<div id="categoryTree"></div>
-					</section>
+					{% endif %}
 				</div>
 				<div class="span8">
+					{% if paginator.page == 1 %}
+					{% assign featured_post = paginator.posts | first %}
+					<section id="featuredPost">
+						<h1>Featured Article</h1>
+						<article>
+							<ul class="breadcrumb">
+								<li>
+									<a href="/">Blog</a>
+									{% if featured_post.categories %}
+									<span class="divider">/</span>
+									{% endif %}
+								</li>
+								{% assign last_category = featured_post.category_names | last %}
+								{% for category in featured_post.category_names %}
+								<li>
+									<a href="/blog/{{category | replace:' ','_' | replace:'.NET','dotnet'}}.html">{{category}}</a>
+									{% if category != last_category %}
+									<span class="divider">/</span>
+									{% endif %}
+								</li>
+								{% endfor %}
+							</ul>
+							<div class="page-header">
+								<h1><a href="{{featured_post.url}}">{{featured_post.title}}</a></h1>
+							</div>
+							<p class="lead">{{featured_post.description}}</p>
+							<p><span class="author">{{page.author}}</span><br/><time datetime="{{page.date | date:'%Y-%m-%d'}}">{{page.date | date:'%B %d, %Y'}}</time></p>
+                        	{{featured_post.content | markdownify}}
+                        	<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
+						</article>
+					</section>
+					{% else %}
 					<section id="recentPosts">
 						<ul class="pager">
 							{% if paginator.previous_page_path %}
@@ -139,8 +133,8 @@ javascript: homepage
 							{% endif %}
 						</ul>
 					</section>
+					{% endif %}
 				</div>
-				{% endif %}
 			</div>
 		</div>
         {% include footer.html %}
