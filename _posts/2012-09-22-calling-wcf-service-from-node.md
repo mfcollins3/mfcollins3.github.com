@@ -11,6 +11,8 @@ twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
 - Windows_Communication_Foundation
+category_names:
+- Windows Communication Foundation
 tags:
 - wcf
 - node

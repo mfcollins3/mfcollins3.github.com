@@ -31,13 +31,19 @@
             <div class="row">
                 <div class="span9">
                     <ul class="breadcrumb">
-                        <li><a href="/blog/index.html">Blog</a> <span class="divider">/</span></li>
-                        {% for category in page.categories %}
                         <li>
-                            <a href="/blog/{{category}}.html">{{category | replace:'_',' '}}</a>
-                            {% unless forloop.last %}
+                            <a href="/">Blog</a>
+                            {% if page.categories %}
                             <span class="divider">/</span>
-                            {% endunless %}
+                            {% endif %}
+                        </li>
+                        {% assign last_category = page.category_names | last %}
+                        {% for category in page.category_names %}
+                        <li>
+                            <a href="/blog/{{category | replace:' ','_'}}.html">{{category}}</a>
+                            {% if category != last_category %}
+                            <span class="divider">/</span>
+                            {% endif %}
                         </li>
                         {% endfor %}
                     </ul>
@@ -46,7 +52,7 @@
                         <div class="page-header">
                             <h1>{{page.title}}</h1>
                         </div>
-                        <p class="lead">{{page.excerpt}}</p>
+                        <p class="lead">{{page.description}}</p>
                         <p><span class="author">{{page.author}}</span><br/><time datetime="{{page.date | date:'%Y-%m-%d'}}">{{page.date | date:'%B %d, %Y'}}</time></p>
                         {{content}}
                     </article>

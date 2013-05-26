@@ -5,6 +5,8 @@ description: I will be presenting to the Phoenix Connected Systems User Group on
 disqus_identifier: 2012-10-22-introduction-to-zeromq
 categories:
 - ZeroMQ
+category_names:
+- ZeroMQ
 tags:
 - zeromq
 - zmq

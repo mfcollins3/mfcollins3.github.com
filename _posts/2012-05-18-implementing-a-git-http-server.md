@@ -11,6 +11,8 @@ twitter_creator: mfcollins3
 modified_time: 2013-04-23
 categories:
 - Git
+category_names:
+- Git
 tags:
 - git
 ---

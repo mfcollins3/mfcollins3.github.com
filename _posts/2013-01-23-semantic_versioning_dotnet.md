@@ -11,6 +11,8 @@ twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
 - Software_Development
+category_names:
+- Software Development
 ---
 In this post, I will introduce you to semantic versioning and explain why you should be using it as a standard for versioning your products. I will then walk you through how to add support for semantic versioning to your .NET projects.
 

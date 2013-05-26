@@ -45,7 +45,7 @@ javascript: homepage
 								{% assign last_category = featured_post.category_names | last %}
 								{% for category in featured_post.category_names %}
 								<li>
-									<a href="#">{{category}}</a>
+									<a href="/blog/{{category | replace:' ','_'}}.html">{{category}}</a>
 									{% if category != last_category %}
 									<span class="divider">/</span>
 									{% endif %}

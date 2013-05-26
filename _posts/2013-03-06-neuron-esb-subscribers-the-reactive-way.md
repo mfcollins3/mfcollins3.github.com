@@ -5,6 +5,8 @@ description: Neuron ESB 3.0 is out, and if you're a Neuron user or using .NET-ba
 disqus_identifier: 2013-03-06-neuron-esb-subscribers-the-reactive-way
 categories:
 - Neuron_ESB
+category_names:
+- Neuron ESB
 tags:
 - neuron
 - neudesic
