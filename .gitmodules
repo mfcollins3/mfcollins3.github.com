@@ -7,3 +7,6 @@
 [submodule "lib/font-awesome"]
 	path = lib/font-awesome
 	url = git://github.com/FortAwesome/Font-Awesome.git
+[submodule "lib/reveal.js"]
+	path = lib/reveal.js
+	url = git@github.com:hakimel/reveal.js.git
