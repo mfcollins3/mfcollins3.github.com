@@ -13,3 +13,6 @@
 [submodule "lib/head.js"]
 	path = lib/head.js
 	url = git://github.com/headjs/headjs.git
+[submodule "lib/TimelineJS"]
+	path = lib/TimelineJS
+	url = git://github.com/VeriteCo/TimelineJS.git
