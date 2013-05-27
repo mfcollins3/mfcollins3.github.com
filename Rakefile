@@ -70,10 +70,13 @@ PRESENTATION_JAVASCRIPT_FILES.include('./lib/reveal.js/js/reveal.js')
 EVENTS_JAVASCRIPT_FILES = FileList.new('./lib/fullcalendar/fullcalendar.js')
 EVENTS_JAVASCRIPT_FILES.include('./src/javascript/events.js')
 
+ABOUTME_JAVASCRIPT_FILES = FileList.new('./src/javascript/aboutme.js')
+
 PAGE_JAVASCRIPT_MODULES = FileList.new('./javascript/homepage.js')
 PAGE_JAVASCRIPT_MODULES.include('./javascript/blog.js')
 PAGE_JAVASCRIPT_MODULES.include('./javascript/events.js')
 PAGE_JAVASCRIPT_MODULES.include('./javascript/presentation.js')
+PAGE_JAVASCRIPT_MODULES.include('./javascript/aboutme.js')
 
 FONT_FILES = FileList.new('./lib/font-awesome/font/fontawesome-webfont.eot')
 FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.svg')
@@ -85,20 +88,30 @@ CSS_FONT_FILES = FONT_FILES.pathmap('./css/fonts/%f')
 JSTREE_SOURCE_THEME_FILES = FileList.new('./lib/jstree/themes/default/**/*.*')
 JSTREE_THEME_FILES = JSTREE_SOURCE_THEME_FILES.pathmap('%{^./lib,./javascript}p')
 
+TIMELINEJS_JAVASCRIPT_FILES = FileList.new('./lib/TimelineJS/compiled/js/storyjs-embed.js')
+TIMELINEJS_JAVASCRIPT_FILES.include('./lib/TimelineJS/compiled/js/timeline-min.js')
+TIMELINEJS_JAVASCRIPT_FILES.include('./lib/TimelineJS/compiled/js/locale/*.js')
+JAVASCRIPT_TIMELINEJS_FILES = TIMELINEJS_JAVASCRIPT_FILES.pathmap('%{^./lib/TimelineJS/compiled/js,./javascript/TimelineJS}p')
+
+TIMELINEJS_CSS_FILES = FileList.new('./lib/TimelineJS/compiled/css/**/*.*')
+CSS_TIMELINEJS_FILES = TIMELINEJS_CSS_FILES.pathmap('%{^./lib/TimelineJS/compiled/css,./css/TimelineJS}p')
+
 desc 'Builds the website'
 task :default => [:compile_stylesheets, :compile_javascript_modules, :compile_templates] do
   sh "jekyll build"
 end
 
-task :compile_javascript_modules => ['./javascript/website.js', :compile_page_javascript_modules, :copy_jstree_files, :copy_revealjs_files]
+task :compile_javascript_modules => ['./javascript/website.js', :compile_page_javascript_modules, :copy_jstree_files, :copy_revealjs_files, :copy_timelinejs_files]
 
 task :copy_jstree_files => ['./javascript/jstree/themes/default'] + JSTREE_THEME_FILES
 
 task :copy_revealjs_files => ['./javascript/reveal.js/lib/js', './javascript/reveal.js/plugin/highlight', './javascript/reveal.js/plugin/markdown', './javascript/reveal.js/plugin/notes', './javascript/reveal.js/plugin/postmessage', './javascript/reveal.js/plugin/print-pdf', './javascript/reveal.js/plugin/remotes', './javascript/reveal.js/plugin/search', './javascript/reveal.js/plugin/zoom-js'] + JAVASCRIPT_REVEALJS_JAVASCRIPT_FILES
 
+task :copy_timelinejs_files => ['./javascript/TimelineJS/locale'] + JAVASCRIPT_TIMELINEJS_FILES
+
 task :compile_page_javascript_modules => PAGE_JAVASCRIPT_MODULES
 
-task :compile_stylesheets => ['./css/fonts', './css/images', './css/lib/font', './css/reveal.js/print', './css/reveal.js/theme', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png'] + CSS_FILES + CSS_FONT_FILES + CSS_REVEALJS_FILES + CSS_REVEALJS_FONT_FILES
+task :compile_stylesheets => ['./css/fonts', './css/images', './css/lib/font', './css/reveal.js/print', './css/reveal.js/theme', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png', './css/TimelineJS/themes/font'] + CSS_FILES + CSS_FONT_FILES + CSS_REVEALJS_FILES + CSS_REVEALJS_FONT_FILES + CSS_TIMELINEJS_FILES
 
 task :compile_templates => ['./_temp/templates'] + TEMPLATE_FILES
 
@@ -111,6 +124,8 @@ directory './css/lib/font'
 directory './css/reveal.js/print'
 
 directory './css/reveal.js/theme'
+
+directory './css/TimelineJS/themes/font'
 
 directory './javascript'
 
@@ -133,6 +148,8 @@ directory './javascript/reveal.js/plugin/remotes'
 directory './javascript/reveal.js/plugin/search'
 
 directory './javascript/reveal.js/plugin/zoom-js'
+
+directory './javascript/TimelineJS/locale'
 
 directory './_temp/css'
 
@@ -170,11 +187,19 @@ file './javascript/website.js' => ['./javascript'] + JAVASCRIPT_FILES do
   sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{JAVASCRIPT_FILES.join(' --js ')} > ./javascript/website.js"
 end
 
+file './javascript/aboutme.js' => ['./javascript'] + ABOUTME_JAVASCRIPT_FILES do
+  sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{ABOUTME_JAVASCRIPT_FILES.join(' --js ')} > ./javascript/aboutme.js"
+end
+
 rule(/^\.\/css\/fonts\/fontawesome-webfont\./ => [proc {|t| t.pathmap('./lib/font-awesome/font/%f')}]) do |t|
 	cp t.source, t.name
 end
 
 rule(/^\.\/css\/reveal.js\// => [proc {|t| t.pathmap('%{^./css/reveal.js,./lib/reveal.js/css}p')}]) do |t|
+  cp t.source, t.name
+end
+
+rule(/^\.\/css\/TimelineJS\// => [proc {|t| t.pathmap('%{^./css/TimelineJS,./lib/TimelineJS/compiled/css}p')}]) do |t|
   cp t.source, t.name
 end
 
@@ -197,5 +222,9 @@ rule(/^\.\/javascript\/jstree\// => [proc {|t| t.pathmap('%{^./javascript,./lib}
 end
 
 rule(/^\.\/javascript\/reveal.js\// => [proc {|t| t.pathmap('%{^./javascript,./lib}p')}]) do |t|
+  cp t.source, t.name
+end
+
+rule(/^\.\/javascript\/TimelineJS\// => [proc {|t| t.pathmap('%{^./javascript/TimelineJS,./lib/TimelineJS/compiled/js}p')}]) do |t|
   cp t.source, t.name
 end
