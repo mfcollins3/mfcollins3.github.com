@@ -37,6 +37,25 @@ JAVASCRIPT_FILES.include('./lib/jstree/jquery.jstree.js')
 STYLESHEET_FILES = FileList.new('./src/themes/normal.less')
 CSS_FILES = STYLESHEET_FILES.pathmap('%{^./src/themes,./css}X.css')
 
+REVEALJS_THEME_FILES = FileList.new('./lib/reveal.js/css/print/*.css')
+REVEALJS_THEME_FILES.include('./lib/reveal.js/css/theme/*.css')
+CSS_REVEALJS_FILES = REVEALJS_THEME_FILES.pathmap('%{^./lib/reveal.js/css,./css/reveal.js}p')
+REVEALJS_FONT_FILES = FileList.new('./lib/reveal.js/lib/font/league_gothic-webfont.*')
+CSS_REVEALJS_FONT_FILES = REVEALJS_FONT_FILES.pathmap('%{^./lib/reveal.js,./css}p')
+REVEALJS_JAVASCRIPT_FILES = FileList.new('./lib/reveal.js/lib/js/classList.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/lib/js/html5shiv.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/highlight/highlight.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/markdown/markdown.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/markdown/marked.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/notes/notes.html')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/notes/notes.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/postmessage/postmessage.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/print-pdf/print-pdf.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/remotes/remotes.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/search/search.js')
+REVEALJS_JAVASCRIPT_FILES.include('./lib/reveal.js/plugin/zoom-js/zoom.js')
+JAVASCRIPT_REVEALJS_JAVASCRIPT_FILES = REVEALJS_JAVASCRIPT_FILES.pathmap('%{^./lib,./javascript}p')
+
 HANDLEBARS_FILES = FileList.new('./src/templates/*.handlebars')
 TEMPLATE_FILES = HANDLEBARS_FILES.pathmap('%{^./src,./_temp}X.js')
 
@@ -44,12 +63,16 @@ HOMEPAGE_JAVASCRIPT_FILES = FileList.new('./src/javascript/homepage.js')
 
 BLOG_JAVASCRIPT_FILES = FileList.new('./src/javascript/blog.js')
 
+PRESENTATION_JAVASCRIPT_FILES = FileList.new('./lib/head.js/dist/head.js')
+PRESENTATION_JAVASCRIPT_FILES.include('./lib/reveal.js/js/reveal.js')
+
 EVENTS_JAVASCRIPT_FILES = FileList.new('./lib/fullcalendar/fullcalendar.js')
 EVENTS_JAVASCRIPT_FILES.include('./src/javascript/events.js')
 
 PAGE_JAVASCRIPT_MODULES = FileList.new('./javascript/homepage.js')
 PAGE_JAVASCRIPT_MODULES.include('./javascript/blog.js')
 PAGE_JAVASCRIPT_MODULES.include('./javascript/events.js')
+PAGE_JAVASCRIPT_MODULES.include('./javascript/presentation.js')
 
 FONT_FILES = FileList.new('./lib/font-awesome/font/fontawesome-webfont.eot')
 FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.svg')
@@ -66,13 +89,15 @@ task :default => [:compile_stylesheets, :compile_javascript_modules, :compile_te
   sh "jekyll build"
 end
 
-task :compile_javascript_modules => ['./javascript/website.js', :compile_page_javascript_modules, :copy_jstree_files]
+task :compile_javascript_modules => ['./javascript/website.js', :compile_page_javascript_modules, :copy_jstree_files, :copy_revealjs_files]
 
 task :copy_jstree_files => ['./javascript/jstree/themes/default'] + JSTREE_THEME_FILES
 
+task :copy_revealjs_files => ['./javascript/reveal.js/lib/js', './javascript/reveal.js/plugin/highlight', './javascript/reveal.js/plugin/markdown', './javascript/reveal.js/plugin/notes', './javascript/reveal.js/plugin/postmessage', './javascript/reveal.js/plugin/print-pdf', './javascript/reveal.js/plugin/remotes', './javascript/reveal.js/plugin/search', './javascript/reveal.js/plugin/zoom-js'] + JAVASCRIPT_REVEALJS_JAVASCRIPT_FILES
+
 task :compile_page_javascript_modules => PAGE_JAVASCRIPT_MODULES
 
-task :compile_stylesheets => ['./css/fonts', './css/images', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png'] + CSS_FILES + CSS_FONT_FILES
+task :compile_stylesheets => ['./css/fonts', './css/images', './css/lib/font', './css/reveal.js/print', './css/reveal.js/theme', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png'] + CSS_FILES + CSS_FONT_FILES + CSS_REVEALJS_FILES + CSS_REVEALJS_FONT_FILES
 
 task :compile_templates => ['./_temp/templates'] + TEMPLATE_FILES
 
@@ -80,9 +105,33 @@ directory './css/fonts'
 
 directory './css/images'
 
+directory './css/lib/font'
+
+directory './css/reveal.js/print'
+
+directory './css/reveal.js/theme'
+
 directory './javascript'
 
 directory './javascript/jstree/themes/default'
+
+directory './javascript/reveal.js/lib/js'
+
+directory './javascript/reveal.js/plugin/highlight'
+
+directory './javascript/reveal.js/plugin/markdown'
+
+directory './javascript/reveal.js/plugin/notes'
+
+directory './javascript/reveal.js/plugin/postmessage'
+
+directory './javascript/reveal.js/plugin/print-pdf'
+
+directory './javascript/reveal.js/plugin/remotes'
+
+directory './javascript/reveal.js/plugin/search'
+
+directory './javascript/reveal.js/plugin/zoom-js'
 
 directory './_temp/css'
 
@@ -112,12 +161,24 @@ file './javascript/blog.js' => ['./javascript'] + BLOG_JAVASCRIPT_FILES do
   sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{BLOG_JAVASCRIPT_FILES.join(' --js ')} > ./javascript/blog.js"
 end
 
+file './javascript/presentation.js' => ['./javascript'] + PRESENTATION_JAVASCRIPT_FILES do
+  sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{PRESENTATION_JAVASCRIPT_FILES.join(' --js ')} > ./javascript/presentation.js"
+end
+
 file './javascript/website.js' => ['./javascript'] + JAVASCRIPT_FILES do
   sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{JAVASCRIPT_FILES.join(' --js ')} > ./javascript/website.js"
 end
 
 rule(/^\.\/css\/fonts\/fontawesome-webfont\./ => [proc {|t| t.pathmap('./lib/font-awesome/font/%f')}]) do |t|
 	cp t.source, t.name
+end
+
+rule(/^\.\/css\/reveal.js\// => [proc {|t| t.pathmap('%{^./css/reveal.js,./lib/reveal.js/css}p')}]) do |t|
+  cp t.source, t.name
+end
+
+rule(/^\.\/css\/lib\// => [proc {|t| t.pathmap('%{^./css/lib,./lib/reveal.js/lib}p')}]) do |t|
+  cp t.source, t.name
 end
 
 rule(/\.css$/ => [proc {|t| t.pathmap('%{^./css,./src/themes}X.less')}]) do |t|
@@ -131,5 +192,9 @@ rule(/^\.\/_temp\/templates\// => [proc {|t| t.pathmap('%{^./_temp,./src}X.handl
 end
 
 rule(/^\.\/javascript\/jstree\// => [proc {|t| t.pathmap('%{^./javascript,./lib}p')}]) do |t|
+  cp t.source, t.name
+end
+
+rule(/^\.\/javascript\/reveal.js\// => [proc {|t| t.pathmap('%{^./javascript,./lib}p')}]) do |t|
   cp t.source, t.name
 end

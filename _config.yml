@@ -1,7 +1,8 @@
 safe: true
 lsi: false
 pygments: true
-exclude: [Rakefile, README.md, lib, _temp, src]
+exclude: [Rakefile, README.md, ./lib, _temp, src]
+include: [./css/lib]
 permalink: /blog/:year/:month/:day/:title.html
 
 paginate: 10

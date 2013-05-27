@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{{page.title}} - {{site.brand}}</title>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml"/>
+	<link rel="stylesheet" href="/css/{{site.theme}}.css"/>
+	{% if page.theme %}
+	<link rel="stylesheet" href="/css/reveal.js/theme/{{page.theme}}.css" id="theme">
+	{% else %}
+	<link rel="stylesheet" href="/css/reveal.js/theme/default.css" id="theme">
+	{% endif %}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="{{page.description}}">
+	<meta name="author" content="{{page.author}}">
+	<meta name="og:title" content="{{page.title}}">
+	<meta name="og:type" content="article">
+	<meta name="og:url" content="http://www.michaelfcollins3.me{{page.url}}">
+	<meta name="og:description" content="{{page.description}}">
+	<meta name="og:published_time" content="{{page.date | date:'%Y-%m-%d'}}">
+	{% if page.modified_time %}
+	<meta name="og:modified_time" content="{{page.modified_time | date:'%Y-%m%d'}}">
+	{% endif %}
+	<meta name="og:author:first_name" content="{{page.author_first_name}}">
+	<meta name="og:author:last_name" content="{{page.author_last_name}}">
+	<meta name="og:author:gender" content="{{page.author_gender}}">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="http://www.michaelfcollins3.me{{page.url}}">
+	<meta name="twitter:title" content="{{page.title}}">
+	<meta name="twitter:description" content="{{page.description}}">
+	<meta name="twitter:creator" content="@{{page.twitter_creator}}"/>
+	<script>
+		document.write('<link rel="stylesheet" href="/css/reveal.js/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
+	</script>
+	<!--[if lt IE 9]>
+	<script src="/javascript/reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+	{% include google_analytics.html %}
+</head>
+<body>
+	{% include navigation_bar.html %}
+	<div class="reveal">
+		<div class="slides">
+			{{content}}
+		</div>
+	</div>
+	{% include javascript.html %}
+	<script type="text/javascript" src="/javascript/presentation.js"></script>
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			keyboard: true,
+			overview: true,
+			loop: false,
+			rtl: false,
+			center: true,
+			autoSlide: 0,
+			mouseWheel: true,
+			rollingLinks: true,
+			transitionSpeed: 'default',
+			theme: Reveal.getQueryHash().theme,
+			transition: Reveal.getQueryHash().transition || 'default',
+			dependencies: [
+				{
+					src: '/javascript/reveal.js/lib/js/classList.js',
+					condition: function() {
+						return !document.body.classList; 
+					}
+				},
+				{
+					src: '/javascript/reveal.js/plugin/markdown/marked.js',
+					condition: function() {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: '/javascript/reveal.js/plugin/markdown/markdown.js',
+					condition: function() {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: '/javascript/reveal.js/plugin/highlight/highlight.js',
+					async: true,
+					callback: function() {
+						hljs.initHighlightingOnLoad();
+					}
+				},
+				{
+					src: '/javascript/reveal.js/plugin/zoom-js/zoom.js',
+					async: true,
+					condition: function() {
+						return !!document.body.classList;
+					}
+				},
+				{
+					src: '/javascript/reveal.js/plugin/notes/notes.js',
+					async: true,
+					condition: function() {
+						return !!document.body.classList;
+					}
+				},
+				/*
+				{
+					src: '/javascript/reveal.js/plugin/remotes/remotes.js',
+					async: true,
+					condition: function() {
+						return !!document.body.classList;
+					}
+				}
+				*/
+			]
+		});
+	</script>
+</body>
+</html>
