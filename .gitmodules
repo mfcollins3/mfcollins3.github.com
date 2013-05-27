@@ -9,7 +9,7 @@
 	url = git://github.com/FortAwesome/Font-Awesome.git
 [submodule "lib/reveal.js"]
 	path = lib/reveal.js
-	url = git@github.com:hakimel/reveal.js.git
+	url = git://github.com/hakimel/reveal.js.git
 [submodule "lib/head.js"]
 	path = lib/head.js
 	url = git://github.com/headjs/headjs.git
