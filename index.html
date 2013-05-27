@@ -30,38 +30,34 @@ javascript: homepage
 		<div class="container">
 			<div class="row">
 				<div class="span4">
-					<h1>Blog</h1>
-					<section id="categories">
-						<div id="categoryTree"></div>
-					</section>
 					{% if paginator.page == 1 %}
-					<section id="recentPosts">
-						<h1>Recent Posts</h2>
-						<ul class="pager">
-							<li class="previous disabled"><a href="#">&larr; Previous</a></li>
-							<li class="next"><a href="{{paginator.next_page_path}}">Next &rarr;</a></li>
-						</ul>
-						<ul class="unstyled">
-							{% for post in paginator.posts offset:1 limit:9 %}
-							<li>
-								<article>
-									<h5><a href="{{post.url}}">{{post.title}}</a></h5>
-									<p><time datetime="{{post.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
-									{{post.excerpt}}
-									<p><a href="{{post.url}}">Read more</a></p>
-									<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
-								</article>
-							</li>
-							{% endfor %}
-						</ul>
-						<ul class="pager">
-							<li class="previous disabled"><a href="#">&larr; Previous</a></li>
-							<li class="next"><a href="{{paginator.next_page_path}}">Next &rarr;</a></li>
+					<section id="sectionList">
+						<h4>On This Page</h4>
+						<ul class="nav nav-list">
+							<li><a href="#featuredPost">Featured Post</a></li>
+							<li><a href="#recentPosts">Recent Posts</a></li>
 						</ul>
 					</section>
 					{% endif %}
+					</section>
+					<section>
+						<h4>Blog</h4>
+						<div id="categoryTree"></div>
+					</section>
 				</div>
-				<div class="span8">
+				<div class="span8" data-spy="scroll" data-target="#sectionList">
+					<ul class="pager">
+						{% if paginator.previous_page_path %}
+						<li class="previous"><a href="{{paginator.previous_page_path}}">&larr; Previous</a></li>
+						{% else %}
+						<li class="previous disabled"><a href="#">&larr; Previous</a></li>
+						{% endif %}
+						{% if paginator.next_page_path %}
+						<li class="next"><a href="{{paginator.next_page_path}}">Next &rarr;</a></li>
+						{% else %}
+						<li class="next disabled"><a href="#">Next &rarr;</a></li>
+						{% endif %}
+					</ul>
 					{% if paginator.page == 1 %}
 					{% assign featured_post = paginator.posts | first %}
 					<section id="featuredPost">
@@ -93,20 +89,24 @@ javascript: homepage
                         	<p><a href="{{featured_post.url}}#disqus_thread" data-disqus-identifier="{{featured_post.disqus_identifier}}">Comments</a></p>
 						</article>
 					</section>
+					<section id="recentPosts">
+						<h1>Recent Posts</h1>
+						<ul class="unstyled">
+							{% for post in paginator.posts offset:1 limit:9 %}
+							<li>
+								<article>
+									<h2><a href="{{post.url}}">{{post.title}}</a></h2>
+									<p><time datetime="{{post.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
+									{{post.excerpt}}
+									<p><a href="{{post.url}}">Read more</a></p>
+									<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
+								</article>
+							</li>
+							{% endfor %}
+						</ul>
+					</section>
 					{% else %}
 					<section id="recentPosts">
-						<ul class="pager">
-							{% if paginator.previous_page_path %}
-							<li class="previous"><a href="{{paginator.previous_page_path}}">&larr; Previous</a></li>
-							{% else %}
-							<li class="previous"><a href="/">&larr; Previous</a></li>
-							{% endif %}
-							{% if paginator.next_page_path %}
-							<li class="next"><a href="{{paginator.next_page_path}}">Next &rarr;</a></li>
-							{% else %}
-							<li class="next disabled"><a href="#">Next &rarr;</a></li>
-							{% endif %}
-						</ul>
 						<ul class="unstyled">
 							{% for post in paginator.posts %}
 							<li>
@@ -120,20 +120,20 @@ javascript: homepage
 							</li>
 							{% endfor %}
 						</ul>
-						<ul class="pager">
-							{% if paginator.previous_page_path %}
-							<li class="previous"><a href="{{paginator.previous_page_path}}">&larr; Previous</a></li>
-							{% else %}
-							<li class="previous"><a href="/">&larr; Previous</a></li>
-							{% endif %}
-							{% if paginator.next_page_path %}
-							<li class="next"><a href="{{paginator.next_page_path}}">Next &rarr;</a></li>
-							{% else %}
-							<li class="next disabled"><a href="#">Next &rarr;</a></li>
-							{% endif %}
-						</ul>
 					</section>
 					{% endif %}
+					<ul class="pager">
+						{% if paginator.previous_page_path %}
+						<li class="previous"><a href="{{paginator.previous_page_path}}">&larr; Previous</a></li>
+						{% else %}
+						<li class="previous"><a href="/">&larr; Previous</a></li>
+						{% endif %}
+						{% if paginator.next_page_path %}
+						<li class="next"><a href="{{paginator.next_page_path}}">Next &rarr;</a></li>
+						{% else %}
+						<li class="next disabled"><a href="#">Next &rarr;</a></li>
+						{% endif %}
+					</ul>
 				</div>
 			</div>
 		</div>
