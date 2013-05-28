@@ -29,7 +29,13 @@
         {% include navigation_bar.html %}
         <div class="container">
             <div class="row">
-                <div class="span9">
+                <div class="span4">
+                    <section>
+                        <h4>Blog</h4>
+                        <div id="categoryTree"></div>
+                    </section>
+                </div>
+                <div class="span8">
                     <ul class="breadcrumb">
                         <li>
                             <a href="/">Blog</a>
@@ -59,31 +65,26 @@
                     {% include post_pager.html %}
                     {% include disqus_thread.html %}
                 </div>
-                <div class="span3">
-                    <section>
-                        <h2>Tags</h2>
-                        <ul class="tags">
-                            {% for tag in page.tags %}
-                            <li><a href="/blog/tags/{{tag}}.html">{{tag | replace:'_':' '}}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Other Posts</h2>
-                        <ul>
-                            {% for related_post in site.related_posts %}
-                            <li><a href="{{related_post.url}}">{{related_post.title}}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Other Topics</h2>
-                        {% include category_list.html %}
-                    </section>
-                </div>
             </div>
         </div>
         {% include footer.html %}
         {% include javascript.html %}
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $.jstree._themes = '/javascript/jstree/themes/';
+                $('#categoryTree').jstree({
+                    core: {},
+                    plugins: ['json_data', 'themes'],
+                    json_data: {
+                        ajax: {
+                            url: '/data/categories.json'
+                        }
+                    },
+                    themes: {
+                        theme: 'default'
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
