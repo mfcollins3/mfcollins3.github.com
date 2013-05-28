@@ -62,32 +62,32 @@ javascript: homepage
 					{% assign featured_post = paginator.posts | first %}
 					<section id="featuredPost">
 						<h1>Featured Article</h1>
-						<article>
-							<ul class="breadcrumb">
-								<li>
-									<a href="/">Blog</a>
-									{% if featured_post.categories %}
-									<span class="divider">/</span>
-									{% endif %}
-								</li>
-								{% assign last_category = featured_post.category_names | last %}
-								{% for category in featured_post.category_names %}
-								<li>
-									<a href="/blog/{{category | replace:' ','_' | replace:'.NET','dotnet'}}.html">{{category}}</a>
-									{% if category != last_category %}
-									<span class="divider">/</span>
-									{% endif %}
-								</li>
-								{% endfor %}
-							</ul>
+						<ul class="breadcrumb">
+							<li>
+								<a href="/">Blog</a>
+								{% if featured_post.categories %}
+								<span class="divider">/</span>
+								{% endif %}
+							</li>
+							{% assign last_category = featured_post.category_names | last %}
+							{% for category in featured_post.category_names %}
+							<li>
+								<a href="/blog/{{category | replace:' ','_' | replace:'.NET','dotnet'}}.html">{{category}}</a>
+								{% if category != last_category %}
+								<span class="divider">/</span>
+								{% endif %}
+							</li>
+							{% endfor %}
+						</ul>
+						<article class="post">
 							<div class="page-header">
 								<h1><a href="{{featured_post.url}}">{{featured_post.title}}</a></h1>
 							</div>
 							<p class="lead">{{featured_post.description}}</p>
 							<p><span class="author">{{featured_post.author}}</span><br/><time datetime="{{featured_post.date | date:'%Y-%m-%d'}}">{{featured_post.date | date:'%B %d, %Y'}}</time></p>
                         	{{featured_post.content | markdownify}}
-                        	<p><a href="{{featured_post.url}}#disqus_thread" data-disqus-identifier="{{featured_post.disqus_identifier}}">Comments</a></p>
 						</article>
+                    	<p><a href="{{featured_post.url}}#disqus_thread" data-disqus-identifier="{{featured_post.disqus_identifier}}">Comments</a></p>
 					</section>
 					<section id="recentPosts">
 						<h1>Recent Posts</h1>
@@ -97,7 +97,7 @@ javascript: homepage
 								<article>
 									<h2><a href="{{post.url}}">{{post.title}}</a></h2>
 									<p><time datetime="{{post.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
-									{{post.excerpt}}
+									{{post.description}}
 									<p><a href="{{post.url}}">Read more</a></p>
 									<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
 								</article>
@@ -113,7 +113,7 @@ javascript: homepage
 								<article>
 									<h5><a href="{{post.url}}">{{post.title}}</a></h5>
 									<p><time datetime="{{post.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
-									{{post.excerpt}}
+									{{post.description}}
 									<p><a href="{{post.url}}">Read more</a></p>
 									<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
 								</article>

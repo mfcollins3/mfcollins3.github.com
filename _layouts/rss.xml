@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    {% if page.title %}
+    <title>{{page.brand}}: {{page.title}}</title>
+    {% else %}
+    <title>The Imaginary Road</title>
+    {% endif %}
+    <description>{{page.description}}</description>
+    <link>http://www.michaelfcollins3.me{{page.index_url}}</link>
+    <copyright>Copyright 2012-2013 Michael F. Collins, III</copyright>
+    <language>en-us</language>
+    <pubDate>{{site.time | date:'%a, %d %b %Y %H:%M:%S %Z'}}</pubDate>
+    {{content}}
+  </channel>
+</rss>
