@@ -10,24 +10,6 @@
 	"children": [
 		{
 			"data": {
-				"title": ".NET Development",
-				"attr": {
-					"href": "/blog/dotnet_development.html"
-				}
-			},
-			"children": [
-				{
-					"data": {
-						"title": "WCF",
-						"attr": {
-							"href": "/blog/Windows_Communication_Foundation.html"
-						}
-					}
-				}
-			]
-		},
-		{
-			"data": {
 				"title": "Command Line Programming",
 				"attr": {
 					"href": "/blog/Command_Line_Programming.html"
@@ -65,6 +47,44 @@
 					"href": "/blog/Software_Development.html"
 				}
 			}
+		},
+		{
+			"data": {
+				"title": "Windows Development",
+				"attr": {
+					"href": "/blog/windows_development.html"
+				}
+			},
+			"state": "open",
+			"children": [
+				{
+					"data": {
+						"title": ".NET Development",
+						"attr": {
+							"href": "/blog/dotnet_development.html"
+						}
+					},
+					"state": "open",
+					"children": [
+						{
+							"data": {
+								"title": "WCF",
+								"attr": {
+									"href": "/blog/Windows_Communication_Foundation.html"
+								}
+							}
+						}
+					]
+				},
+				{
+					"data": {
+						"title": "Debugging",
+						"attr": {
+							"href": "/blog/debugging.html"
+						}
+					}
+				}
+			]
 		},
 		{
 			"data": {

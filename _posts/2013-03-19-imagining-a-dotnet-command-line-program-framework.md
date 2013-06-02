@@ -8,7 +8,6 @@ categories:
 category_names:
 - Command Line Programming
 author: Michael F. Collins, III
-author: Michael F. Collins, III
 author_first_name: Michael
 author_last_name: Collins
 author_gender: male
