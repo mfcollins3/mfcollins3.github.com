@@ -10,9 +10,11 @@ author_gender: male
 twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
+- windows_development
 - dotnet_development
 - Windows_Communication_Foundation
 category_names:
+- Windows Development
 - .NET Development
 - Windows Communication Foundation
 tags:

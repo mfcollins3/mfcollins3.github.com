@@ -10,9 +10,11 @@ author_gender: male
 twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
-- Software_Development
+- windows_development
+- dotnet_development
 category_names:
-- Software Development
+- Windows Development
+- .NET Development
 ---
 Product versioning has always been a tricky paradigm. There used to be no rules and everyone had their opinion what versions should be like. Initially, versions were probably just *Version 1*, *Version 2*, etc. Then someone probably decided that a bug fix probably did not justify going from *Version 1* to *Version 2*, so they added another number to indicate that the release was a bug fix, so we ended up with *Version 1.0* with *Version 1.1* being a bug fix release. Next someone decided that having the bug fix number as the second number was not a good idea because he wanted to indicate that a release received new incremental functionality that did not break existing functionality, but also still be able to do bug fix releases, so we ended up with versions like *1.0.0*, *1.1.0*, and *1.1.1*. Along the way, product marketing groups joined the version conundrum and everyone started using the year in which the products were published, so we ended up with products like *Windows 95* and *Office 2010*.
 
