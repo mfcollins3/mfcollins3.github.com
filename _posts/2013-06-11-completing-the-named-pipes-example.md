@@ -23,37 +23,6 @@ In the previous post, I only implemented a single scenario for creating a work q
 
 Here's the updated SpecFlow feature and scenarios that will be implemented:
 
-{% highlight gherkin %}
-Feature: Manage work queues
-
-  Scenario: Create a work queue
-    Given the work queue does not exist
-    When I create the work queue
-    Then the work queue will exist
-    And the work queue will be stopped
-
-  Scenario: List work queues
-    Given there are work queues defined
-    When I list the work queues
-    Then all of the work queus will be returned
-
-  Scenario: Delete a work queue
-    Given the work queue exists
-    When I delete the work queue
-    Then the work queue will be deleted
-
-  Scenario: Start a work queue
-    Given the work queue exists
-    And the work queue is stopped
-    When I start the work queue
-    Then the work queue will be running
-
-  Scenario: Stop a work queue
-    Given the work queue exists
-    And the work queue is running
-    When I stop the work queue
-    Then the work queue will be stopped
-{% endhighlight %}
 
 The first scenario, **Create a work queue**, was completed in the [last post]({% post_url 2013-06-10-windows-ipc-using-named-pipes %}). For reference, here are the step definitions that I ended up with:
 
@@ -124,7 +93,7 @@ public class StepDefinitions
                         buffer, 0, t.Result));
                     while (!pipeStream.IsMessageComplete)
                     {
-                        var length = pipeStream>Read(
+                        var length = pipeStream.Read(
                             buffer, 0, buffer.Length);
                         message.Append(Encoding.Unicode.GetString(
                             buffer, 0, length));
@@ -286,11 +255,11 @@ I am reading the response and building a SpecFlow **Table** object that I will u
 To implement the server-side logic so that this step passes, I need to refactor the **RunNamedPipeServer** method a little to handle a new command and to improve the efficiency of the named pipe server implementation:
 
 {% highlight c# %}
-private static readonly Regex CreateCommandRegex = new Regex
+private static readonly Regex CreateCommandRegex = new Regex(
     @"CREATE (?<name>\w+)$",
     RegexOptions.Compiled | RegexOptions.Singleline);
 
-private static readonly Regex ListCommandRegex = new Regex
+private static readonly Regex ListCommandRegex = new Regex(
     @"^LIST$",
     RegexOptions.Compiled | RegexOptions.Singleline);
 
@@ -401,8 +370,8 @@ Here I refactored the **GivenTheWorkQueueDoesNotExist** method to store the name
 Now that the work queue exists, I can implement the logic for deleting it:
 
 {% highlight c# %}
-[When(@"I delete the service")]
-public void WhenIDeleteTheService()
+[When(@"I delete the work queue")]
+public void WhenIDeleteTheWorkQueue()
 {
     this.RunNamedPipeServer();
     var reply = SendCommandToServer("DELETE MyWorkQueue");
@@ -429,7 +398,7 @@ private void RunNamedPipeServer()
         var match = CreateCommandRegex.Match(command);
         if (match.Success)
         {
-            var queueName = match.Groups["name"];
+            var queueName = match.Groups["name"].Value;
             this.CreateWorkQueue(queueName, serverPipe);
             goto end;
         }
@@ -437,7 +406,7 @@ private void RunNamedPipeServer()
         match = DeleteCommandRegex.Match(command);
         if (match.Success)
         {
-            var queueName = match.Groups["name"];
+            var queueName = match.Groups["name"].Value;
             this.DeleteWorkQueue(queueName, serverPipe);
             goto end;
         }
@@ -527,7 +496,7 @@ The first step has already been implemented in a previous scenario, so we can re
 
 {% highlight c# %}
 [Given(@"the work queue is stopped")]
-public void GIvenTheWorkQueueIsStopped()
+public void GivenTheWorkQueueIsStopped()
 {
     Assert.Equal(
         WorkQueueState.Stopped,
@@ -538,8 +507,8 @@ public void GIvenTheWorkQueueIsStopped()
 The third step will send a new **START** command to the named pipe server:
 
 {% highlight c# %}
-[When(@"I start the service")]
-public void WhenIStartTheService()
+[When(@"I start the work queue")]
+public void WhenIStartTheWorkQueue()
 {
     this.RunNamedPipeServer();
     var reply = SendCommandToServer("START MyWorkQueue");
@@ -636,7 +605,7 @@ private static readonly Regex StopCommandRegex = new Regex(
     @"^STOP (?<name>\w+)$",
     RegexOptions.Compiled | RegexOptions.Singleline);
 
-[Given(@"the service is running")]
+[Given(@"the work queue is running")]
 public void GivenTheWorkQueueIsRunning()
 {
   this.workQueues[TestWorkQueueName].Start();
