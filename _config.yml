@@ -4,6 +4,7 @@ pygments: true
 exclude: [Rakefile, README.md, ./lib, _temp, src]
 include: [./css/lib]
 permalink: /blog/:year/:month/:day/:title.html
+markdown: redcarpet
 
 paginate: 10
 
