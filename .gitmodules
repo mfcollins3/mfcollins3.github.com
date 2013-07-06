@@ -16,3 +16,6 @@
 [submodule "lib/TimelineJS"]
 	path = lib/TimelineJS
 	url = git://github.com/VeriteCo/TimelineJS.git
+[submodule "lib/bootswatch"]
+	path = lib/bootswatch
+	url = https://github.com/thomaspark/bootswatch.git
