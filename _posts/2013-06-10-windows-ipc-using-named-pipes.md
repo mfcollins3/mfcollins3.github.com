@@ -268,7 +268,7 @@ public void WhenICreateTheWorkQueue()
         PipeDirection.InOut,
         NamedPipeServerStream.MaxAllowedServerInstances,
         PipeTransmissionMode.Message,
-        PipeOption.Asynchronous,
+        PipeOptions.Asynchronous,
         BufferSize,
         BufferSize);
     Task.Factory.FromAsync(
@@ -398,14 +398,14 @@ private static Task<string> ReadMessageAsync(PipeStream pipeStream)
     return pipeStream.ReadAsync(buffer, 0, buffer.Length)
         .ContinueWith(t =>
             {
-                message.Append(Encoding.UTF8.GetString(
+                message.Append(Encoding.Unicode.GetString(
                     buffer, 0, t.Result));
                 while (!pipeStream.IsMessageComplete)
                 {
                     var length = pipeStream.Read(
-                    buffer, 0, buffer.Length);
-                    message.Append(Encoding.UTF8.GetString(
-                    buffer, 0, length));
+                        buffer, 0, buffer.Length);
+                    message.Append(Encoding.Unicode.GetString(
+                        buffer, 0, length));
                 }
 
                 return message.ToString();
@@ -437,7 +437,7 @@ private void RunNamedPipeServer()
                         var commandRegex = new Regex(
                             @"^CREATE (?<name>\w+)$",
                             RegexOptions.Singleline);
-                        var match = commandRege.Match(rt.Result);
+                        var match = commandRegex.Match(rt.Result);
                         var name = match.Groups["name"].Value;
                         var workQueue = new WorkQueue
                         {

@@ -23,6 +23,37 @@ In the previous post, I only implemented a single scenario for creating a work q
 
 Here's the updated SpecFlow feature and scenarios that will be implemented:
 
+{% highlight gherkin %}
+Feature: Manage work queues
+
+  Scenario: Create a work queue
+    Given the work queue does not exist
+    When I create the work queue
+    Then the work queue will exist
+    And the work queue will be stopped
+
+  Scenario: List work queues
+    Given there are work queues defined
+    When I list the work queues
+    Then all of the work queus will be returned
+
+  Scenario: Delete a work queue
+    Given the work queue exists
+    When I delete the work queue
+    Then the work queue will be deleted
+
+  Scenario: Start a work queue
+    Given the work queue exists
+    And the work queue is stopped
+    When I start the work queue
+    Then the work queue will be running
+
+  Scenario: Stop a work queue
+    Given the work queue exists
+    And the work queue is running
+    When I stop the work queue
+    Then the work queue will be stopped
+{% endhighlight %}
 
 The first scenario, **Create a work queue**, was completed in the [last post]({% post_url 2013-06-10-windows-ipc-using-named-pipes %}). For reference, here are the step definitions that I ended up with:
 
@@ -279,7 +310,7 @@ private void RunNamedPipeServer()
             {
                 ReadMessageAsync(serverPipe).ContinueWith(rt =>
                     {
-                        var command = x.Result;
+                        var command = rt.Result;
                         var match = CreateCommandRegex.Match(command);
                         if (match.Success)
                         {
