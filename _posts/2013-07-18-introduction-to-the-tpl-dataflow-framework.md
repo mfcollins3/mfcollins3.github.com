@@ -11,7 +11,7 @@ category_names:
 author: Michael F. Collins, III
 author_first_name: Michael
 author_last_name: Collins
-atuhor_gender: male
+author_gender: male
 twitter_creator: mfcollins3
 ---
 Probably one of the most significant improvements over the past few years in my software development ecosystem has been the rise of package managers. I have always built software using third-party software libraries, and over the years most of these libraries have come from the open source community. I don't know the history of package management and who came up with it first, but it seems that the Ruby Gem tool is the origin of many of the current implementations. Along with Gem, Node.js has NPM, and fortunately, .NET has NuGet.
