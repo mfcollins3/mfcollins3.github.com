@@ -33,14 +33,31 @@ javascript: homepage
 	        		<section id="featuredArticle">
 	        			{% assign featured_post = site.posts | first %}
 	        			<header>
-	        				<h1><a href="{{post.url}}">{{post.title}}</a></h1>
+        					<h1>Featured Article</h1>
+	        				<h2><a href="{{featured_post.url}}">{{featured_post.title}}</a></h2>
+	        				<p class="lead">{{featured_post.description}}</p>
+	                        <p><span class="author">{{featured_post.author}}</span><br/><time datetime="{{featured_post.date | date:'%Y-%m-%d'}}">{{featured_post.date | date:'%B %d, %Y'}}</time></p>
 	        			</header>
 	        			<article>
 	        				{{featured_post.content | markdownify}}
 	        			</article>
+	        			<footer>
+	        				<p><a href="{{featured_post.url}}#disqus_thread" data-disqus-identifier="{{featured_post.disqus_identifier}}">Comments</a></p>
+	        			</footer>
 	        		</section>
 	        		<section id="recentArticles">
-	        			<p>TODO: Recent articles</p>
+	        			<header>
+	        				<h1>Recent Articles</h1>
+	        			</header>
+	        			<ul class="list-unstyled">
+	        				{% for post in site.posts limit:9 offset:1 %}
+	        				<li>
+	        					<h2><a href="{{post.url}}">{{post.title}}</a></h2>
+	        					<p>{{post.description}}</p>
+	        					<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">>Comments</a></p>
+	        				</li>
+	        				{% endfor %}
+	        			</ul>
 	        		</section>
 	        	</div>
         	</div>
