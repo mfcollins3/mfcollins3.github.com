@@ -1,6 +1,6 @@
 [submodule "lib/twitter-bootstrap"]
 	path = lib/twitter-bootstrap
-	url = git://github.com/twitter/bootstrap.git
+	url = https://github.com/twbs/bootstrap.git
 [submodule "lib/yuicompressor"]
 	path = lib/yuicompressor
 	url = git://github.com/yui/yuicompressor.git
