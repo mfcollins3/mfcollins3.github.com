@@ -6,7 +6,7 @@ javascript: homepage
 <html lang="en">
 	<head>
 		<title>{{site.brand}}</title>
-		<link rel="stylesheet" href="/css/{{site.theme}}.css"/>
+		<link rel="stylesheet" href="/css/{{site.theme}}.css" media="screen"/>
 		<link rel="alternate" type="application/rss+xml" title="{{site.brand}} RSS Feed" href="/rss.xml"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="og:title" content="{{site.brand}}"/>
@@ -21,89 +21,28 @@ javascript: homepage
 	</head>
 	<body id="homepage">
         {% include navigation_bar.html %}
-        <header class="hero-unit">
+        <header class="jumbotron">
         	<div class="container">
 	        	<h1>The Imaginary Road</h1>
 	        	<p>{{page.description}}</p>
 	        </div>
         </header>
-        <section>
+        <section id="body">
         	<div class="container">
-        		{% if paginator.page > 1 %}
-        		{% assign previous_class = '' %}
-        		{% capture previous_page_path %}/{{paginator.previous_page_path}}{% endcapture %}
-        		{% else %}
-        		{% assign previous_class = 'disabled' %}
-        		{% assign previous_page_path = '#' %}
-        		{% endif %}
-        		{% if paginator.page < paginator.total_pages %}
-        		{% assign next_class = '' %}
-        		{% capture next_page_path %}/{{paginator.next_page_path}}{% endcapture %}
-        		{% else %}
-        		{% assign next_class = 'disabled' %}
-        		{% assign next_page_path = '#' %}
-        		{% endif %}
-        		<ul class="pager">
-        			<li class="previous {{previous_class}}"><a href="{{previous_page_path}}">&larr; Newer</a></li>
-        			<li class="next {{next_class}}"><a href="{{next_page_path}}">Older &rarr;</a></li>
-        		</ul>
-	    		{% if paginator.page == 1 %}
-        		<div class="row">
-	        		<section class="span9">
-						{% assign featured_post = site.posts | first %}
-						<header>
-							<h1>Featured Article</h1>
-						</header>
-						<article class="post">
-							<div class="page-header">
-								<h2><a href="{{featured_post.url}}">{{featured_post.title}}</a></h2>
-							</div>
-							<p class="lead">{{featured_post.description}}</p>
-							<p><span class="author">{{featured_post.author}}</span><br/><time datetime="{{featured_post.date | date:'%Y-%m-%d'}}">{{featured_post.date | date:'%B %d, %Y'}}</time></p>
-	                    	{{featured_post.content | markdownify}}
-						</article>
-						<footer>
-		                	<p><a href="{{featured_post.url}}#disqus_thread" data-disqus-identifier="{{featured_post.disqus_identifier}}">Comments</a></p>
-		                </footer>
-	        		</section>
-	        		<section class="span3">
+        		<div>
+	        		<section id="featuredArticle">
+	        			{% assign featured_post = site.posts | first %}
 	        			<header>
-							<h3>Recent Posts</h3>
-						</header>
-						{% for post in site.posts offset:1 limit:9 %}
-						<article>
-							<header>
-								<h4><a href="{{post.url}}">{{post.title}}</a></h4>
-								<p><time datetime="{{post.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
-							</header>
-							{{post.description}}
-							<footer>
-								<p><a href="{{post.url}}">Read more</a></p>
-								<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
-							</footer>
-						</article>
-						{% endfor %}
+	        				<h1><a href="{{post.url}}">{{post.title}}</a></h1>
+	        			</header>
+	        			<article>
+	        				{{featured_post.content | markdownify}}
+	        			</article>
+	        		</section>
+	        		<section id="recentArticles">
+	        			<p>TODO: Recent articles</p>
 	        		</section>
 	        	</div>
-		    	{% else %}
-				{% for post in paginator.posts %}
-				<article>
-					<header>
-						<h1><a href="{{post.url}}">{{post.title}}</a></h1>
-						<p><time datetime="{{post.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
-					</header>
-					{{post.description}}
-					<footer>
-						<p><a href="{{post.url}}">Read more</a></p>
-						<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
-					</footer>
-				</article>
-				{% endfor %}
-	    		{% endif %}
-        		<ul class="pager">
-        			<li class="previous {{previous_class}}"><a href="{{previous_page_path}}">&larr; Newer</a></li>
-        			<li class="next {{next_class}}"><a href="{{next_page_path}}">Older &rarr;</a></li>
-	    		</ul>
         	</div>
 	    </section>
         {% include footer.html %}
