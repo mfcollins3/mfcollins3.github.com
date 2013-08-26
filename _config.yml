@@ -7,6 +7,7 @@ permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
 
 paginate: 10
+paginate_path: "blog/page:num"
 
 theme: normal
 brand: The Imaginary Road

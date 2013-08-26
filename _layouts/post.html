@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>{{page.title}} - {{site.brand}}</title>
         <link rel="stylesheet" href="/css/{{site.theme}}.css"/>
@@ -29,34 +29,11 @@
         {% include navigation_bar.html %}
         <div class="container">
             <div class="row">
-                <div class="span4">
-                    <section>
-                        {% include category_list.html %}
-                    </section>
-                </div>
-                <div class="span8">
-                    <ul class="breadcrumb">
-                        <li>
-                            <a href="/">Blog</a>
-                            {% if page.categories %}
-                            <span class="divider">/</span>
-                            {% endif %}
-                        </li>
-                        {% assign last_category = page.category_names | last %}
-                        {% for category in page.category_names %}
-                        <li>
-                            <a href="/blog/{{category | replace:' ','_' | replace:'.NET','dotnet'}}.html">{{category}}</a>
-                            {% if category != last_category %}
-                            <span class="divider">/</span>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ul>
+                {% include category_list.html %}
+                <section id="post">
                     {% include post_pager.html %}
                     <article class="post">
-                        <div class="page-header">
-                            <h1>{{page.title}}</h1>
-                        </div>
+                        <h1>{{page.title}}</h1>
                         <p class="lead">{{page.description}}</p>
                         <p><span class="author">{{page.author}}</span><br/><time datetime="{{page.date | date:'%Y-%m-%d'}}">{{page.date | date:'%B %d, %Y'}}</time></p>
                         {{content}}
