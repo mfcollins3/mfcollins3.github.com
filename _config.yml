@@ -1,12 +1,13 @@
 safe: true
 lsi: false
 pygments: true
-exclude: [Rakefile, README.md, ./lib, _temp, src]
+exclude: [Rakefile, README.md, ./lib, _temp, src, server]
 include: [./css/lib]
 permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
 
 paginate: 10
+paginate_path: "blog/page:num"
 
 theme: normal
 brand: The Imaginary Road

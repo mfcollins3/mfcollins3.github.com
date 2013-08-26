@@ -19,20 +19,18 @@ CLOBBER.include('./javascript')
 JAVASCRIPT_FILES = FileList.new('./lib/modernizr/modernizr.js')
 JAVASCRIPT_FILES.include('./lib/jquery/jquery.js')
 JAVASCRIPT_FILES.include('./lib/handlebars/handlebars.runtime.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-transition.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-modal.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-dropdown.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-scrollspy.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-tab.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-tooltip.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-popover.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-alert.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-button.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-collapse.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-carousel.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-typeahead.js')
-JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/bootstrap-affix.js')
-JAVASCRIPT_FILES.include('./lib/jstree/jquery.jstree.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/transition.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/modal.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/dropdown.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/scrollspy.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/tab.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/tooltip.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/popover.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/alert.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/button.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/collapse.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/carousel.js')
+JAVASCRIPT_FILES.include('./lib/twitter-bootstrap/js/affix.js')
 
 STYLESHEET_FILES = FileList.new('./src/themes/normal.less')
 CSS_FILES = STYLESHEET_FILES.pathmap('%{^./src/themes,./css}X.css')
@@ -83,10 +81,11 @@ FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.svg')
 FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.ttf')
 FONT_FILES.include('./lib/font-awesome/font/fontawesome-webfont.woff')
 FONT_FILES.include('./lib/font-awesome/font/FontAwesome.otf')
-CSS_FONT_FILES = FONT_FILES.pathmap('./css/fonts/%f')
-
-JSTREE_SOURCE_THEME_FILES = FileList.new('./lib/jstree/themes/default/**/*.*')
-JSTREE_THEME_FILES = JSTREE_SOURCE_THEME_FILES.pathmap('%{^./lib,./javascript}p')
+FONT_FILES.include('./lib/twitter-bootstrap/fonts/glyphicons-halflings-regular.eot')
+FONT_FILES.include('./lib/twitter-bootstrap/fonts/glyphicons-halflings-regular.svg')
+FONT_FILES.include('./lib/twitter-bootstrap/fonts/glyphicons-halflings-regular.ttf')
+FONT_FILES.include('./lib/twitter-bootstrap/fonts/glyphicons-halflings-regular.woff')
+CSS_FONT_FILES = FONT_FILES.pathmap('./fonts/%f')
 
 TIMELINEJS_JAVASCRIPT_FILES = FileList.new('./lib/TimelineJS/compiled/js/storyjs-embed.js')
 TIMELINEJS_JAVASCRIPT_FILES.include('./lib/TimelineJS/compiled/js/timeline-min.js')
@@ -101,9 +100,7 @@ task :default => [:compile_stylesheets, :compile_javascript_modules, :compile_te
   sh "jekyll build"
 end
 
-task :compile_javascript_modules => ['./javascript/website.js', :compile_page_javascript_modules, :copy_jstree_files, :copy_revealjs_files, :copy_timelinejs_files]
-
-task :copy_jstree_files => ['./javascript/jstree/themes/default'] + JSTREE_THEME_FILES
+task :compile_javascript_modules => ['./javascript/website.js', :compile_page_javascript_modules, :copy_revealjs_files, :copy_timelinejs_files]
 
 task :copy_revealjs_files => ['./javascript/reveal.js/lib/js', './javascript/reveal.js/plugin/highlight', './javascript/reveal.js/plugin/markdown', './javascript/reveal.js/plugin/notes', './javascript/reveal.js/plugin/postmessage', './javascript/reveal.js/plugin/print-pdf', './javascript/reveal.js/plugin/remotes', './javascript/reveal.js/plugin/search', './javascript/reveal.js/plugin/zoom-js'] + JAVASCRIPT_REVEALJS_JAVASCRIPT_FILES
 
@@ -111,13 +108,9 @@ task :copy_timelinejs_files => ['./javascript/TimelineJS/locale'] + JAVASCRIPT_T
 
 task :compile_page_javascript_modules => PAGE_JAVASCRIPT_MODULES
 
-task :compile_stylesheets => ['./css/fonts', './css/images', './css/lib/font', './css/reveal.js/print', './css/reveal.js/theme', './_temp/css', './css/images/glyphicons-halflings.png', './css/images/glyphicons-halflings-white.png', './css/TimelineJS/themes/font'] + CSS_FILES + CSS_FONT_FILES + CSS_REVEALJS_FILES + CSS_REVEALJS_FONT_FILES + CSS_TIMELINEJS_FILES
+task :compile_stylesheets => ['./css', './css/lib/font', './css/reveal.js/print', './css/reveal.js/theme', './fonts', './_temp/css', './css/TimelineJS/themes/font'] + CSS_FILES + CSS_FONT_FILES + CSS_REVEALJS_FILES + CSS_REVEALJS_FONT_FILES + CSS_TIMELINEJS_FILES
 
 task :compile_templates => ['./_temp/templates'] + TEMPLATE_FILES
-
-directory './css/fonts'
-
-directory './css/images'
 
 directory './css/lib/font'
 
@@ -126,6 +119,8 @@ directory './css/reveal.js/print'
 directory './css/reveal.js/theme'
 
 directory './css/TimelineJS/themes/font'
+
+directory './fonts'
 
 directory './javascript'
 
@@ -155,16 +150,8 @@ directory './_temp/css'
 
 directory './_temp/templates'
 
-file './css/fonts/FontAwesome.otf' => ['./lib/font-awesome/font/FontAwesome.otf'] do
-	cp './lib/font-awesome/font/FontAwesome.otf', './css/fonts/FontAwesome.otf'
-end
-
-file './css/images/glyphicons-halflings-white.png' => ['./lib/twitter-bootstrap/img/glyphicons-halflings-white.png'] do
-  cp './lib/twitter-bootstrap/img/glyphicons-halflings-white.png', './css/images/glyphicons-halflings-white.png'
-end
-
-file './css/images/glyphicons-halflings.png' => ['./lib/twitter-bootstrap/img/glyphicons-halflings.png'] do
-  cp './lib/twitter-bootstrap/img/glyphicons-halflings.png', './css/images/glyphicons-halflings.png'
+file './fonts/FontAwesome.otf' => ['./fonts', './lib/font-awesome/font/FontAwesome.otf'] do
+	cp './lib/font-awesome/font/FontAwesome.otf', './fonts/FontAwesome.otf'
 end
 
 file './javascript/events.js' => ['./javascript'] + EVENTS_JAVASCRIPT_FILES do
@@ -191,8 +178,12 @@ file './javascript/aboutme.js' => ['./javascript'] + ABOUTME_JAVASCRIPT_FILES do
   sh "java -jar lib/googleclosurecompiler/compiler.jar --js #{ABOUTME_JAVASCRIPT_FILES.join(' --js ')} > ./javascript/aboutme.js"
 end
 
-rule(/^\.\/css\/fonts\/fontawesome-webfont\./ => [proc {|t| t.pathmap('./lib/font-awesome/font/%f')}]) do |t|
+rule(/^\.\/fonts\/fontawesome-webfont\./ => [proc {|t| t.pathmap('./lib/font-awesome/font/%f')}]) do |t|
 	cp t.source, t.name
+end
+
+rule(/^\.\/fonts\/glyphicons-/ => [proc {|t| t.pathmap('./lib/twitter-bootstrap/fonts/%f')}]) do |t|
+  cp t.source, t.name
 end
 
 rule(/^\.\/css\/reveal.js\// => [proc {|t| t.pathmap('%{^./css/reveal.js,./lib/reveal.js/css}p')}]) do |t|

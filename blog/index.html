@@ -5,19 +5,34 @@ header: Michael Collins' Blog
 header_description: Here you will find my thoughts, ideas, and sample code from the hobby and professional projects that I am working on.
 javascript: blog
 ---
-<div class="page-header">
-    <h1>{{page.title}}</h1>
-</div>
 <div class="row">
-    <div class="span4">
-        <h3>Categories</h3>
-        <div id="categoryTree"></div>
-    </div>
-    <div class="span8">
-        <ul>
-            {% for post in site.posts %}
-            {% include post_summary.html %}
-            {% endfor %}
+    {% include category_list.html %}
+    <section id="posts">
+        {% if paginator.previous_page_path %}
+        {% assign previous_class = '' %}
+        {% else %}
+        {% assign previous_class = 'disabled' %}
+        {% endif %}
+        {% if paginator.next_page %}
+        {% assign next_class = '' %}
+        {% else %}
+        {% assign next_class = 'disabled' %}
+        {% endif %}
+        <ul class="pager">
+            <li class="previous {{previous_class}}"><a href="{{paginator.previous_page_path}}">&larr; Newer</a></li>
+            <li class="next {{next_class}}"><a href="{{paginator.next_page_path}}">&rarr; Older</a></li>
         </ul>
-    </div>
+        {% for post in paginator.posts %}
+        <div class="post">
+            <h1><a href="{{post.url}}">{{post.title}}</a></h1>
+            <p><time datetime="{{post.date | date:'%Y-%m-%d'}}">{{post.date | date:'%B %d, %Y'}}</time></p>
+            <p>{{post.description}}</p>
+            <p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">Comments</a></p>
+        </div>
+        {% endfor %}
+        <ul class="pager">
+            <li class="previous {{previous_class}}"><a href="{{paginator.previous_page_path}}">&larr; Newer</a></li>
+            <li class="next {{next_class}}"><a href="{{paginator.next_page_path}}">&rarr; Older</a></li>
+        </ul>
+    </section>
 </div>
