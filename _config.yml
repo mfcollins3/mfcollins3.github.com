@@ -1,13 +1,21 @@
 safe: true
 lsi: false
-pygments: true
-exclude: [Rakefile, README.md, ./lib, _temp, src, server]
+exclude: [Rakefile, README.md, ./lib, _temp, src, server, package.json, bower.json, Gruntfile.coffee, Gemfile, Gemfile.lock, node_modules, bower_components, less]
 include: [./css/lib]
 permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
+highlighter: pygments
 
 paginate: 10
-paginate_path: "blog/page:num"
+paginate_path: "blog/page:num/"
 
-theme: normal
 brand: The Imaginary Road
+
+excerpt_separator: <!--more-->
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      theme: normal

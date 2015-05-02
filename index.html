@@ -1,14 +1,15 @@
 ---
 description: The Imaginary Road is the personal blog of Michael Collins. My blog contains mostly technical postings about the projects that I am working on or researching in both my personal and professional lives.
-javascript: homepage
 ---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{{site.brand}}</title>
-		<link rel="stylesheet" href="/css/{{site.theme}}.css" media="screen"/>
-		<link rel="alternate" type="application/rss+xml" title="{{site.brand}} RSS Feed" href="/rss.xml"/>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>{{site.brand}}</title>
+		<link rel="stylesheet" href="/css/{{page.theme}}.css" media="screen"/>
+		<link rel="alternate" type="application/rss+xml" title="{{site.brand}} RSS Feed" href="/rss.xml"/>
 		<meta name="og:title" content="{{site.brand}}"/>
 		<meta name="og:type" content="website"/>
 		<meta name="og:url" content="http://www.michaelfcollins3.me"/>
@@ -16,54 +17,41 @@ javascript: homepage
 		<meta name="og:site_name" content="{{site.brand}}"/>
 		<meta name="description" content="{{page.description}}"/>
 		<meta name="author" content="Michael F. Collins, III"/>
-		<meta charset="UTF-8"/>
 		{% include google_analytics.html %}
 	</head>
 	<body id="homepage">
-        {% include navigation_bar.html %}
-        <header class="jumbotron">
-        	<div class="container">
-	        	<h1>The Imaginary Road</h1>
-	        	<p>{{page.description}}</p>
-	        </div>
-        </header>
-        <section id="body">
-        	<div class="container">
-        		<div>
-	        		<section id="featuredArticle">
-	        			{% assign featured_post = site.posts | first %}
-	        			<header>
-        					<h1>Featured Article</h1>
-	        				<h2><a href="{{featured_post.url}}">{{featured_post.title}}</a></h2>
-	        				<p class="lead">{{featured_post.description}}</p>
-	                        <p><span class="author">{{featured_post.author}}</span><br/><time datetime="{{featured_post.date | date:'%Y-%m-%d'}}">{{featured_post.date | date:'%B %d, %Y'}}</time></p>
-	        			</header>
-	        			<article>
-	        				{{featured_post.content | markdownify}}
-	        			</article>
-	        			<footer>
-	        				<p><a href="{{featured_post.url}}#disqus_thread" data-disqus-identifier="{{featured_post.disqus_identifier}}">Comments</a></p>
-	        			</footer>
-	        		</section>
-	        		<section id="recentArticles">
-	        			<header>
-	        				<h1>Recent Articles</h1>
-	        			</header>
-	        			<ul class="list-unstyled">
-	        				{% for post in site.posts limit:9 offset:1 %}
-	        				<li>
-	        					<h2><a href="{{post.url}}">{{post.title}}</a></h2>
-	        					<p>{{post.description}}</p>
-	        					<p><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.disqus_identifier}}">>Comments</a></p>
-	        				</li>
-	        				{% endfor %}
-	        			</ul>
-	        		</section>
-	        	</div>
-        	</div>
-	    </section>
-        {% include footer.html %}
-        {% include javascript.html %}
-        {% include disqus_comment_count_javascript.html %}
+		<div class="jumbotron">
+			<div class="background"></div>
+			<div class="container">
+				<h1>{{site.brand}}</h1>
+				<p>{{page.description}}</p>
+			</div>
+		</div>
+		{% include navigation_bar.html %}
+
+		<div class="container">
+			<section>
+				<header>
+					<h1>Latest Post</h1>
+				</header>
+
+				{% assign post = site.posts | first %}
+				<article>
+					<header>
+						<h1><a href="{{post.url}}">{{post.title}}</a></h1>
+						<p>{{post.date | date_to_long_string}}</p>
+					</header>
+					{{post.content}}
+					<footer>
+						<p><a href="{{post.url}}#disqus_thread">Comments</a></p>
+						<p><a href="/blogs">Read more blog posts</a></p>
+					</footer>
+				</article>
+			</section>
+		</div>
+
+		{% include footer.html %}
+    {% include javascript.html %}
+    {% include disqus_comment_count_javascript.html %}
 	</body>
 </html>

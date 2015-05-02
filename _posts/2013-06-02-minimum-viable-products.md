@@ -12,6 +12,11 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+I create a lot of prototypes. I do this to learn, but what are often really good ideas go undeveloped because I have not been developing the ideas correctly. In this post, I will explore a new idea that I want to pursue for developing my ideas in a more structured, formal way.
+categories:
+
+<!--more-->
+
 Introduction
 ------------
 If there is one shortcoming that I have never had, it's having an interest in learning new things. I love to learn and play with new technologies, whether they are really new technologies or just new to me. For example, over the past year, I have learned Ruby, which is a 20-year-old language, and Erlang, which may be even older. In 1998, I wrote parts of a product for PeopleSoft in COBOL. For most C++ programmers, that may not sound like a whole lot of fun, but in reality it was some of the best work that I have ever done.

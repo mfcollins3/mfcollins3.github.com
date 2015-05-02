@@ -14,6 +14,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+In this post, I want to discuss a basic debugging technique on Windows by outputting trace information through the debugger. I will explain to you how you can use OutputDebugString from native or .NET code and how to write tools that can you can install with your production software to capture this trace information at runtime.
+
+<!--more-->
+
 Introduction
 ------------
 Debugging is a skill that I am constantly working on. The problem is that like most of computer science, debugging is an extremely large topic. For many software developers, debugging may be thought of as using a tool such as Visual Studio to walk through your code. Unfortunately for them, only a small fraction of bugs happen in this controlled environment during testing. Users will undoubtedly use your software in ways that you had never imagined that they would, and all kinds of conditions are bound to pop up in foreign environments where debuggers are not allowed.
@@ -24,7 +28,7 @@ The Microsoft Windows API includes a function named [OutputDebugString](http://b
 
 When not running in a development environment, Microsoft makes a wonderful tool available that can be used in production or QA environments to capture the trace log. It is named [DebugView](http://technet.microsoft.com/en-us/sysinternals/bb896647) and it is a free download from the [Microsoft Sysinternals website](http://technet.microsoft.com/en-us/sysinternals). **DebugView** is a simple little tool, but it will capture and display the messages written to **OutputDebugString** that are running on the local computer. In addition, there's a great feature where you can have **DebugView** connect to an instance of **DebugView** that is running on a remote server, and you can pipe all of the debug output to your development computer.
 
-**DebugView** is a great tool, but even though it is free, the license provided by Microsoft prevents me from distributing **DebugView** with my own software. Microsoft prefers that customers download the latest version from Microsoft's servers. This can be problematic if my users are in a locked-down production environment and need to go through a change control process in order to install any new software on their servers just so that I can diagnose a problem for a customer support issue. 
+**DebugView** is a great tool, but even though it is free, the license provided by Microsoft prevents me from distributing **DebugView** with my own software. Microsoft prefers that customers download the latest version from Microsoft's servers. This can be problematic if my users are in a locked-down production environment and need to go through a change control process in order to install any new software on their servers just so that I can diagnose a problem for a customer support issue.
 
 Having an inquisitive mind, I wanted to understand how **DebugView** works so that I could look at writing my own utility that I can install with my software products and allow my customers to capture the trace output without having to install **DebugView**. In the rest of this post, I am going to explain to you how **OutputDebugString** works internally, and how to write your own program that can capture the debug trace information for your own use.
 

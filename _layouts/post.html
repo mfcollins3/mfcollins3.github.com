@@ -1,66 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>{{page.title}} - {{site.brand}}</title>
-        <link rel="stylesheet" href="/css/{{site.theme}}.css"/>
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="{{page.description}}"/>
-        <meta name="author" content="{{page.author}}"/>
-        <meta name="og:title" content="{{page.title}}"/>
-        <meta name="og:type" content="article"/>
-        <meta name="og:url" content="http://www.michaelfcollins3.me{{page.url}}"/>
-        <meta name="og:description" content="{{page.description}}"/>
-        <meta name="og:published_time" content="{{page.date | date:'%Y-%m-%d'}}"/>
-        {% if page.modified_time %}
-        <meta name="og:modified_time" content="{{page.modified_time | date:'%Y-%m-%d'}}"/>
-        {% endif %}
-        <meta name="og:author:first_name" content="{{page.author_first_name}}"/>
-        <meta name="og:author:last_name" content="{{page.author_last_name}}"/>
-        <meta name="og:author:gender" content="{{page.author_gender}}"/>
-        <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:url" content="http://www.michaelfcollins3.me{{page.url}}"/>
-        <meta name="twitter:title" content="{{page.title}}"/>
-        <meta name="twitter:description" content="{{page.description}}"/>
-        <meta name="twitter:creator" content="@{{page.twitter_creator}}"/>
-        {% include google_analytics.html %}
-    </head>
-    <body>
-        {% include navigation_bar.html %}
-        <div class="container">
-            <div class="row">
-                {% include category_list.html %}
-                <section id="post">
-                    {% include post_pager.html %}
-                    <article class="post">
-                        <h1>{{page.title}}</h1>
-                        <p class="lead">{{page.description}}</p>
-                        <p><span class="author">{{page.author}}</span><br/><time datetime="{{page.date | date:'%Y-%m-%d'}}">{{page.date | date:'%B %d, %Y'}}</time></p>
-                        {{content}}
-                    </article>
-                    {% include post_pager.html %}
-                    {% include disqus_thread.html %}
-                </div>
-            </div>
-        </div>
-        {% include footer.html %}
-        {% include javascript.html %}
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $.jstree._themes = '/javascript/jstree/themes/';
-                $('#categoryTree').jstree({
-                    core: {},
-                    plugins: ['json_data', 'themes'],
-                    json_data: {
-                        ajax: {
-                            url: '/data/categories.json'
-                        }
-                    },
-                    themes: {
-                        theme: 'default'
-                    }
-                });
-            });
-        </script>
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{site.brand}}: {{page.title}}</title>
+  <link rel="stylesheet" href="/css/{{page.theme}}.css" media="screen">
+  <meta name="description" content="{{page.description}}"/>
+  <meta name="author" content="{{page.author}}"/>
+  <meta name="og:title" content="{{page.title}}"/>
+  <meta name="og:type" content="article"/>
+  <meta name="og:url" content="http://www.michaelfcollins3.me{{page.url}}"/>
+  <meta name="og:description" content="{{page.description}}"/>
+  <meta name="og:published_time" content="{{page.date | date:'%Y-%m-%d'}}"/>
+  {% if page.modified_time %}
+  <meta name="og:modified_time" content="{{page.modified_time | date:'%Y-%m-%d'}}"/>
+  {% endif %}
+  <meta name="og:author:first_name" content="{{page.author_first_name}}"/>
+  <meta name="og:author:last_name" content="{{page.author_last_name}}"/>
+  <meta name="og:author:gender" content="{{page.author_gender}}"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:url" content="http://www.michaelfcollins3.me{{page.url}}"/>
+  <meta name="twitter:title" content="{{page.title}}"/>
+  <meta name="twitter:description" content="{{page.description}}"/>
+  <meta name="twitter:creator" content="@{{page.twitter_creator}}"/>
+  {% include google_analytics.html %}
+</head>
+<body>
+  {% include navigation_bar.html %}
+  <div class="container">
+
+    {% if page.next %}
+    {% assign previous_disabled = "" %}
+    {% else %}
+    {% assign previous_disabled = "disabled" %}
+    {% endif %}
+    {% if page.previous %}
+    {% assign next_disabled = "" %}
+    {% else %}
+    {% assign next_disabled = "disabled" %}
+    {% endif %}
+
+    <nav>
+      <ul class="pager">
+        <li class="previous {{previous_disabled}}">
+          <a href="{{page.next.url}}">
+            <span aria-hidden="true">&larr;</span> Next Post</span>
+          </a>
+        </li>
+        <li class="next {{next_disabled}}">
+          <a href="{{page.previous.url}}">
+            <span aria-hidden="true">&rarr;</span> Previous Post</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <header>
+          <h1>{{page.title}}</h1>
+          <p>{{page.date | date_to_long_string}}</p>
+        </header>
+        {{content}}
+        <footer>
+          {% include disqus_thread.html %}
+        </footer>
+      </article>
+    </section>
+
+  </div>
+
+  {% include footer.html %}
+  {% include javascript.html %}
+</body>
 </html>

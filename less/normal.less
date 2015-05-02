@@ -1,0 +1,37 @@
+@import "bootstrap.less";
+@import "includes/pygments.less";
+
+.jumbotron {
+  position: relative;
+  height: 800px;
+  padding-top: 550px;
+  margin-bottom: 0;
+}
+
+.jumbotron > .background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-image: url('/images/cover.jpg');
+  background-size: cover;
+  height: 800px;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.jumbotron > .container {
+  z-index: 2;
+  background: lightgray;
+  color: black;
+}
+
+.navbar.affix {
+  .navbar-fixed-top;
+}
+
+body > footer {
+  border-top: 1px lightgray solid;
+  margin-top: 20px;
+  padding-top: 20px;
+}

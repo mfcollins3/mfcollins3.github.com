@@ -1,51 +1,21 @@
-{% assign prefix = page.url | replace_first:'/','' | split:'/' | first %}
-{% case prefix %}
-{% when 'blog' %}
-{% assign blogClass = 'active' %}
-{% when 'projects.html' %}
-{% assign projectsClass = 'active' %}
-{% when 'about-me.html' %}
-{% assign aboutMeClass = 'active' %}
-{% when 'events.html' %}
-{% assign eventsClass = 'active' %}
-{% when 'presentations' %}
-{% assign presentationsClass = 'active' %}
-{% endcase %}
-<nav id="navigationBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default" data-spy="affix" data-offset-top="800">
+  <div class="container-fluid">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">{{site.brand}}</a>
+      <button type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">{{site.brand}}</a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-            <li class="{{blogClass}}"><a href="/blog/index.html">Blog</a></li>
-            <li class="{{eventsClass}}"><a href="/events.html">Events</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="https://github.com/mfcollins3/cimprovider">CIM Provider Sample</a></li>
-                </ul>
-            </li>
-            <li class="{{aboutMeClass}}"><a href="/about-me.html">About Me</a></li>
-        </ul>
-        <ul id="socialMediaLinks" class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact Me <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="https://github.com/mfcollins3" title="GitHub"><span class="socialMediaIcon icon-github"></span><span>GitHub</span></a></li>
-                    <li><a href="https://www.facebook.com/mfcollins3" title="Facebook"><span class="socialMediaIcon icon-facebook"></span><span>Facebook</span></a></li>
-                    <li><a href="http://twitter.com/mfcollins3" title="Twitter"><span class="socialMediaIcon icon-twitter"></span><span>Twitter</span></a></li>
-                    <li><a href="http://www.linkedin.com/in/michaelfcollins3/" title="LinkedIn"><span class="socialMediaIcon icon-linkedin"></span><span>LinkedIn</span></a></li>
-                    <li><a href="https://plus.google.com/108671264811803826632/" title="Google+"><span class="socialMediaIcon icon-google-plus"></span><span>Google+</span></a></li>
-                    <li><a href="http://pinterest.com/mfcollins3/" title="Pinterest"><span class="socialMediaIcon icon-pinterest"></span><span>Pinterest</span></a></li>
-                    <li><a href="skype:mfcollins3" title="Skype"><span class="socialMediaIcon icon-phone"></span><span>Skype</span></a></li>
-                </ul>
-            </li>
-        </ul>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/blog">Blog</a></li>
+      </ul>
     </div>
+  </div>
 </nav>

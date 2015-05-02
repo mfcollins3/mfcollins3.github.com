@@ -22,6 +22,10 @@ tags:
 - node
 - javascript
 ---
+In this post, I will demonstrate writing a command-line program that will allow other programs to call WCF-based web services. This will demonstrate some of the important aspects of command-line programming that I touched on in the introduction post.
+
+<!--more-->
+
 In my [previous post](http://www.michaelfcollins3.me/blog/Desert%20Code%20Camp/2012/Command-Line%20Programming/2012/09/21/introduction-to-command-line-programming.html), I introduced command-line programming in general. In this post, I will actually create a command-line program to demonstrate some of the important aspects of command-line programming, and then I will create another program using Node.js that will consume my command-line program. The command-line program that I am going to create is a generic WCF client that can be used to invoke remote WCF services. I will then use this command-line program to send a request to a WCF service from a [Node.js](http://nodejs.org) application and process the reply.
 
 <div class="alert alert-info alert-block">
@@ -113,7 +117,7 @@ internal class Program
       if (null != serviceHost &&
       	  CommunicationState.Opened == serviceHost.State)
       {
-        serviceHost.Close();      	
+        serviceHost.Close();
       }
     }
   }

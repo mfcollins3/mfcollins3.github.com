@@ -12,6 +12,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+In this post, I will expand on my previous two posts and will extract a working named pipe server program from my feature tests. I will then update the feature tests to perform acceptance testing against the named pipe server.
+
+<!--more-->
+
 In my last two posts, I have been using SpecFlow to build an interprocess communication solution using Windows named pipes. My solution has been to manage work queues that can be used to ship units of work to background processes. In the first two posts on this subject, I built out the SpecFlow feature, the IPC protocol, the named pipe server, and the named pipe client. However, all of this code was embedded inside of the feature tests and the named pipe service did not exist as a separate executable component. In this post, I will extract the named pipe server into an executable program and will revise my feature tests to use the new server program.
 
 In my opinion, refactoring working code works best when there is a working suite of unit or feature tests available. The reason why this works best is that refactoring code with working tests adds the pressure to return the tests to working status as quickly as possible in order to validate that the refactoring was performed correctly.
@@ -357,7 +361,7 @@ public class StepDefinitions
                                 {
                                     var queueName = match.Groups["name"].Value;
                                     this.CreateWorkQueue(
-                                        queueName, 
+                                        queueName,
                                         serverPipe);
                                         goto end;
                                 }
@@ -411,7 +415,7 @@ public class StepDefinitions
                                     CultureInfo.CurrentCulture,
                                     "ERROR {0}",
                                     ex.Message);
-                                var messageBytes = 
+                                var messageBytes =
                                     Encoding.Unicode.GetBytes(message);
                                 serverPipe.Write(
                                     messageBytes,
@@ -607,8 +611,8 @@ internal class Program
         foreach (var kvp in workQueues)
         {
             replyBuilder.AppendFormat(
-                "{0}\t{1}", 
-                kvp.Value.Name, 
+                "{0}\t{1}",
+                kvp.Value.Name,
                 kvp.Value.State);
             replyBuilder.AppendLine();
         }

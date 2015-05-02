@@ -14,6 +14,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+The .NET 4.0 Framework introduced the new Task Parallel Framework which has made background and parallel processing extremely easy for .NET developers. With .NET 4.5, Microsoft released a new enhancement for the TPL library out of band. Called the TPL Dataflow framework, this new framework makes it extremely easy to create batch-processing pipelines in your applications. In this post, I will introduce you to the background concepts of the TPL Dataflow framework and set up further posts where I will show you how to use and build on the TPL Dataflow framework.
+
+<!--more-->
+
 Probably one of the most significant improvements over the past few years in my software development ecosystem has been the rise of package managers. I have always built software using third-party software libraries, and over the years most of these libraries have come from the open source community. I don't know the history of package management and who came up with it first, but it seems that the Ruby Gem tool is the origin of many of the current implementations. Along with Gem, Node.js has NPM, and fortunately, .NET has NuGet.
 
 What has been truly great with NuGet is that over the past two years, it has not only been used by community folks to redistribute their libraries, but it is also being used by Microsoft to push out out-of-band releases and improvements to the .NET Framework. The first releases that I really noticed were the Azure SDKs, but I have just started to notice other frameworks that also improve the base class library. One of those frameworks is the topic of today's post.
@@ -34,7 +38,7 @@ The Dataflow library is a natural extension of the TPL library that allows devel
 
 ![Example dataflow pipeline](/images/2013-07-18-dataflow-pipeline.png "Example dataflow pipeline")
 
-In this example, consider that a streaming data source is being used to obtain the input data for the pipeline. The data source may be a file of records that are being downloaded over the Internet, or a series of records being read from a database or disk file. The data source could also be messages being received from a message queue such as RabbitMQ or the Azure Service Bus. 
+In this example, consider that a streaming data source is being used to obtain the input data for the pipeline. The data source may be a file of records that are being downloaded over the Internet, or a series of records being read from a database or disk file. The data source could also be messages being received from a message queue such as RabbitMQ or the Azure Service Bus.
 
 As the messages are received, they first go through a block where they are transformed into a format that's easier for the pipline to use. The source data may be XML for example, so the transform block could be parsing the XML and turning the data into objects that are easier to query and manipulate.
 
@@ -60,7 +64,7 @@ To be successful in building Dataflow pipelines, this rule is critical:
 
 **Do one thing, and do it well**
 
-This is more a rule for Unix command line programs, but is also a principal of modern object-oriented development called the [Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle). The central idea is that your block should only perform one action and should only have one reason to change. 
+This is more a rule for Unix command line programs, but is also a principal of modern object-oriented development called the [Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle). The central idea is that your block should only perform one action and should only have one reason to change.
 
 Return to the code example above. Each block had no more than one responsibility. The input block provided the input records to the pipeline. The transformer blocks all performed a single transform: converting a string into an XML object, parsing the XML and generating an object containing the record's data, and creating a formatted message from the object. The output block simply took the data that was provided to it and wrote it to the standard output stream.
 

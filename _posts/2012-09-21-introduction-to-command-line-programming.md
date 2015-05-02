@@ -14,6 +14,10 @@ categories:
 category_names:
 - Command Line Programming
 ---
+We live in a GUI dominated world and we have since Windows 3.1 appeared in the early 1990s. For many of us, writing console mode programs went out of fashion long ago to be replaced by graphical shells and web applications. However, the value of programs without user interfaces, that run in console windows or terminals, and that accept a variety of command-line options has not diminished. In this post, I return to take a look at the world of command-line development to see if a former command-line developer can return from the world of the web and Windows.
+
+<!--more-->
+
 I will be presenting at the upcoming Desert Code Camp in November, 2012, at the Chandler-Gilbert Community College campus. I love presenting at Code Camp. Attending it is one of the highlights of my year. I love being around others like me that are enthusiastic about being technologists and computer scientists, and being with people that want to learn from people who want to teach. I love doing both and am very grateful when I get the opportunity to do so.
 
 One of my presentations this year is going to be a bit different from the past. I am not really going to cover new technology, but will instead take a step back to look at the state of command-line development and why command-line programs are too powerful of a tool to be dismissed. Most of this dates back to my career change late in 2011.

@@ -12,6 +12,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+In my last post, I introduced you to the TPL Dataflow library that was added out-of-band to .NET 4.5. In this post, I will show my first example of a custom dataflow block when I create a block to support building Neuron ESB-based dataflow pipelines that send or receive messages to a Neuron ESB topic.
+
+<!--more-->
+
 In my [last post]({% post_url 2013-07-18-introduction-to-the-tpl-dataflow-framework %}), I introduced you to the TPL Dataflow Library. To recap, the Dataflow Library was produced by the .NET Base Class Library team and was released out-of-band via [NuGet](http://www.nuget.org). Using the Dataflow Library, it's easy to create individual blocks that perform a behavior and compose them into a parallel processing pipeline. While most of the internals of a pipeline can be handled with standard blocks, lamdba expressions, and anonymous methods, getting data into the pipeline or sending data produced to the pipeline to somewhere else is left up to the developer to figure out. In this post, I will show how easy it is to create a block by tying my Dataflow Library research with my day job and creating a block that can be used to send messages to or receive messages from a Neuron ESB service.
 
 Dataflow Block Design Basics
@@ -22,7 +26,7 @@ Building a dataflow block is extremely easy. Every dataflow block falls within o
 2. Target block
 3. Propagator block
 
-A **source block** is a data source that provides messages. Source blocks are typically used as the first block in a dataflow pipeline because the source block will feed the source data to the pipeline. On the other side of a pipeline, a **target block** is typically a destination block that is used at the end of a dataflow pipeline. Messages sent to a target block are delivered to a destination, and then processing of that message and pipeline terminates at that point. Between source blocks and target blocks are **propagator blocks**. 
+A **source block** is a data source that provides messages. Source blocks are typically used as the first block in a dataflow pipeline because the source block will feed the source data to the pipeline. On the other side of a pipeline, a **target block** is typically a destination block that is used at the end of a dataflow pipeline. Messages sent to a target block are delivered to a destination, and then processing of that message and pipeline terminates at that point. Between source blocks and target blocks are **propagator blocks**.
 
 Propagator blocks act as both source blocks and target blocks. Propagator blocks typically fall into two further subcategories:
 

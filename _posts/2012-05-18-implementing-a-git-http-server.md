@@ -18,6 +18,10 @@ tags:
 ---
 Introduction
 ------------
+In this post, I will look at the Git smart HTTP protocol and will demonstrate how to create a web application that can host and serve Git repositories to users. Demonstrations will be shown using Node.js.
+
+<!--more-->
+
 GitHub is a marvelous website and I use it almost every day. It's great that we
 have GitHub to complement Git, which has quickly become one of my favorite
 development tools, and hands down my favorite version control system for

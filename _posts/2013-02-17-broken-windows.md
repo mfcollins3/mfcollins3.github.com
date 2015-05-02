@@ -17,6 +17,10 @@ tags:
 - windows
 - microsoft
 ---
+Microsoft's Windows 8 is revolutionary, but when talking about Microsoft Windows is revolutionary really a good thing? In this post, I will look at my feelings of Windows 8 and the Windows platform in general, and will talk about how Windows 8 has affected me as a long-time Windows developer.
+
+<!--more-->
+
 I have been a Windows programmer since version 1.0. I learned to program it as a child using the first edition of _Programming Windows_ by [Charles Petzold](http://www.charlespetzold.com/books.html). From pure C-based SDK programming, I evolved with the platform to use C++ frameworks including Borland's Object Windows Library (OWL) and the Microsoft Foundation Class (MFC) Library. I took a break to do Java development in the late 1990s, but I came back to Windows with .NET in 2000.
 
 I remember the first big *innovation* in Windows when I went to the Microsoft Professional Developer Conference in 2005. This was when Microsoft announced Windows Vista and showed off .NET 3.0 with WPF. I was instantly in love with the change in the desktop between Windows XP and Windows Vista, and I was really excited about the possibilities for building rich graphical applications with WPF. Then came Windows 7 with its improvements in the shell and the taskbar features. They were all very cool and I was excited to be building desktop applications.

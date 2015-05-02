@@ -19,6 +19,10 @@ author_gender: male
 twitter_creator: mfcollins3
 modified_time: 2013-04-16
 ---
+Neuron ESB 3.0 is out, and if you're a Neuron user or using .NET-based ESBs, then you should be interested, because there's a lot of stuff there. Now rocking on the .NET 4 platform, there are some pretty cool things that you can do with Neuron that you could not do with the previous releases. In this post, I will show you a new way to create custom subscribers using Neuron's Party class and using Reactive Extensions to asynchronously receive and filter incoming messages sent to a subscriber.
+
+<!--more-->
+
 [Neuron ESB 3.0](http://products.neudesic.com/latest) recently hit the proverbial store shelves last week. This was a big release for me as it was my first major release since I joined the Neuron team. Moving Neuron to .NET 4 and a major release has been a big accomplishment. While I hoped to have Neuron out late last year, the extra time that we took releasing it now gave us a chance to fix a lot of quality and stability issues in the code, and I honestly believe that Neuron is in a great position in terms of quality and potential for future investment.
 
 Moving to .NET 4 was a big move for Neuron. What this means is that we're investing for Neuron to be a viable solution moving forward. We want to give you Neuron users the latest and greatest tools and techniques, and as product developers, we want to build you the best product possible. Over the next year we'll be adding more functionality based on .NET 4 technologies and doing more things like parallel processing and taking better advantage of multiple-core environments in order to maximize the performance of the product.
@@ -63,7 +67,7 @@ private void Run()
 			"Listening for messages. Press Enter to exit.");
 		Console.In.ReadLine();
 	}
-	finally 
+	finally
 	{
 		this.party.OnReceive -= ProcessMessage;
 	}
@@ -105,37 +109,37 @@ private static void ProcessMessage(object o, MessageEventArgs messageEventArgs)
 
         case "Orders.California":
             Trace.TraceInformation(
-            	"Received order from California: {0}", 
+            	"Received order from California: {0}",
             	message.ToString());
             break;
 
         case "Orders.Arizona":
             Trace.TraceInformation(
-            	"Received order from Arizona: {0}", 
+            	"Received order from Arizona: {0}",
             	message.ToString());
             break;
 
         case "Orders.Hawaii":
             Trace.TraceInformation(
-            	"Received order from Hawaii: {0}", 
+            	"Received order from Hawaii: {0}",
             	message.ToString());
             break;
 
         case "Orders.Oregon":
             Trace.TraceInformation(
-            	"Received order from Oregon: {0}", 
+            	"Received order from Oregon: {0}",
             	message.ToString());
             break;
 
         case "Orders.Nevada":
             Trace.TraceInformation(
-            	"Received order from Nevada: {0}", 
+            	"Received order from Nevada: {0}",
             	message.ToString());
             break;
 
         default:
             Trace.TraceError(
-            	"Don't know how to process message for topic \"{0}\".", 
+            	"Don't know how to process message for topic \"{0}\".",
             	message.Header.Topic);
             break;
     }
@@ -234,7 +238,7 @@ private void CreateOrderSubscriptions(
 	IObservable<Tuple<strng, ESBMessage>> receiveSource)
 {
 	var orderSource = receiveSource
-		.Where(t => t.Item1 == "Orders" || 
+		.Where(t => t.Item1 == "Orders" ||
 			t.Item1.StartsWith("Orders."));
 	this.californiaOrderSubscription = orderSource
 		.Where(t => t.Item1.EndsWith(".California"))

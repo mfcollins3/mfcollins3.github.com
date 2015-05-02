@@ -12,6 +12,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+In this post, I will complete my named pipes example from the previous post in preparation for my next post where I will build out a complete IPC-based system for managing work queues.
+
+<!--more-->
+
 In my last post, I started to develop a solution that used named pipes for interprocess communication in order to manage work queues in a work queue server. Using named pipes, a client administation program could send text-based messages to the server program to create a work queue. In this post, I will complete that demonstration and expand on it before I take my named pipe solution and build out the next phase of the project.
 
 In the previous post, I only implemented a single scenario for creating a work queue. In this post, I will implement these additional scenarios:
@@ -314,7 +318,7 @@ private void RunNamedPipeServer()
                         var match = CreateCommandRegex.Match(command);
                         if (match.Success)
                         {
-                            var queueName = 
+                            var queueName =
                                 match.Groups["name"].Value;
                             this.CreateWorkQueue(queueName, serverPipe);
                         }

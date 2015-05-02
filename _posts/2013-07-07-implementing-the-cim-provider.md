@@ -12,6 +12,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+In the previous three posts in this series, I have been creating a work queue service that can be controlled through messages sent to the service using named pipes. In this article, I will complete the series by implementing a working CIM provider and showing how PowerShell can be used to administer work queues.
+
+<!--more-->
+
 Where I Left Off
 ----------------
 If you recall from the previous three articles in this series, I have demonstrated the following:
@@ -448,7 +452,7 @@ namespace {
     const wchar_t *buffer = message.c_str();
     size_t number_of_bytes;
     StringCbLength(buffer, 256, &number_of_bytes);
-    BOOL success = 
+    BOOL success =
       WriteFile(pipe_handle, buffer, number_of_bytes, NULL, NULL);
     if (!success) {
       throw std::exception("WriteFile failed");
@@ -543,7 +547,7 @@ private void CreateWorkQueue(string workQueueName)
 {
     var operationOptions = new CimOperationOptions
         {
-            WriteMessage = (channel, message) => 
+            WriteMessage = (channel, message) =>
                 Console.Error.WriteLine(message)
         };
         var workQueueClass = this.session.GetClass(
@@ -821,11 +825,11 @@ Get-CimInstance -Namespace root/standardcimv2/sample
 In the output, you should now see a work queue object named **MyWorkQueue**. The **EnabledState** property should have a value of **3** indicating that the work queue is stopped. Let's start it:
 
 {% highlight powershell %}
-$workQueue = Get-CimInstance 
+$workQueue = Get-CimInstance
     -Query "SELECT * FROM Sample_WorkQueue WHERE Name = 'MyWorkQueue'"
     -Namespace root/standardcimv2/sample
 Invoke-CimMethod $workQueue -MethodName StartService
-$workQueue = Get-CimInstance 
+$workQueue = Get-CimInstance
     -Query "SELECT * FROM Sample_WorkQueue WHERE Name = 'MyWorkQueue'"
     -Namespace root/standardcimv2/sample
 $workQueue

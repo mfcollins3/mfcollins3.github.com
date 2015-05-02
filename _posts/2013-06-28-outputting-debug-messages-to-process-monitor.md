@@ -14,6 +14,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+I have been using Process Monitor a lot recently to help solve customer support issues. Process Monitor is a great tool for looking at what files, registry keys, and network resources that my products are using. Earlier today, I discovered a new technique to make my Process Monitor logs better.
+
+<!--more-->
+
 Since taking the lead on [Neuron ESB](http://www.neuronesb.com), I have had to spend a lot of time refining my customer support skills. Customer support is hard for a product like Neuron, especially when I can't physically see the environment that Neuron is running in or poke around on the server to understand where Neuron might be having a problem. One of the tools that I have found to be extremely useful for my customer support activities is a free utility from Microsoft that is part of their wonderful [Sysinternals](http://www.sysinternals.com) suite: [Process Monitor](http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx).
 
 Process Monitor is a fantastic tool. Users can start Process Monitor on their computer or server and Process Monitor immediately begins capturing events that occur on the computer. Process monitor captures process and thread activity, file activity, registry activity, network activity, and other profiling events on the computer. At the end of a capture session, users can save the Process Monitor log to a file, and that file can be viewed or replayed by other people. For example, when looking at some difficult-to-solve problems, I can have my customers email me their Process Monitor log so that I can replay their session and look at what Neuron was doing at the time that a problem occurred.

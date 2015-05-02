@@ -12,6 +12,10 @@ author_last_name: Collins
 author_gender: male
 twitter_creator: mfcollins3
 ---
+Writing collaborating programs is common in the modern age. Many programs make use of web services to distribute work between a client application and a server. But not all applications are distributed over a network. It is also common for two programs on the same computer to collaborate by exchanging messages. In this post, we will look at building a request-reply exchange pattern between two Windows programs using named pipes.
+
+<!--more-->
+
 Introduction
 ------------
 In my day job maintaining and enhancing [Neuron ESB](http://www.neuronesb.com), I deal a lot with web services and distributed applications. Being an enterprise service bus, Neuron has integrations with web service technologies such as WCF and HTTP, and it also has an expanding series of adapters that connect to other applications or technologies. Typically when you think of application distribution, you think of deploying programs on different computers over the Internet or an intranet and exchanging messages between them.
@@ -43,18 +47,18 @@ Following up on my [last post]({% post_url 2013-06-02-minimum-viable-products %}
 
 {% highlight gherkin %}
 Feature: Manage work queues
-  In order to maintain responsive clients, long-running activities are 
-  dispatched to background worker components. The client applications 
-  will publish messages to work queues that worker components will 
-  retrieve. The work queue service exposes a management interface that 
-  management tools can use to list current work queues, and create, 
+  In order to maintain responsive clients, long-running activities are
+  dispatched to background worker components. The client applications
+  will publish messages to work queues that worker components will
+  retrieve. The work queue service exposes a management interface that
+  management tools can use to list current work queues, and create,
   delete, start, or stop work queues managed by the service.
 
   Scenario: Create a work queue
-    In order to pass work to background workers, a queue needs to exist. 
-    A management program can send a message to the service to create a 
-    work queue. The queue will initially be created in the stopped state 
-    so that the management program can perform additional configuration 
+    In order to pass work to background workers, a queue needs to exist.
+    A management program can send a message to the service to create a
+    work queue. The queue will initially be created in the stopped state
+    so that the management program can perform additional configuration
     of the work queue before starting it.
 
     Given the work queue does not exist
@@ -534,7 +538,7 @@ Now I can implement the final step:
 public void ThenTheWorkQueueWillBeStopped()
 {
     Assert.Equal(
-        WorkQueueState.Stopped, 
+        WorkQueueState.Stopped,
         this.workQueues["MyWorkQueue"].State);
 }
 {% endhighlight %}

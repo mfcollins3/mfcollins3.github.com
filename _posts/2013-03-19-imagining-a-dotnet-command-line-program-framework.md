@@ -14,6 +14,10 @@ author_gender: male
 twitter_creator: mfcollins3
 modified_time: 2013-05-19
 ---
+In an earlier post, I introduced you to the properties of developing command line programs. In this post, I will revive that topic and will start looking at how to create a framework for building command line programs using the .NET Framework on Microsoft Windows computers.
+
+<!--more-->
+
 At the [November 2012 Desert Code Camp](http://nov2012.desertcodecamp.com/session/473), I presented a session on command line development. The focus of the presentation was why, in this world of web-based applications and graphical windowing environments, the command line still matters. And yes, it does still matter. Command line programs are quick to develop, provide demonstrable results faster when you do not necessarily need to have a GUI or web interface developed, are great for POCs and testing new ideas, and are also a great idea for providing a scriptable or expert interface for administering and managing your applications. 
 
 In this post, I am going to expand on my presentation and my previous blog post and start writing a framework for creating .NET-based command line programs that run on the Microsoft Windows platform.
@@ -368,7 +372,7 @@ public abstract class CommandCategory : Command
 
     public override int Execute(string[] args)
     {
-        var command = 
+        var command =
             this.Commands.Single(
                 x => this.CommandName == x.Metadata.Name);
         return command.Execute(args);
