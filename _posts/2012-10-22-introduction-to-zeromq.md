@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Introduction to ZeroMQ
-description: I will be presenting to the Phoenix Connected Systems User Group on November 7th, 2012. The topic will be an introduction to ZeroMQ. In this post, I will describe a little about ZeroMQ and tell you what you will be seeing in my presentation.
 disqus_identifier: 2012-10-22-introduction-to-zeromq
 categories:
 - ZeroMQ
@@ -10,11 +8,6 @@ category_names:
 tags:
 - zeromq
 - zmq
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 modified_time: 2013-04-16
 ---
 I will be presenting to the Phoenix Connected Systems User Group on November 7th, 2012. The topic will be an introduction to ZeroMQ. In this post, I will describe a little about ZeroMQ and tell you what you will be seeing in my presentation.

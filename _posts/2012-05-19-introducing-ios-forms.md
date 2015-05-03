@@ -1,13 +1,6 @@
 ---
-layout: post
 title: "New Project: iOS Forms"
-description: In this post, I will introduce you to the iOS Forms project, a new open source project to help myself and others create form-based data entry applications for the iPhone or iPad.
 disqus_identifier: 2012-05-19-introducing-ios-forms.md
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
 - iOS

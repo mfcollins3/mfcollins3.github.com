@@ -1,13 +1,6 @@
 ---
-layout: post
 title: Introduction to Command-Line Programming
-description: We live in a GUI dominated world and we have since Windows 3.1 appeared in the early 1990s. For many of us, writing console mode programs went out of fashion long ago to be replaced by graphical shells and web applications. However, the value of programs without user interfaces, that run in console windows or terminals, and that accept a variety of command-line options has not diminished. In this post, I return to take a look at the world of command-line development to see if a former command-line developer can return from the world of the web and Windows.
 disqus_identifier: 2012-09-21-introduction-to-command-line-programming
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
 - Command_Line_Programming

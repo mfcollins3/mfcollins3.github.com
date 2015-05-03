@@ -1,18 +1,11 @@
 ---
-layout: post
 title: Understanding OutputDebugString
-description: In this post, I want to discuss a basic debugging technique on Windows by outputting trace information through the debugger. I will explain to you how you can use OutputDebugString from native or .NET code and how to write tools that can you can install with your production software to capture this trace information at runtime.
 categories:
 - windows_development
 - debugging
 category_names:
 - Windows Development
 - Debugging
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 In this post, I want to discuss a basic debugging technique on Windows by outputting trace information through the debugger. I will explain to you how you can use OutputDebugString from native or .NET code and how to write tools that can you can install with your production software to capture this trace information at runtime.
 

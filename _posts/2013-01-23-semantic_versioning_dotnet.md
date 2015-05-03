@@ -1,13 +1,6 @@
 ---
-layout: post
 title: Semantic Versioning in .NET
-description: In this post, I will introduce you to semantic versioning and explain why you should be using it as a standard for versioning your products. I will then walk you through how to add support for semantic versioning to your .NET projects.
 disqus_identifier: 2013-01-23-semantic-versioning-dotnet
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
 - windows_development

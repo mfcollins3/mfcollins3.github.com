@@ -1,13 +1,6 @@
 ---
-layout: post
 title: Poison Message and Dead Letter Handling for WCF and MSMQ
-description: Since I started working on Neudesic's Neuron product, I have found myself doing a lot more with WCF and gaining a better understanding of that technology plus related technologies such as MSMQ. In this post, I will discuss how to handle problem situations where WCF messages sent over MSMQ have errors or expire and are sent to the dead letter queue.
 disqus_identifier: 2012-09-20-wcf-msmq-bad-message-handling
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
 - windows_development

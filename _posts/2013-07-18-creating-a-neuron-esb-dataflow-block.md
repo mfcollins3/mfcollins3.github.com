@@ -1,16 +1,9 @@
 ---
-layout: post
 title: Creating a Neuron ESB Dataflow Block
-description: In my last post, I introduced you to the TPL Dataflow library that was added out-of-band to .NET 4.5. In this post, I will show my first example of a custom dataflow block when I create a block to support building Neuron ESB-based dataflow pipelines that send or receive messages to a Neuron ESB topic.
 categories:
 - neuron_esb
 category_names:
 - Neuron ESB
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 In my last post, I introduced you to the TPL Dataflow library that was added out-of-band to .NET 4.5. In this post, I will show my first example of a custom dataflow block when I create a block to support building Neuron ESB-based dataflow pipelines that send or receive messages to a Neuron ESB topic.
 

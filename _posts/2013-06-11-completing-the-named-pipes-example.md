@@ -1,16 +1,9 @@
 ---
-layout: post
 title: Completing the Named Pipes Example
-description: In this post, I will complete my named pipes example from the previous post in preparation for my next post where I will build out a complete IPC-based system for managing work queues.
 categories:
 - windows_development
 category_names:
 - Windows Development
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 In this post, I will complete my named pipes example from the previous post in preparation for my next post where I will build out a complete IPC-based system for managing work queues.
 

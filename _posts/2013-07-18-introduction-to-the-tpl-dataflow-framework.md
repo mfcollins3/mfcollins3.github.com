@@ -1,18 +1,11 @@
 ---
-layout: post
 title: Introduction to the TPL Dataflow Framework
-description: The .NET 4.0 Framework introduced the new Task Parallel Framework which has made background and parallel processing extremely easy for .NET developers. With .NET 4.5, Microsoft released a new enhancement for the TPL library out of band. Called the TPL Dataflow framework, this new framework makes it extremely easy to create batch-processing pipelines in your applications. In this post, I will introduce you to the background concepts of the TPL Dataflow framework and set up further posts where I will show you how to use and build on the TPL Dataflow framework.
 categories:
 - windows_development
 - dotnet_development
 category_names:
 - Windows Development
 - .NET Development
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 The .NET 4.0 Framework introduced the new Task Parallel Framework which has made background and parallel processing extremely easy for .NET developers. With .NET 4.5, Microsoft released a new enhancement for the TPL library out of band. Called the TPL Dataflow framework, this new framework makes it extremely easy to create batch-processing pipelines in your applications. In this post, I will introduce you to the background concepts of the TPL Dataflow framework and set up further posts where I will show you how to use and build on the TPL Dataflow framework.
 

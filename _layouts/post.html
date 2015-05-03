@@ -11,7 +11,7 @@
   <meta name="og:title" content="{{page.title}}"/>
   <meta name="og:type" content="article"/>
   <meta name="og:url" content="http://www.michaelfcollins3.me{{page.url}}"/>
-  <meta name="og:description" content="{{page.description}}"/>
+  <meta name="og:description" content="{{page.excerpt}}"/>
   <meta name="og:published_time" content="{{page.date | date:'%Y-%m-%d'}}"/>
   {% if page.modified_time %}
   <meta name="og:modified_time" content="{{page.modified_time | date:'%Y-%m-%d'}}"/>
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:url" content="http://www.michaelfcollins3.me{{page.url}}"/>
   <meta name="twitter:title" content="{{page.title}}"/>
-  <meta name="twitter:description" content="{{page.description}}"/>
+  <meta name="twitter:description" content="{{page.excerpt}}"/>
   <meta name="twitter:creator" content="@{{page.twitter_creator}}"/>
   {% include google_analytics.html %}
 </head>

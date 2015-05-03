@@ -1,16 +1,9 @@
 ---
-layout: post
 title: Interprocess Communication on Windows using Named Pipes
-description: Writing collaborating programs is common in the modern age. Many programs make use of web services to distribute work between a client application and a server. But not all applications are distributed over a network. It is also common for two programs on the same computer to collaborate by exchanging messages. In this post, we will look at building a request-reply exchange pattern between two Windows programs using named pipes.
 categories:
 - windows_development
 category_names:
 - Windows Development
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 Writing collaborating programs is common in the modern age. Many programs make use of web services to distribute work between a client application and a server. But not all applications are distributed over a network. It is also common for two programs on the same computer to collaborate by exchanging messages. In this post, we will look at building a request-reply exchange pattern between two Windows programs using named pipes.
 

@@ -1,16 +1,9 @@
 ---
-layout: post
 title: Minimum Viable Products
-description: I create a lot of prototypes. I do this to learn, but what are often really good ideas go undeveloped because I have not been developing the ideas correctly. In this post, I will explore a new idea that I want to pursue for developing my ideas in a more structured, formal way.
 categories:
 - software_development
 category_names:
 - Software Development
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 I create a lot of prototypes. I do this to learn, but what are often really good ideas go undeveloped because I have not been developing the ideas correctly. In this post, I will explore a new idea that I want to pursue for developing my ideas in a more structured, formal way.
 categories:

@@ -1,16 +1,9 @@
 ---
-layout: post
 title: Extracting the Named Pipe Server
-description: In this post, I will expand on my previous two posts and will extract a working named pipe server program from my feature tests. I will then update the feature tests to perform acceptance testing against the named pipe server.
 categories:
 - windows_development
 category_names:
 - Windows Development
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 In this post, I will expand on my previous two posts and will extract a working named pipe server program from my feature tests. I will then update the feature tests to perform acceptance testing against the named pipe server.
 

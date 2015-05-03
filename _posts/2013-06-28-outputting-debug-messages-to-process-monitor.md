@@ -1,18 +1,11 @@
 ---
-layout: post
 title: Outputting Debug Messages to Process Monitor
-description: I have been using Process Monitor a lot recently to help solve customer support issues. Process Monitor is a great tool for looking at what files, registry keys, and network resources that my products are using. Earlier today, I discovered a new technique to make my Process Monitor logs better.
 categories:
 - windows_development
 - debugging
 category_names:
 - Windows Development
 - Debugging
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 I have been using Process Monitor a lot recently to help solve customer support issues. Process Monitor is a great tool for looking at what files, registry keys, and network resources that my products are using. Earlier today, I discovered a new technique to make my Process Monitor logs better.
 

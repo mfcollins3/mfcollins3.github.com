@@ -1,13 +1,6 @@
 ---
-layout: post
 title: Calling a WCF Service from Node.js
-description: In this post, I will demonstrate writing a command-line program that will allow other programs to call WCF-based web services. This will demonstrate some of the important aspects of command-line programming that I touched on in the introduction post.
 disqus_identifier: 2012-09-22-calling-wcf-service-from-node
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 modified_time: 2013-04-16
 categories:
 - windows_development

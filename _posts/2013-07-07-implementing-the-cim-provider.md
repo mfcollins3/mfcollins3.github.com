@@ -1,16 +1,9 @@
 ---
-layout: post
 title: Implementing the CIM Provider
-description: In the previous three posts in this series, I have been creating a work queue service that can be controlled through messages sent to the service using named pipes. In this article, I will complete the series by implementing a working CIM provider and showing how PowerShell can be used to administer work queues.
 categories:
 - windows_development
 category_names:
 - Windows Development
-author: Michael F. Collins, III
-author_first_name: Michael
-author_last_name: Collins
-author_gender: male
-twitter_creator: mfcollins3
 ---
 In the previous three posts in this series, I have been creating a work queue service that can be controlled through messages sent to the service using named pipes. In this article, I will complete the series by implementing a working CIM provider and showing how PowerShell can be used to administer work queues.
 
