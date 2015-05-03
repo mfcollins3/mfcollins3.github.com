@@ -26,8 +26,13 @@
   <meta name="twitter:creator" content="@{{page.twitter_creator}}"/>
   {% include google_analytics.html %}
 </head>
-<body>
+<body class="post">
   {% include navigation_bar.html %}
+  {% if page.cover_photo %}
+  <div class="jumbotron" style="background-image:url('/images/{{page.cover_photo}}')">
+  </div>
+  {% endif %}
+
   <div class="container">
 
     {% if page.next %}

@@ -6891,3 +6891,46 @@ article.post > p:first-of-type {
     font-size: 21px;
   }
 }
+body.post .jumbotron {
+  background-size: cover;
+  height: 500;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  body.post .jumbotron {
+    display: none !important;
+  }
+}
+body.post .navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  top: 0;
+  border-width: 0 0 1px;
+  margin-bottom: 0;
+}
+body.post .navbar .navbar-collapse {
+  max-height: 340px;
+}
+@media (max-device-width: 480px) and (orientation: landscape) {
+  body.post .navbar .navbar-collapse {
+    max-height: 200px;
+  }
+}
+@media (min-width: 768px) {
+  body.post .navbar {
+    border-radius: 0;
+  }
+}
+.cover-photo-credit {
+  display: none;
+}
+body.post .cover-photo-credit {
+  display: block;
+}
+@media (max-width: 767px) {
+  body.post .cover-photo-credit {
+    display: none !important;
+  }
+}

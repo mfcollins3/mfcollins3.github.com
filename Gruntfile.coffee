@@ -13,6 +13,7 @@ module.exports = (grunt) ->
         options:
           serve: true
           watch: true
+          drafts: true
     concat:
       options:
         sourceMap: true

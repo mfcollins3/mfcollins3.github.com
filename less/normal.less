@@ -49,3 +49,30 @@ body > footer {
 article.post > p:first-of-type {
   .lead;
 }
+
+body.post .jumbotron {
+  background-size: cover;
+  height: 500;
+  width: 100%;
+
+  @media (max-width: @screen-xs-max) {
+    .responsive-invisibility();
+  }
+}
+
+body.post .navbar {
+  .navbar-fixed-top;
+  margin-bottom: 0;
+}
+
+.cover-photo-credit {
+  display: none;
+}
+
+body.post .cover-photo-credit {
+  display: block;
+
+  @media (max-width: @screen-xs-max) {
+    .responsive-invisibility();
+  }
+}
