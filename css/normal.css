@@ -6825,6 +6825,9 @@ button.close {
     padding-top: 550px;
   }
 }
+.jumbotron > .background {
+  background-position: center;
+}
 @media (max-width: 767px) {
   .jumbotron > .background {
     display: none !important;
@@ -6842,11 +6845,6 @@ button.close {
     width: 100%;
     opacity: 0.5;
     filter: alpha(opacity=50);
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .jumbotron > .background {
-    background-position: center;
   }
 }
 .jumbotron > .container {
@@ -6893,7 +6891,8 @@ article.post > p:first-of-type {
 }
 body.post .jumbotron {
   background-size: cover;
-  height: 500;
+  background-position: center;
+  height: 500px;
   width: 100%;
 }
 @media (max-width: 767px) {
