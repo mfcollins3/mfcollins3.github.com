@@ -25,7 +25,7 @@ attention: [Try Something New for 30 Days by Matt Cutts](https://www.ted.com/tal
 It's not a long presentation, but if you have about 5 minutes, check it
 out below:
 
-<iframe src="https://embed-ssl.ted.com/talks/matt_cutts_try_something_new_for_30_days.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://embed-ssl.ted.com/talks/matt_cutts_try_something_new_for_30_days.html" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 This is a very inspiring presentation, with easy ideas. Instead of
 making big, life changing decisions in life, Matt recommends making

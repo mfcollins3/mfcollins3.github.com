@@ -6933,3 +6933,6 @@ body.post .cover-photo-credit {
     display: none !important;
   }
 }
+#recentPosts article header h1 {
+  font-size: 18px;
+}

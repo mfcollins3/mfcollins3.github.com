@@ -31,10 +31,14 @@ description: Here you will find my thoughts, ideas, and sample code from the hob
 <section>
   {% for post in paginator.posts %}
   <article>
-    <h1><a href="{{post.url}}">{{post.title}}</a></h1>
-    <p>{{post.date | date_to_long_string}}</p>
+    <header>
+      <h1><a href="{{post.url}}">{{post.title}}</a></h1>
+      <p>{{post.date | date_to_long_string}}</p>
+    </header>
     {{post.excerpt}}
-    <p><a href="{{post.url}}#disqus_thread">Comments</a></p>
+    <footer>
+      <p><a href="{{post.url}}#disqus_thread">Comments</a></p>
+    </footer>
   </article>
   {% endfor %}
 </section>
