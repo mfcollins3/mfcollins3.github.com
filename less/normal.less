@@ -3,21 +3,28 @@
 
 .jumbotron {
   position: relative;
-  height: 800px;
-  padding-top: 550px;
   margin-bottom: 0;
+  @media (min-width: @screen-sm-min) {
+    height: 800px;
+    padding-top: 550px;
+  }
 }
 
 .jumbotron > .background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  background-image: url('/images/cover.jpg');
-  background-size: cover;
-  height: 800px;
-  width: 100%;
-  opacity: 0.5;
+  @media (max-width: @screen-xs-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-sm-min) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-image: url('/images/cover.jpg');
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    .opacity(0.5);
+  }
 }
 
 .jumbotron > .container {

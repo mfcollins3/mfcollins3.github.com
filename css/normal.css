@@ -6817,20 +6817,32 @@ button.close {
 /* Literal.Number.Integer.Long */
 .jumbotron {
   position: relative;
-  height: 800px;
-  padding-top: 550px;
   margin-bottom: 0;
 }
-.jumbotron > .background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  background-image: url('/images/cover.jpg');
-  background-size: cover;
-  height: 800px;
-  width: 100%;
-  opacity: 0.5;
+@media (min-width: 768px) {
+  .jumbotron {
+    height: 800px;
+    padding-top: 550px;
+  }
+}
+@media (max-width: 767px) {
+  .jumbotron > .background {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .jumbotron > .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-image: url('/images/cover.jpg');
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+  }
 }
 .jumbotron > .container {
   z-index: 2;
