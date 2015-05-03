@@ -6844,6 +6844,11 @@ button.close {
     filter: alpha(opacity=50);
   }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .jumbotron > .background {
+    background-position: center;
+  }
+}
 .jumbotron > .container {
   z-index: 2;
   background: lightgray;
