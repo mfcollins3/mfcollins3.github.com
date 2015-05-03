@@ -6875,3 +6875,14 @@ body > footer {
   margin-top: 20px;
   padding-top: 20px;
 }
+article.post > p:first-of-type {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  article.post > p:first-of-type {
+    font-size: 21px;
+  }
+}
