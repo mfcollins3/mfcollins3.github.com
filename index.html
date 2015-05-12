@@ -53,7 +53,7 @@ description: The Imaginary Road is the personal blog of Michael Collins. My blog
 					<header class="page-header">
 						<h1>Recent Posts</h1>
 					</header>
-					
+
 					{% for post in site.posts offset:1 limit:5 %}
 					<article>
 				    <header>
@@ -72,6 +72,9 @@ description: The Imaginary Road is the personal blog of Michael Collins. My blog
 
 		{% include footer.html %}
     {% include javascript.html %}
+		{% if post.javascript %}
+		<script type="text/javascript" src="/js/{{post.javascript}}.js"></script>
+		{% endif %}
     {% include disqus_comment_count_javascript.html %}
 	</body>
 </html>

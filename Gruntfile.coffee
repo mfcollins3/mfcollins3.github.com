@@ -38,7 +38,17 @@ module.exports = (grunt) ->
         src: ['*.less']
         dest: 'css/'
         ext: '.css'
+    coffee:
+      options:
+        sourceMap: true
+      website:
+        expand: true
+        cwd: 'coffee/'
+        src: ['*.coffee']
+        dest: 'js/'
+        ext: '.js'
 
+  grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-less'
@@ -47,7 +57,8 @@ module.exports = (grunt) ->
   grunt.registerTask '_build', [
     'concat',
     'copy',
-    'less'
+    'less',
+    'coffee'
   ]
   grunt.registerTask 'default', 'Builds the website', [
     '_build',

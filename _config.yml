@@ -1,6 +1,6 @@
 safe: true
 lsi: false
-exclude: [Rakefile, README.md, ./lib, _temp, src, server, package.json, bower.json, Gruntfile.coffee, Gemfile, Gemfile.lock, node_modules, bower_components, less]
+exclude: [Rakefile, README.md, ./lib, _temp, src, server, package.json, bower.json, Gruntfile.coffee, Gemfile, Gemfile.lock, node_modules, bower_components, less, coffee]
 include: [./css/lib]
 permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
@@ -40,4 +40,4 @@ defaults:
       author_first_name: "Michael"
       author_last_name: "Collins"
       author_gender: "male"
-      twitter_creator: "mfcollins3"      
+      twitter_creator: "mfcollins3"
