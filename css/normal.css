@@ -6936,3 +6936,6 @@ body.post .cover-photo-credit {
 #recentPosts article header h1 {
   font-size: 18px;
 }
+body.post.no-cover-photo {
+  padding-top: 50px;
+}
