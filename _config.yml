@@ -1,5 +1,3 @@
-safe: true
-lsi: false
 exclude: [Rakefile, README.md, ./lib, _temp, src, server, package.json, bower.json, Gruntfile.coffee, Gemfile, Gemfile.lock, node_modules, bower_components, less, coffee]
 include: [./css/lib]
 permalink: /blog/:year/:month/:day/:title.html
@@ -12,6 +10,12 @@ paginate_path: "blog/page:num/"
 brand: The Imaginary Road
 
 excerpt_separator: <!--more-->
+
+gems:
+  - jekyll-mentions
+  - jemoji
+  - jekyll-redirect-from
+  - jekyll-sitemap
 
 defaults:
   -
