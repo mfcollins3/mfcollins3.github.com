@@ -1,9 +1,0 @@
----
-layout: rss
-title: Neuron Enterprise Service Bus
-description: Neuron ESB is an enterprise service bus and message-based integration product that is the focus of my professional work at Neudesic. In these posts, I will share some insights into new features of Neuron and provide guides for how to use Neuron in advanced scenarios.
-index_url: /index.html
----
-{% for post in site.categories.neuron_esb limit:20 %}
-{% include rss_post.xml %}
-{% endfor %}

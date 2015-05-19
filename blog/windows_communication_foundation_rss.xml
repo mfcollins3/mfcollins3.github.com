@@ -1,9 +1,0 @@
----
-layout: rss
-title: Windows Communication Foundation
-description: Windows Communication Foundation is Microsoft's universal messaging and web services technology for the .NET platform. In these posts, I share some of the techniques that I have learned for building WCF-based applications and tools that I have built to make WCF better.
-index_url: /index.html
----
-{% for post in site.categories.windows_communication_foundation limit:20 %}
-{% include rss_post.xml %}
-{% endfor %}

@@ -1,9 +1,0 @@
----
-layout: rss
-title: iOS
-description: As far as mobile platforms, I love Apple iOS development and enjoy writing applications for my iPhone and iPad. In these posts, I share some of the projects that I am working on and insights into the iOS platform and application development.
-index_url: /index.html
----
-{% for post in site.categories.ios limit:20 %}
-{% include rss_post.xml %}
-{% endfor %}

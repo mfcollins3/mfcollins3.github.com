@@ -1,9 +1,0 @@
----
-layout: rss
-title: Windows Development
-description: Let's face it, as cool as Linux has always been, most of us have made good livings developing for the Windows ecosystem since it sits on most of the computers out there. Here are some of my stories around building and supporting software on the Windows platform.
-index_url: /index.html
----
-{% for post in site.categories.windows_development limit:20 %}
-{% include rss_post.xml %}
-{% endfor %}

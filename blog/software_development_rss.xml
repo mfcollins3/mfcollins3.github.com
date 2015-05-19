@@ -1,9 +1,0 @@
----
-layout: rss
-title: Software Development
-description: Software development is a personal hobby and a professional passion. In these posts, I detail my opinions on software development trends, ideas for improvement, and evaluation of new techniques and technologies.
-index_url: /index.html
----
-{% for post in site.categories.software_development limit:20 %}
-{% include rss_post.xml %}
-{% endfor %}

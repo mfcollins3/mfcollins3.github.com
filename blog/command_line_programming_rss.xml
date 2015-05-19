@@ -1,9 +1,0 @@
----
-layout: rss
-title: Command Line Programming
-description: Command line programming is an essential tool that is still very valuable in a web and GUI world. These posts cover some of my thoughts and ideas on how to build effective command line programs.
-index_url: /index.html
----
-{% for post in site.categories.command_line_programming limit:20 %}
-{% include rss_post.xml %}
-{% endfor %}

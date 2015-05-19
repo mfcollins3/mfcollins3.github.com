@@ -1,9 +1,0 @@
----
-layout: rss
-title: .NET Development
-description: I do a lot of my professional software development using the Microsoft .NET Framework. In these posts, I will share some of the techniques that I use and discoveries that I have made while developing software using the Microsoft .NET technologies.
-index_url: /index.html
----
-{% for post in site.categories.dotnet_development limit:20 %}
-{% include rss_post.xml %}
-{% endfor %}
