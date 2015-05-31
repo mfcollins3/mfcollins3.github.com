@@ -73,6 +73,20 @@
         </header>
         {{content}}
         <footer>
+          <nav>
+            <ul class="pager">
+              <li class="previous {{previous_disabled}}">
+                <a href="{{page.next.url}}">
+                  <span aria-hidden="true">&larr;</span> Next Post</span>
+                </a>
+              </li>
+              <li class="next {{next_disabled}}">
+                <a href="{{page.previous.url}}">
+                  <span aria-hidden="true">&rarr;</span> Previous Post</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
           {% include disqus_thread.html %}
         </footer>
       </article>
