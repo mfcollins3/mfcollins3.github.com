@@ -1,3 +1,5 @@
+remote_theme: mfcollins3/normal-blog-theme
+
 # GitHub Defaults
 #
 # The following settings are set by GitHub and cannot be changed.
@@ -21,9 +23,7 @@ kramdown:
   input: GFM
   hard_wrap: false
 
-remote_theme: mfcollins3/normal-blog-theme
-
-exclude: [README.md, package.json, bower.json, Gruntfile.coffee, Gemfile, Gemfile.lock, node_modules, bower_components, less]
+exclude: [README.md, Gemfile, Gemfile.lock]
 permalink: /blog/:year/:month/:day/:title.html
 
 paginate: 10
@@ -33,11 +33,14 @@ brand: The Imaginary Road
 
 excerpt_separator: <!--more-->
 
-gems:
-  - jekyll-mentions
-  - jemoji
+plugins:
+  - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-avatar
+  - jemoji
+  - jekyll-mentions
 
 defaults:
   -
