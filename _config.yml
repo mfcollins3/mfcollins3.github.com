@@ -13,6 +13,8 @@ author:
 
 rss_feed: /rss.xml
 
+timezone: America/Phoenix
+
 # GitHub Defaults
 #
 # The following settings are set by GitHub and cannot be changed.

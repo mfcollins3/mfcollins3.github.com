@@ -1,6 +1,6 @@
 ---
 title: Asynchronous Messaging Architectures
-cover_photo: messaging_architecture.jpg
+cover_photo: /images/messaging_architecture.jpg
 disqus_identifier: 2015-05-30-asynchronous-messaging-architectures
 ---
 Software architectures are full of opinions. They are usually the
@@ -9,7 +9,7 @@ specific approach to developing software. Sometimes software
 architectures are the result of reading something in a book or seeing
 something in a video and believing that it's the answer to the world's
 problems. In this post, I'll share my opinion, and my desired
-architecture for my own softare.
+architecture for my own software.
 
 <!--more-->
 

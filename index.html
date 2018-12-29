@@ -1,3 +1,17 @@
 ---
 layout: homepage
 ---
+<div id="latest-story">
+  <header>
+    <h1>Latest Article</h1>
+  </header>
+  <article>
+    {% assign latest_post = site.posts | first %}
+    <h1><a href="{{ latest_post.url }}">{{latest_post.title}}</a></h1>
+    <div>
+      {{ post.author.name | default: post.author | default: site.author.name | default: site.author }}<br>
+      <time datetime="{{latest_post.date | date:'%Y-%m-%d'}}">{{latest_post.date | date:'%B %d, %Y'}}</time>
+    </div>
+    <p>{{ latest_post.excerpt | remove: '<p>' | remove: '</p>' }} <a href="{{ latest_post.url }}">Read more</a></p>
+  </article>
+</div>

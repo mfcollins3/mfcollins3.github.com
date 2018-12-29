@@ -1,0 +1,41 @@
+---
+---
+@import "{{ site.theme }}";
+
+#latest-story {
+  header {
+    h1 {
+      font-size: $font-size-base * 1.5;
+      border-bottom: 1px solid $gray-300;
+    }
+  }
+}
+
+main {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+footer {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contact {
+  display: none;
+}
+
+@include media-breakpoint-up(md) {
+  body > footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+    .contact {
+      grid-column: 3;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+    }
+  }
+}
