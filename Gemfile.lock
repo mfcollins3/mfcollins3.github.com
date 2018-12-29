@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/mfcollins3/normal-blog-theme.git
+  revision: a925aa9d0691486e31a3744b4d6ccca4c7484c16
+  specs:
+    normal-blog-theme (0.1.0)
+      github-pages
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -243,6 +250,9 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-feed
+  normal-blog-theme!
+  tzinfo-data
 
 BUNDLED WITH
    1.16.3

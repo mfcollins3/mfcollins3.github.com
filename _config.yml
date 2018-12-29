@@ -1,8 +1,30 @@
-exclude: [Rakefile, README.md, ./lib, _temp, src, server, package.json, bower.json, Gruntfile.coffee, Gemfile, Gemfile.lock, node_modules, bower_components, less, coffee]
-include: [./css/lib]
+# GitHub Defaults
+#
+# The following settings are set by GitHub and cannot be changed.
+
+lsi: false
+safe: true
+source: .
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+
+encoding: UTF-8
+future: true
+jailed: false
+gfm_quirks: paragraph_end
+
+kramdown:
+  math_engine: mathjax # GitHub default; cannot be changed
+  syntax_highlighter: rouge # GitHub default; cannot be changed
+  input: GFM
+  hard_wrap: false
+
+remote_theme: mfcollins3/normal-blog-theme
+
+exclude: [README.md, package.json, bower.json, Gruntfile.coffee, Gemfile, Gemfile.lock, node_modules, bower_components, less]
 permalink: /blog/:year/:month/:day/:title.html
-markdown: redcarpet
-highlighter: pygments
 
 paginate: 10
 paginate_path: "blog/page:num/"
