@@ -1,5 +1,7 @@
 remote_theme: mfcollins3/normal-blog-theme
 
+google_analytics_id: UA-62548623-1
+
 # GitHub Defaults
 #
 # The following settings are set by GitHub and cannot be changed.
