@@ -3,8 +3,8 @@ remote_theme: mfcollins3/normal-blog-theme
 google_analytics_id: UA-62548623-1
 
 title: The Imaginary Road
-description: "The personal website of Michael F. Collins, III, where I share information about myself, experimenting with new technologies, and building software solutions in both my personal and professional life."
-url: "https://www.michaelfcollins3.me"
+description: The personal website of Michael F. Collins, III, where I share information about myself, experimenting with new technologies, and building software solutions in both my personal and professional life.
+url: https://www.michaelfcollins3.me
 
 author:
   name: Michael F. Collins, III
@@ -14,6 +14,8 @@ author:
 rss_feed: /rss.xml
 
 timezone: America/Phoenix
+
+disqus_tenant: mfcollins3
 
 # GitHub Defaults
 #

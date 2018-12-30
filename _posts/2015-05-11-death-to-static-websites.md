@@ -1,6 +1,6 @@
 ---
 title: Death to Static Websites
-cover_photo: landfill.jpg
+cover_photo: /images/landfill.jpg
 javascript: staticapp
 disqus_identifier: 2015-05-11-death-to-static-websites
 ---

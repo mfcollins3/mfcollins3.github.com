@@ -1,6 +1,6 @@
 ---
 title: Refactoring My Go Web Server
-cover_photo: renovating.jpg
+cover_photo: /images/renovating.jpg
 disqus_identifier: 2015-05-15-refactoring-my-go-web-server
 ---
 In my previous post, I wrote a Go web server

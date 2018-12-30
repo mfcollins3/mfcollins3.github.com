@@ -1,6 +1,8 @@
 ---
 title: Asynchronous Messaging Architectures
-cover_photo: /images/messaging_architecture.jpg
+cover_photo:
+  url: /images/messaging_architecture.jpg
+  attribution: <a href="https://www.flickr.com/photos/smithsonian/2550229291/">Smithsonian Institution</a> / <a href="http://foter.com/">Foter</a> / <a href="http://flickr.com/commons/usage/">No known copyright restrictions</a>
 disqus_identifier: 2015-05-30-asynchronous-messaging-architectures
 categories: [architecture]
 ---
@@ -52,7 +54,7 @@ components, but since Heroku exists inside Amazon's cloud,
 applications running on Heroku can take advantage of Amazon's cloud
 services as well.
 
-<image class="img-responsive center-block" src="/images/website-architecture.png" alt="Naked Coders website architecture">
+<img class="img-responsive center-block" src="/images/website-architecture.png" alt="Naked Coders website architecture">
 
 The initial architecture for the Naked Coders website has three
 components. The website itself will be mostly static content or dynamic
@@ -122,7 +124,3 @@ exchange to receive different kinds of events.
 In my next post, I'll build out my first feature, user registration,
 and I will demonstrate publishing my first events to my RabbitMQ
 server.
-
-<div class="cover-photo-credit">
-Photo credit: <a href="https://www.flickr.com/photos/smithsonian/2550229291/">Smithsonian Institution</a> / <a href="http://foter.com/">Foter</a> / <a href="http://flickr.com/commons/usage/">No known copyright restrictions</a>
-</div>

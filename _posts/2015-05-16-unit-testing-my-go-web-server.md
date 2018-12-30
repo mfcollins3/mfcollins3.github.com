@@ -1,7 +1,7 @@
 ---
 title: Unit Testing My Go Web Server
 disqus_identifier: 2015-05-16-unit-testing-my-go-web-server
-cover_photo: golang_testing.png
+cover_photo: /images/golang_testing.png
 ---
 My first post in this series had me write a cool little demo showing
 how to make a static web page more dynamic using a Go web server and

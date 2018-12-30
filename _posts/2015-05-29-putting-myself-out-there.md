@@ -1,6 +1,6 @@
 ---
 title: Putting Myself Out There
-cover_photo: table_for_one.jpg
+cover_photo: /images/table_for_one.jpg
 disqus_identifier: 2015-05-29-putting-myself-out-there
 ---
 In this post, I relate my first entrepreneurial experience pitching my

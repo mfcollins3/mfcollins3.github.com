@@ -1,6 +1,6 @@
 ---
 title: Getting out of a Rut
-cover_photo: stuck_bike.jpg
+cover_photo: /images/stuck_bike.jpg
 disqus_identifier: 2015-05-03-stuck-in-a-rut
 ---
 Yes, it's been a long time since I've blogged. It's not that I haven't
