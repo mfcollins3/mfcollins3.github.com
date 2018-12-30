@@ -1,0 +1,82 @@
+{
+  "events": [
+    {
+      "start_date": {
+        "year": 1993,
+        "month": 8
+      },
+      "end_date": {
+        "year": 1996,
+        "month": 12
+      },
+      "text": {
+        "headline": "University!!!",
+        "text": "In August, 1993, I enrolled at California State University, Sacramento, for my undergraduate studies in Computer Engineering. I underestimated the effect that going to CSU Sacramento would have on my life as living on campus, being a part of that community, and learning to be an adult during my first year of college taught me a lot. Attending a university was one of the greatest achievements of my life and the experience far exceeded what I had expected to come from it."
+      },
+      "display_date": "August 1993"
+    },
+    {
+      "start_date": {
+        "year": 1994,
+        "month": 7
+      },
+      "end_date": {
+        "year": 1997,
+        "month": 4
+      },
+      "text": {
+        "headline": "Health Care Information Services",
+        "text": "<p>At the end of my first year of college, I saw an advertisement in the school newspaper by a company looking for a programmer. I was desperately in need of a job and to figure out my off-campus life and decided to take a chance. I put together the basic resume that I could and dressed up in a suit and tie and hand-delivered my resume to the office, which conveniently was near to the campus. A few days later, I received the first call from the gentleman who would become my future manager and attended my first interview. A couple of weeks later, after completing a programming assignment and getting a recommendation from one of my Computer Science professors, I had my first programming job!</p><p>Health Care Information Services was a critical step in my development and at a good time. I learned so much more about Computer Science and software development by being able to apply what I was learning in college with the realities of professional work. This was a time when we implemented data structures and algorithms manually, over and over again. I learned about I/O issues, disk performance, computing performance, networks, and so much more. This was a very exciting company to work with. It also helped that the company was designed for student employees and provided great assistance to help us get through school, including helping us to pay our tuition.</p>"
+      }
+    },
+    {
+      "start_date": {
+        "year": 1997,
+        "month": 1
+      },
+      "text": {
+        "headline": "Goodbye and Thanks for the Experience",
+        "text": "In January 1997, I learned of the pending closing of my office in Sacramento, CA, and the end of my career at Health Care Information Services. This was both exciting and unfortunate. It was unfortunate because I was going to lose my job. However, as I discovered there was a very hot job market down in the Bay Area that was very ready for me to jump in. Sadly, at this time I decided to put the completion of my Computer Engineering degree on hold. At this point in my life, I needed a job with income and the opportunity to move to the Bay Area was too great."
+      },
+      "display_date": "January 1997"
+    },
+    {
+      "start_date": {
+        "year": 1997,
+        "month": 4
+      },
+      "end_date": {
+        "year": 1997,
+        "month": 12
+      },
+      "text": {
+        "headline": "Quantal International",
+        "text": "<p>In April 1997, I was hired by Quantal International, Inc., in Berkeley as a senior software engineer. Quantal International is an investment technology firm that at the time was building an investment portfolio optimization solution from a proof-of-concept that had been developed as an Excel workbook. I worked as part of a three-person team to try to build a Windows application for this solution that could be sold to customers.</p><p>My time at Quantal International was far from successful and was my first big failure. I had the technical skills, but I was not the right person for the subject matter. I did not understand the math involved in order to successfully deliver the product and the longer I stayed, the more evident it was becoming that I really was the wrong person for the job.</p>"
+      }
+    },
+    {
+      "start_date": {
+        "year": 1998,
+        "month": 1
+      },
+      "end_date": {
+        "year": 1999,
+        "month": 10
+      },
+      "text": {
+        "headline": "PeopleSoft",
+        "text": "<p>I have very fond memories of PeopleSoft. PeopleSoft is one of those places where you don't realize how great the office environment was until much later, and you can spend your entire career trying to find it again but you never will. PeopleSoft was my life. It was my work life. It was my social life. It was a wonderful place to work.</p><p>I was a Development Manager for the new Enterprise Performance Management product. I worked on financial applications that produced metrics or simulations that could be used to plan financial actions. The applications that we built were extremely fun to work on. I had to learn COBOL when I started at PeopleSoft, but eventually we moved to C++.</p><p>As great as PeopleSoft was, it started becoming a career killer for me. PeopleSoft was very focused on their PeopleTools technology, but Java was just hitting the scene and that's where all of the excitement in Silicon Valley was focusing on. I started becoming unhappy with the technical limitations of my job and wanted to continue to grow in a way that PeopleSoft couldn't support me. I then chose to leave to pursue other opportunities.</p>"
+      }
+    }
+  ],
+  "title": {
+    "start_date": {
+      "year": 1993,
+      "month": 8
+    },
+    "text": {
+      "headline": "My Professional Timeline",
+      "text": "This timeline is to help you understand the journey that I have taken in my professional carrer and to help you to understand how I arrived at this current moment in my career."
+    }
+  }
+}
