@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mfcollins3/normal-blog-theme.git
-  revision: 6dae68aa74f963f02365f2084d5bce50017cba35
+  revision: f6910ab55d07d63b3303b64e11dbc66cd39dc082
   specs:
     normal-blog-theme (0.1.0)
       github-pages
