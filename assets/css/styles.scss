@@ -2,30 +2,38 @@
 ---
 @import "{{ site.theme }}";
 
-#latest-story {
-  header {
-    h1 {
-      font-size: $font-size-base * 1.5;
-      border-bottom: 1px solid $gray-300;
-    }
+main {
+  margin: 0 10px;
+}
+
+#latest-story, #featured-category {
+  margin: $grid-gutter-width 0;
+
+  > header > h1 {
+    font-size: $font-size-base * 1.5;
+    border-bottom: 1px solid $gray-300;
   }
 }
 
-main {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-footer {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.contact {
-  display: none;
+.cover-photo img {
+  width: 100%;
 }
 
 @include media-breakpoint-up(md) {
+  #latest-story > article {
+    display: flex;
+    flex-direction: row;
+
+    .cover-photo {
+      flex: 1;
+      margin-right: $grid-gutter-width;
+    }
+
+    .post-summary {
+      flex: 2;
+    }
+  }
+
   body > footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

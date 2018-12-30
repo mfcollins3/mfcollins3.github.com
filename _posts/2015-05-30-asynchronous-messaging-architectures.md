@@ -2,6 +2,7 @@
 title: Asynchronous Messaging Architectures
 cover_photo: /images/messaging_architecture.jpg
 disqus_identifier: 2015-05-30-asynchronous-messaging-architectures
+categories: [architecture]
 ---
 Software architectures are full of opinions. They are usually the
 result of one person's bias towards a specific technology, or a
