@@ -1,8 +1,0 @@
----
-layout: rss
-description: Personal and professional thoughts and observations from Michael Collins.
-index_url: /index.html
----
-{% for post in site.posts limit:20 %}
-{% include rss_post.xml %}
-{% endfor %}

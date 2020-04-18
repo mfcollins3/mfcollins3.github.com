@@ -1,6 +1,0 @@
-<item>
-	<title>{{post.title}}</title>
-	<link>http://www.michaelfcollins3.me{{post.url}}</link>
-	<description>{{post.description}}</description>
-	<pubDate>{{post.date | date:'%a, %d %b %Y'}}</pubDate>
-</item>
