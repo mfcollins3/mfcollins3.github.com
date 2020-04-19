@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Blog on The Imaginary Road</title>
+    <link>https://www.michaelfcollins3.me/blog/</link>
+    <description>Recent content in My Blog on The Imaginary Road</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mfcollins3@me.com (Michael F. Collins, III)</managingEditor>
+    <webMaster>mfcollins3@me.com (Michael F. Collins, III)</webMaster>
+    <copyright>Copyright 2012-2002 Michael F. Collins, III</copyright>
+    
+	<atom:link href="https://www.michaelfcollins3.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
