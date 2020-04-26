@@ -13,5 +13,19 @@
 	<atom:link href="https://www.michaelfcollins3.me/blog/2020/04/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Relaunching Michael Collins</title>
+      <link>https://www.michaelfcollins3.me/blog/2020/04/relaunching-michael-collins/</link>
+      <pubDate>Sun, 26 Apr 2020 14:43:27 -0700</pubDate>
+      <author>mfcollins3@me.com (Michael F. Collins, III)</author>
+      <guid>https://www.michaelfcollins3.me/blog/2020/04/relaunching-michael-collins/</guid>
+      <description>&lt;p&gt;In 26 years as a professional software developer, one of the most important
+things that I have learned is that if some code is not quite working out like
+you had hoped, it&amp;rsquo;s sometimes worthwhile to delete it and start over. I find
+that to be true in life sometimes too. In this post, I will reintroduce myself,
+tell you about my new website and blog, and lay out a roadmap for the journey
+ahead.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>
