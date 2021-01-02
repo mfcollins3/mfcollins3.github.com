@@ -1,40 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>The Imaginary Road</title>
-    <link>https://www.michaelfcollins3.me/</link>
-    <description>Recent content on The Imaginary Road</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>mfcollins3@me.com (Michael F. Collins, III)</managingEditor>
-    <webMaster>mfcollins3@me.com (Michael F. Collins, III)</webMaster>
-    <copyright>Copyright &amp;copy; 2012-2020 Michael F. Collins, III</copyright>
-    
-	<atom:link href="https://www.michaelfcollins3.me/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Relaunching Michael Collins</title>
-      <link>https://www.michaelfcollins3.me/blog/2020/04/relaunching-michael-collins/</link>
-      <pubDate>Sun, 26 Apr 2020 14:43:27 -0700</pubDate>
-      <author>mfcollins3@me.com (Michael F. Collins, III)</author>
-      <guid>https://www.michaelfcollins3.me/blog/2020/04/relaunching-michael-collins/</guid>
-      <description>&lt;p&gt;In 26 years as a professional software developer, one of the most important
-things that I have learned is that if some code is not quite working out like
-you had hoped, it&amp;rsquo;s sometimes worthwhile to delete it and start over. I find
-that to be true in life sometimes too. In this post, I will reintroduce myself,
-tell you about my new website and blog, and lay out a roadmap for the journey
-ahead.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.michaelfcollins3.me/authors/michael-collins/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>mfcollins3@me.com (Michael F. Collins, III)</author>
-      <guid>https://www.michaelfcollins3.me/authors/michael-collins/</guid>
-      <description>&lt;p&gt;Michael Collins is a professional software developer.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>The Imaginary Road</title>
+        <link>https://www.michaelfcollins3.me/</link>
+        <description>Thoughts, ideas, and stories from the personal and professional life of Michael F. Collins, III.</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 13:40:11 -0700</lastBuildDate>
+            <atom:link href="https://www.michaelfcollins3.me/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Welcome (Back) to The Imaginary Road</title>
+    <link>https://www.michaelfcollins3.me/posts/2021/01/welcome-back-to-the-imaginary-road/</link>
+    <pubDate>Fri, 01 Jan 2021 13:40:11 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/posts/2021/01/welcome-back-to-the-imaginary-road/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/cover.jpg" referrerpolicy="no-referrer">
+            </div><p>Welcome back to my personal blog: The Imaginary Road. In this post, I will discuss my break from writing, what has brought me back, and what I plan to write about in the immediate future.</p>]]></description>
+</item></channel>
 </rss>
