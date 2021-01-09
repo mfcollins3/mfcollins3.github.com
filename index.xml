@@ -11,7 +11,7 @@
     <pubDate>Sat, 09 Jan 2021 09:20:00 -0700</pubDate>
     <author>michael-collins</author>
     <guid>https://www.michaelfcollins3.me/posts/2021/01/creating-multiple-scenes-in-a-swiftui-app/</guid>
-    <description><![CDATA[<p>The latest iPad and iPad Pro devices are ripe and ready for more powerful business solutions. In this post, I will describe the ability to create multiple scenes in iPad applications.</p>]]></description>
+    <description><![CDATA[<p>The latest iPad and iPad Pro devices are ripe and ready for more powerful business solutions. SwiftUI 2 has changed the application model but didn&rsquo;t really explain how to support some of the features specific to iPads. In this post, I will describe how to use SwiftUI 2 to create multiple scenes in iPad applications.</p>]]></description>
 </item><item>
     <title>Welcome (Back) to The Imaginary Road</title>
     <link>https://www.michaelfcollins3.me/posts/2021/01/welcome-back-to-the-imaginary-road/</link>
