@@ -3,5 +3,12 @@
         <title>Categories - Category - The Imaginary Road</title>
         <link>https://www.michaelfcollins3.me/categories/</link>
         <description>Categories - Category - The Imaginary Road</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://www.michaelfcollins3.me/categories/" rel="self" type="application/rss+xml" /></channel>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 02 Jan 2021 13:54:13 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>iOS Development</title>
+    <link>https://www.michaelfcollins3.me/categories/ios-development/</link>
+    <pubDate>Sat, 02 Jan 2021 13:54:13 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/categories/ios-development/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>
