@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Naked Blogging - Category - The Imaginary Road</title>
+        <link>https://www.michaelfcollins3.me/categories/naked-blogging/</link>
+        <description>Naked Blogging - Category - The Imaginary Road</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 10 Jan 2021 15:50:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/categories/naked-blogging/" rel="self" type="application/rss+xml" /><item>
+    <title>Introducing Naked Blogging</title>
+    <link>https://www.michaelfcollins3.me/posts/2021/01/introducing-naked-blogging/</link>
+    <pubDate>Sun, 10 Jan 2021 15:50:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/posts/2021/01/introducing-naked-blogging/</guid>
+    <description><![CDATA[<p>In this post, I am restarting my journey to build my own blogging app: Naked Blogging. I am going to give you an overview of my vision and start documenting my journey by showing you how I am building this product.</p>]]></description>
+</item></channel>
+</rss>

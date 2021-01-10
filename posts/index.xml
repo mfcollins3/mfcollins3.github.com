@@ -3,7 +3,14 @@
         <title>All Posts - The Imaginary Road</title>
         <link>https://www.michaelfcollins3.me/posts/</link>
         <description>All Posts | The Imaginary Road</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 10 Jan 2021 12:14:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 10 Jan 2021 15:50:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Introducing Naked Blogging</title>
+    <link>https://www.michaelfcollins3.me/posts/2021/01/introducing-naked-blogging/</link>
+    <pubDate>Sun, 10 Jan 2021 15:50:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/posts/2021/01/introducing-naked-blogging/</guid>
+    <description><![CDATA[<p>In this post, I am restarting my journey to build my own blogging app: Naked Blogging. I am going to give you an overview of my vision and start documenting my journey by showing you how I am building this product.</p>]]></description>
+</item><item>
     <title>Home Screen Quick Actions With SwiftUI</title>
     <link>https://www.michaelfcollins3.me/posts/2021/01/home-screen-quick-actions-with-swiftui/</link>
     <pubDate>Sun, 10 Jan 2021 12:14:00 -0700</pubDate>
