@@ -3,7 +3,14 @@
         <title>Naked Blogging - Tag - The Imaginary Road</title>
         <link>https://www.michaelfcollins3.me/tags/naked-blogging/</link>
         <description>Naked Blogging - Tag - The Imaginary Road</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 10 Jan 2021 15:50:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/tags/naked-blogging/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 16 Jan 2021 15:12:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/tags/naked-blogging/" rel="self" type="application/rss+xml" /><item>
+    <title>Automating Delivery of iOS Applications to Customers</title>
+    <link>https://www.michaelfcollins3.me/posts/2021/01/automating-delivery-of-ios-applications-to-customers/</link>
+    <pubDate>Sat, 16 Jan 2021 15:12:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/posts/2021/01/automating-delivery-of-ios-applications-to-customers/</guid>
+    <description><![CDATA[<p>The most important user story when developing a software product is planning for how to distribute it. A product isn&rsquo;t a product if it can&rsquo;t reach customers. In this post, I show you how to automate packaging and distributing an iOS application using Fastlane Tools.</p>]]></description>
+</item><item>
     <title>Introducing Naked Blogging</title>
     <link>https://www.michaelfcollins3.me/posts/2021/01/introducing-naked-blogging/</link>
     <pubDate>Sun, 10 Jan 2021 15:50:00 -0700</pubDate>
