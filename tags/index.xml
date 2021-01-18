@@ -3,7 +3,49 @@
         <title>Tags - Tag - The Imaginary Road</title>
         <link>https://www.michaelfcollins3.me/tags/</link>
         <description>Tags - Tag - The Imaginary Road</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 16 Jan 2021 15:12:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 17 Jan 2021 22:45:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Catalyst</title>
+    <link>https://www.michaelfcollins3.me/tags/catalyst/</link>
+    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/catalyst/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>CMake</title>
+    <link>https://www.michaelfcollins3.me/tags/cmake/</link>
+    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/cmake/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Git</title>
+    <link>https://www.michaelfcollins3.me/tags/git/</link>
+    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/git/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>iOS</title>
+    <link>https://www.michaelfcollins3.me/tags/ios/</link>
+    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/ios/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>libgit2</title>
+    <link>https://www.michaelfcollins3.me/tags/libgit2/</link>
+    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/libgit2/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Swift Package Manager</title>
+    <link>https://www.michaelfcollins3.me/tags/swift-package-manager/</link>
+    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/swift-package-manager/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>App Store</title>
     <link>https://www.michaelfcollins3.me/tags/app-store/</link>
     <pubDate>Sat, 16 Jan 2021 15:12:00 -0700</pubDate>
@@ -18,13 +60,6 @@
     <guid>https://www.michaelfcollins3.me/tags/fastlane-tools/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>iOS</title>
-    <link>https://www.michaelfcollins3.me/tags/ios/</link>
-    <pubDate>Sat, 16 Jan 2021 15:12:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/ios/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
     <title>Naked Blogging</title>
     <link>https://www.michaelfcollins3.me/tags/naked-blogging/</link>
     <pubDate>Sat, 16 Jan 2021 15:12:00 -0700</pubDate>
@@ -37,41 +72,6 @@
     <pubDate>Sat, 16 Jan 2021 15:12:00 -0700</pubDate>
     <author>michael-collins</author>
     <guid>https://www.michaelfcollins3.me/tags/testflight/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Products</title>
-    <link>https://www.michaelfcollins3.me/tags/products/</link>
-    <pubDate>Sun, 10 Jan 2021 15:50:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/products/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Home Screen</title>
-    <link>https://www.michaelfcollins3.me/tags/home-screen/</link>
-    <pubDate>Sun, 10 Jan 2021 12:14:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/home-screen/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Quick Action</title>
-    <link>https://www.michaelfcollins3.me/tags/quick-action/</link>
-    <pubDate>Sun, 10 Jan 2021 12:14:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/quick-action/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>SwiftUI</title>
-    <link>https://www.michaelfcollins3.me/tags/swiftui/</link>
-    <pubDate>Sun, 10 Jan 2021 12:14:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/swiftui/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>iPadOS</title>
-    <link>https://www.michaelfcollins3.me/tags/ipados/</link>
-    <pubDate>Sat, 09 Jan 2021 09:20:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/ipados/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

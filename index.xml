@@ -3,9 +3,16 @@
         <title>The Imaginary Road</title>
         <link>https://www.michaelfcollins3.me/</link>
         <description>Thoughts, ideas, and stories from the personal and professional life of Michael F. Collins, III.</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 16 Jan 2021 15:12:00 -0700</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 17 Jan 2021 22:45:00 -0700</lastBuildDate>
             <atom:link href="https://www.michaelfcollins3.me/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Build libgit2 for iOS and Catalyst</title>
+    <link>https://www.michaelfcollins3.me/posts/2021/01/build-libgit2-for-ios-and-catalyst/</link>
+    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/posts/2021/01/build-libgit2-for-ios-and-catalyst/</guid>
+    <description><![CDATA[<p>Using open source libraries can be a blessing or a curse. They can be a blessing in the short term if they help you to accomplish an immediate task. They can be a curse if they&rsquo;re not maintained. In this article, I will take you through my journey to consume libgit2 and why I did it.</p>]]></description>
+</item><item>
     <title>Automating Delivery of iOS Applications to Customers</title>
     <link>https://www.michaelfcollins3.me/posts/2021/01/automating-delivery-of-ios-applications-to-customers/</link>
     <pubDate>Sat, 16 Jan 2021 15:12:00 -0700</pubDate>
