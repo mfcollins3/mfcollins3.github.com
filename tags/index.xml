@@ -3,7 +3,28 @@
         <title>Tags - Tag - The Imaginary Road</title>
         <link>https://www.michaelfcollins3.me/tags/</link>
         <description>Tags - Tag - The Imaginary Road</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 23 Jan 2021 11:04:43 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 31 Jan 2021 14:10:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>iOS</title>
+    <link>https://www.michaelfcollins3.me/tags/ios/</link>
+    <pubDate>Sun, 31 Jan 2021 14:10:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/ios/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>libgit2</title>
+    <link>https://www.michaelfcollins3.me/tags/libgit2/</link>
+    <pubDate>Sun, 31 Jan 2021 14:10:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/libgit2/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Swift</title>
+    <link>https://www.michaelfcollins3.me/tags/swift/</link>
+    <pubDate>Sun, 31 Jan 2021 14:10:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/tags/swift/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>HOTP</title>
     <link>https://www.michaelfcollins3.me/tags/hotp/</link>
     <pubDate>Sat, 23 Jan 2021 11:04:43 -0700</pubDate>
@@ -46,32 +67,11 @@
     <guid>https://www.michaelfcollins3.me/tags/git/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>iOS</title>
-    <link>https://www.michaelfcollins3.me/tags/ios/</link>
-    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/ios/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>libgit2</title>
-    <link>https://www.michaelfcollins3.me/tags/libgit2/</link>
-    <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/libgit2/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
     <title>Swift Package Manager</title>
     <link>https://www.michaelfcollins3.me/tags/swift-package-manager/</link>
     <pubDate>Sun, 17 Jan 2021 22:45:00 -0700</pubDate>
     <author>michael-collins</author>
     <guid>https://www.michaelfcollins3.me/tags/swift-package-manager/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>App Store</title>
-    <link>https://www.michaelfcollins3.me/tags/app-store/</link>
-    <pubDate>Sat, 16 Jan 2021 15:12:00 -0700</pubDate>
-    <author>michael-collins</author>
-    <guid>https://www.michaelfcollins3.me/tags/app-store/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

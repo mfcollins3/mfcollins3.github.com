@@ -3,7 +3,14 @@
         <title>All Posts - The Imaginary Road</title>
         <link>https://www.michaelfcollins3.me/posts/</link>
         <description>All Posts | The Imaginary Road</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 23 Jan 2021 11:04:43 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 31 Jan 2021 14:10:00 -0700</lastBuildDate><atom:link href="https://www.michaelfcollins3.me/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Cloning Git Repositories</title>
+    <link>https://www.michaelfcollins3.me/posts/2021/01/cloning-git-repositories/</link>
+    <pubDate>Sun, 31 Jan 2021 14:10:00 -0700</pubDate>
+    <author>michael-collins</author>
+    <guid>https://www.michaelfcollins3.me/posts/2021/01/cloning-git-repositories/</guid>
+    <description><![CDATA[<p>In my <a href="https://www.michaelfcollins3.me/posts/2021/01/build-libgit2-for-ios-and-catalyst/" rel="">last Naked Blogging post</a>, I showed you how I built libgit2, libssh2, and OpenSSL for iOS and package them as XCFrameworks so that I can use them in my Naked Blogging application. In this post, I will implement my first Git feature: cloning my website repository on GitHub.</p>]]></description>
+</item><item>
     <title>All About One Time Passwords</title>
     <link>https://www.michaelfcollins3.me/posts/2021/01/all-about-one-time-passwords/</link>
     <pubDate>Sat, 23 Jan 2021 11:04:43 -0700</pubDate>
